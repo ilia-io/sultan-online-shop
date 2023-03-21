@@ -1,12 +1,15 @@
 import React from 'react';
-import { Counter } from './features/counter/Counter';
 import './App.scss';
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
-  return <>
-  <Header />
-  </>;
+  return (
+    <>
+      <Header />
+      <Footer />
+    </>
+  );
 }
 
 export default App;
