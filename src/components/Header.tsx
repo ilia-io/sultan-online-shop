@@ -14,7 +14,7 @@ const Header = (props: Props) => {
   return (
     <header className="header">
       <div className="header__wrapper container">
-        <section className="header__menu-wrapper ">
+        <section className="header__menu-wrapper">
           <div className="header__location-mail-box">
             <div className="header__location-box">
               <img
@@ -66,7 +66,7 @@ const Header = (props: Props) => {
             </ul>
           </nav>
         </section>
-        <section className="header-main-section">
+        <section className="header__main-section">
           <img src={logoHeader} alt="sultan" className="header__logo" />
           <button className="header__catalogBtn" type="button">
             Каталог{` `}

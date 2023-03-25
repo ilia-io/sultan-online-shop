@@ -4,13 +4,16 @@ import emailBtn from '../assets/icons/email-btn.svg';
 import priceListBtnIcon from '../assets/icons/price-list-in-btn.svg';
 import telegram from '../assets/icons/telegram.svg';
 import whatsapp from '../assets/icons/whatsapp.svg';
+import visa from '../assets/icons/visa.svg';
+import mastercard from '../assets/icons/m-card.svg';
+
 
 type Props = {};
 
 const Footer = (props: Props) => {
   return (
     <footer className="footer">
-      <div className="footer-wrapper container">
+      <div className="footer__wrapper container">
         <section className="footer__logo-box">
           <img src={logoFooter} alt="sultan" className="footer__logo" />
           <p className="footer__logo-text">
@@ -97,8 +100,8 @@ const Footer = (props: Props) => {
             </li>
           </ul>
         </nav>
-        <section className="footer__contact">
-          <h2 className="footer__contact-title">Скачать прайс-лист:</h2>
+        <section className="footer__price">
+          <h2 className="footer__price-title">Скачать прайс-лист:</h2>
           <button className="header__price-list-btn" type="button">
             Прайс-лист{' '}
             <img
@@ -107,18 +110,28 @@ const Footer = (props: Props) => {
               className="header__price-list-btn-icon"
             />
           </button>
-          <p className="footer__contact-text">Связь в мессенджерах:</p>
+          <p className="footer__price-text">Связь в мессенджерах:</p>
+          <div className="footer__price-icon-box">
+            <img src={whatsapp} alt="telegram" className="footer__price-icon" />
+            <img src={telegram} alt="telegram" className="footer__price-icon" />
+          </div>
+        </section>
+        <section className="footer__contact">
+          <h2 className="footer__contact-title">Контакты:</h2>
+          <div className="footer__contact-tel-box">
+            <p className="footer__contact-tel">+7 (777) 490-00-91</p>
+            <p className="footer__contact-text">время работы: 9:00-20:00</p>
+            <a href="/" className="footer__contact-link">
+              Заказать звонок
+            </a>
+          </div>
+          <div className="footer__contact-mail-box">
+            <p className="footer__contact-mail">opt.sultan@mail.ru</p>
+            <p className="footer__contact-mail-text">На связи в любое время</p>
+          </div>
           <div className="footer__contact-icon-box">
-            <img
-              src={whatsapp}
-              alt="telegram"
-              className="footer__contact-icon"
-            />
-            <img
-              src={telegram}
-              alt="telegram"
-              className="footer__contact-icon"
-            />
+            <img src={visa} alt="visa" />
+            <img src={mastercard} alt="visa" />
           </div>
         </section>
       </div>
