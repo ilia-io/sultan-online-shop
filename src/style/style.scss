@@ -45,18 +45,20 @@ body {
     width: 100%;
     min-height: 61px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     flex-wrap: wrap;
     margin: 0 auto;
   }
 
   &__location-mail-box {
     width: 493px;
-    height: 34px;
+    min-height: 34px;
     display: flex;
-    justify-content: space-around;
     align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
   }
 
   &__location-box {
@@ -129,8 +131,6 @@ body {
     color: #3F4E65;
   }
 
-  &__menu {}
-
   &__menu-vertical-line {
     height: 29px;
     opacity: 0.1;
@@ -143,6 +143,7 @@ body {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    gap: 10px;
   }
 
   &__logo {
@@ -326,13 +327,15 @@ body {
   }
 }
 
-.nav-list {
-  height: 29px;
+.header .nav-list {
+  list-style: none;
+  min-height: 29px;
   width: 512px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  list-style: none;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
 
   &__item {}
 
@@ -344,70 +347,207 @@ body {
 }
 
 .footer {
+  min-height: 500px;
   background: $_2;
   box-shadow: 0px 15px 70px -11px rgba(43, 28, 1, 0.04);
   display: flex;
-  align-items: center;
   margin: 0 auto;
 
   &__wrapper {
+    margin-top: 71px;
+    width: 1329px;
+    min-height: 313px;
     display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
   }
 
-  &__logo-box {}
+  &__logo-box {
+    width: 282px;
+    height: 313px;
+    display: flex;
+    flex-direction: column;
+  }
 
-  &__logo {}
+  &__logo {
+    height: 66px;
+    width: 156px;
+    margin-bottom: 15px;
+  }
 
-  &__logo-text {}
+  &__logo-text {
+    font-size: 16px;
+    line-height: 150%;
+    color: #FFFFFF;
+    margin-bottom: 45px;
+  }
 
-  &__logo-note {}
+  &__logo-note {
+    font-size: 12px;
+    line-height: 150%;
+    color: #fff;
+    margin-bottom: 14px;
+  }
 
-  &__email-form {}
+  &__email-form {
+    width: 282px;
+    height: 59px;
+    background-color: #fff;
+    border-radius: 36px;
 
-  &__email-input {}
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
 
-  &__email-btn {}
+  &__email-input {
+    width: 203px;
+    height: 18px;
+    font-size: 12px;
+    line-height: 150%;
+    color: #5c6370;
+    opacity: 0.6;
 
-  &__info {}
+    outline: none;
+    border: none;
+    margin-left: 20px;
+  }
 
-  &__info-title {}
+  &__email-btn {
+    width: 39px;
+    height: 39px;
+  }
 
-  &__price {}
+  &__info {
+    display: flex;
+    flex-direction: column;
+  }
 
-  &__price-title {}
+  &__info-title {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 150%;
+    color: #FFFFFF;
+    margin-bottom: 25px;
+  }
 
-  &__price-text {}
+  &__price {
+    display: flex;
+    flex-direction: column;
+  }
 
-  &__price-icon-box {}
+  &__price-title {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 150%;
+    color: #FFFFFF;
+    margin-bottom: 25px;
+  }
 
-  &__price-icon {}
+  &__price-text {
+    font-size: 14px;
+    line-height: 150%;
+    color: #FFFFFF;
+    margin-top: 20px;
+    margin-bottom: 15px;
+  }
 
-  &__contact {}
+  &__price-icon-box {
+    width: 88px;
+    display: flex;
+    justify-content: space-between;
+  }
 
-  &__contact-title {}
+  &__price-icon {
+    height: 39px;
+    width: 39px;
+  }
 
-  &__contact-tel-box {}
+  &__contact {
+    display: flex;
+    flex-direction: column;
+  }
 
-  &__contact-tel {}
+  &__contact-title {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 150%;
+    color: #FFFFFF;
+    margin-bottom: 25px;
+  }
 
-  &__contact-text {}
+  &__contact-tel-box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+  }
 
-  &__contact-link {}
+  &__contact-tel {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 150%;
+    color: #FFFFFF;
+    margin-bottom: 5px;
+  }
 
-  &__contact-mail-box {}
+  &__contact-text {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 150%;
+    color: #FFFFFF;
+    margin-bottom: 5px;
+  }
 
-  &__contact-mail {}
+  &__contact-link {
+    font-size: 10px;
+    line-height: 150%;
+    text-decoration-line: underline;
+    color: #FFFFFF;
+  }
 
-  &__contact-mail-text {}
+  &__contact-mail-box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+  }
 
-  &__contact-icon-box {}
+  &__contact-mail {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    color: #FFFFFF;
+  }
+
+  &__contact-mail-text {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 130.02%;
+    color: #FFFFFF;
+  }
+
+  &__contact-icon-box {
+    width: 127px;
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 
 
 .footer .nav-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
 
-  &__item {}
+  &__item {
+    margin-bottom: 20px;
+  }
 
-  &__link {}
+  &__link {
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 150%;
+    color: #FFFFFF;
+  }
 }

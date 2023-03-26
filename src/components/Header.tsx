@@ -38,33 +38,31 @@ const Header = (props: Props) => {
               </div>
             </div>
           </div>
-          <nav className="header__menu">
-            <ul className="nav-list">
-              <li className="nav-list__item">
-                <a href="/" className="nav-list__link">
-                  О компании
-                </a>
-              </li>
-              <div className="header__menu-vertical-line"></div>
-              <li className="nav-list__item">
-                <a href="/" className="nav-list__link">
-                  Доставка и оплата
-                </a>
-              </li>
-              <div className="header__menu-vertical-line"></div>
-              <li className="nav-list__item">
-                <a href="/" className="nav-list__link">
-                  Возврат
-                </a>
-              </li>
-              <div className="header__menu-vertical-line"></div>
-              <li className="nav-list__item">
-                <a href="/" className="nav-list__link">
-                  Контакты
-                </a>
-              </li>
-            </ul>
-          </nav>
+          <ul className="nav-list menu">
+            <li className="nav-list__item">
+              <a href="/" className="nav-list__link">
+                О компании
+              </a>
+            </li>
+            <div className="header__menu-vertical-line"></div>
+            <li className="nav-list__item">
+              <a href="/" className="nav-list__link">
+                Доставка и оплата
+              </a>
+            </li>
+            <div className="header__menu-vertical-line"></div>
+            <li className="nav-list__item">
+              <a href="/" className="nav-list__link">
+                Возврат
+              </a>
+            </li>
+            <div className="header__menu-vertical-line"></div>
+            <li className="nav-list__item">
+              <a href="/" className="nav-list__link">
+                Контакты
+              </a>
+            </li>
+          </ul>
         </section>
         <section className="header__main-section">
           <img src={logoHeader} alt="sultan" className="header__logo" />
