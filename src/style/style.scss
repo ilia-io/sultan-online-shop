@@ -26,6 +26,8 @@ body {
   padding: 0 15px;
 }
 
+/*-----------------------------------header-----------------------------------*/
+
 .header {
   min-height: 170px;
   // margin: 0 auto;
@@ -346,6 +348,7 @@ body {
   }
 }
 
+/*-----------------------------------footer-----------------------------------*/
 .footer {
   min-height: 500px;
   background: $_2;
@@ -417,6 +420,7 @@ body {
   &__email-btn {
     width: 39px;
     height: 39px;
+    cursor: pointer;
   }
 
   &__info {
@@ -462,6 +466,7 @@ body {
   &__price-icon {
     height: 39px;
     width: 39px;
+    cursor: pointer;
   }
 
   &__contact {
@@ -532,8 +537,6 @@ body {
     justify-content: space-between;
   }
 }
-
-
 
 .footer .nav-list {
   display: flex;
