@@ -21,7 +21,7 @@ body {
 }
 
 .container {
-  max-width: 1366px;
+  max-width: 1371px;
   margin: 0 auto;
   padding: 0 15px;
 }
@@ -36,7 +36,6 @@ body {
   // flex-direction: column;
 
   &__wrapper {
-    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -354,16 +353,15 @@ body {
   background: $_2;
   box-shadow: 0px 15px 70px -11px rgba(43, 28, 1, 0.04);
   display: flex;
-  margin: 0 auto;
+
 
   &__wrapper {
+    width: 100%;
     margin-top: 71px;
-    width: 1329px;
     min-height: 313px;
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
-    gap: 20px;
+    row-gap: 50px;
   }
 
   &__logo-box {
@@ -371,6 +369,7 @@ body {
     height: 313px;
     display: flex;
     flex-direction: column;
+    margin-right: 59px;
   }
 
   &__logo {
@@ -426,6 +425,7 @@ body {
   &__info {
     display: flex;
     flex-direction: column;
+    margin-right: 95px;
   }
 
   &__info-title {
@@ -439,6 +439,7 @@ body {
   &__price {
     display: flex;
     flex-direction: column;
+    margin-right: 95px;
   }
 
   &__price-title {
@@ -552,5 +553,38 @@ body {
     font-size: 14px;
     line-height: 150%;
     color: #FFFFFF;
+  }
+}
+
+.bread-crumbs {
+  min-height: 112px;
+
+  &__wrapper {
+    min-height: 112px;
+    display: flex;
+    align-items: center;
+
+    &>* {
+      margin-right: 10px;
+    }
+  }
+
+  &__element {
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 120%;
+    color: $_2;
+
+    &_active {
+      text-decoration: none;
+      opacity: 0.5;
+    }
+  }
+
+  &__vertical-line {
+    height: 16px;
+    opacity: 0.3;
+    border-left: 1px dashed $_2;
   }
 }
