@@ -2,6 +2,7 @@ import React from 'react';
 import arrowDown from '../assets/icons/sort-arrow-down.svg';
 import arrowUp from '../assets/icons/sort-arrow-up.svg';
 import db from '../assets/db.json';
+import searchBtn from '../assets/icons/search-btn.svg';
 
 type Props = {};
 
@@ -29,6 +30,8 @@ const manufacturers: string[] = [
   'Paclan',
   'Булгари Грин',
 ];
+
+console.log(db);
 
 const Catalog = (props: Props) => {
   return (
@@ -91,7 +94,37 @@ const Catalog = (props: Props) => {
             ))}
           </ul>
         </section>
-        <section className="catalog-main"></section>
+        <section className="catalog-main">
+          <section className="catalog__side-filters">
+            <h2 className="catalog__side-filters-title">
+              ПОДБОР ПО ПАРАМЕТРАМ
+            </h2>
+            <div className="catalog__price-filter-box">
+              <h2 className="catalog__price-filter-title">
+                Цена <span>₸</span>
+              </h2>
+              <div className="catalog-price-filter-inputs">
+                <label htmlFor="priceMin"></label>
+                <input
+                  id="priceMin"
+                  type="text"
+                  className="catalog-price-filter-min"
+                />
+                <p className="catalog-price-filter-divider">-</p>
+                <label htmlFor="priceMax"></label>
+                <input
+                  id="priceMax"
+                  type="text"
+                  className="catalog-price-filter-min"
+                />
+              </div>
+            </div>
+            <div className="catalog__manufacturer-filter-box">
+              
+             
+            </div>
+          </section>
+        </section>
       </div>
     </section>
   );

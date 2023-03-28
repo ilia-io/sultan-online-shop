@@ -595,6 +595,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    padding-bottom: 30px;
   }
 
   &__title {
@@ -664,5 +665,6 @@ body {
     border-radius: 10px;
 
     text-align: center;
+    cursor: pointer;
   }
 }
