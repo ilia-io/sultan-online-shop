@@ -1,16 +1,33 @@
 import React from 'react';
 import arrowDown from '../assets/icons/sort-arrow-down.svg';
 import arrowUp from '../assets/icons/sort-arrow-up.svg';
+import db from '../assets/db.json';
 
 type Props = {};
 
 type TCategorie = string;
 
 const categories: string[] = [
-  "Уход за телом","Уход за руками","Уход за ногами","Уход за лицом","Уход за волосами","Средства для загара","Средства для бритья","Подарочные наборы","Гигиеническая продукция","Гигиена полости рта","Бумажная продукция",
+  'Уход за телом',
+  'Уход за руками',
+  'Уход за ногами',
+  'Уход за лицом',
+  'Уход за волосами',
+  'Средства для загара',
+  'Средства для бритья',
+  'Подарочные наборы',
+  'Гигиеническая продукция',
+  'Гигиена полости рта',
+  'Бумажная продукция',
 ];
 
-const manufacturers: string[] = ["BioMio","Нэфис","Grifon","Boyscout","Paclan","Булгари Грин",
+const manufacturers: string[] = [
+  'BioMio',
+  'Нэфис',
+  'Grifon',
+  'Boyscout',
+  'Paclan',
+  'Булгари Грин',
 ];
 
 const Catalog = (props: Props) => {
@@ -22,11 +39,16 @@ const Catalog = (props: Props) => {
           <div className="catalog__sort-box">
             <p className="catalog__sort-text">Сортировка:</p>
             <button className="catalog__sort-btn" type="button">
-              выбрать
+              Название{' '}
+              <img
+                src={arrowDown}
+                alt="arrow down"
+                className="catalog__sort-icon"
+              />
             </button>
             <ul className="catalog__sort-list">
               <li className="catalog__sort-option">
-                Название
+                Название{' '}
                 <img
                   src={arrowDown}
                   alt="arrow down"
@@ -34,7 +56,7 @@ const Catalog = (props: Props) => {
                 />
               </li>
               <li className="catalog__sort-option">
-                Название
+                Название{' '}
                 <img
                   src={arrowUp}
                   alt="arrow up"
@@ -42,7 +64,7 @@ const Catalog = (props: Props) => {
                 />
               </li>
               <li className="catalog__sort-option">
-                Цена
+                Цена{' '}
                 <img
                   src={arrowDown}
                   alt="arrow down"
@@ -50,7 +72,7 @@ const Catalog = (props: Props) => {
                 />
               </li>
               <li className="catalog__sort-option">
-                Цена
+                Цена{' '}
                 <img
                   src={arrowUp}
                   alt="arrow up"
@@ -69,9 +91,7 @@ const Catalog = (props: Props) => {
             ))}
           </ul>
         </section>
-        <section className="catalog-main">
-          
-        </section>
+        <section className="catalog-main"></section>
       </div>
     </section>
   );
