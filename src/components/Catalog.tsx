@@ -2,8 +2,10 @@ import React from 'react';
 import arrowDown from '../assets/icons/sort-arrow-down.svg';
 import arrowUp from '../assets/icons/sort-arrow-up.svg';
 import DB from '../assets/db.json';
-import searchBtn from '../assets/icons/search-btn.svg';
 import SearchForm from './SearchForm';
+import typeBottleIcon from '../assets/icons/type-bottle.svg';
+import typeSolidBoxIcon from '../assets/icons/type-solid-box.svg';
+import cartBtnIcon from '../assets/icons/product-cart-in-btn.svg';
 
 type Props = {};
 
@@ -163,7 +165,54 @@ const Catalog = (props: Props) => {
               </ul>
             </div>
           </section>
-          section.
+          <section className="catalog__products">
+            <ul className="catalog__products-list">
+              {PRODUCTS.map((product: IProduct) => (
+                <li key={product.barcode} className="catalog__product">
+                  <img
+                    src={product.imageURL}
+                    alt={product.name}
+                    className="catalog__product-img"
+                  />
+                  <div className="catalog__product-type-box">
+                    <img
+                      src={
+                        product.type === 'weight'
+                          ? typeSolidBoxIcon
+                          : typeBottleIcon
+                      }
+                      alt={product.type === 'weight' ? 'solid box' : 'bottle'}
+                      className="catalog__product-type-icon"
+                    />
+                    <p className="catalog__product-type-text">
+                      {product.size} {product.type === 'weight' ? 'г' : 'мл'}
+                    </p>
+                  </div>
+                  <h2 className="catalog__product-title">{product.name}</h2>
+                  <p className="catalog__product-barcode">
+                    Штрихкод: {product.barcode}
+                  </p>
+                  <p className="catalog__product-manufacturer">
+                    Производитель: {product.manufacturer}
+                  </p>
+                  <p className="catalog__product-manufacturer">
+                    Бренд: {product.brand}
+                  </p>
+                  <div className="catalog__product-price-box">
+                    <p className="catalog__product-price">{product.price} ₸</p>
+                    <button type="button" className="catalog__product-cartBtn">
+                      В КОРЗИНУ{' '}
+                      <img
+                        src={cartBtnIcon}
+                        alt="cart"
+                        className="catalog__product-cartBtn-icon"
+                      />
+                    </button>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </section>
         </section>
       </div>
     </section>
