@@ -1,37 +1,28 @@
 import React from 'react';
 import arrowDown from '../assets/icons/sort-arrow-down.svg';
 import arrowUp from '../assets/icons/sort-arrow-up.svg';
-import db from '../assets/db.json';
+import DB from '../assets/db.json';
 import searchBtn from '../assets/icons/search-btn.svg';
+import SearchForm from './SearchForm';
 
 type Props = {};
 
-type TCategorie = string;
+interface IProduct {
+  imageURL: string;
+  name: string;
+  type: string;
+  size: number;
+  barcode: number;
+  manufacturer: string;
+  brand: string;
+  description: string;
+  price: number;
+  careType: string[];
+}
 
-const categories: string[] = [
-  'Уход за телом',
-  'Уход за руками',
-  'Уход за ногами',
-  'Уход за лицом',
-  'Уход за волосами',
-  'Средства для загара',
-  'Средства для бритья',
-  'Подарочные наборы',
-  'Гигиеническая продукция',
-  'Гигиена полости рта',
-  'Бумажная продукция',
-];
-
-const manufacturers: string[] = [
-  'BioMio',
-  'Нэфис',
-  'Grifon',
-  'Boyscout',
-  'Paclan',
-  'Булгари Грин',
-];
-
-console.log(db);
+const categories: string[] = DB.careTypes;
+const manufacturers: string[] = DB.manufacturers;
+const PRODUCTS: IProduct[] = DB.products;
 
 const Catalog = (props: Props) => {
   return (
@@ -120,10 +111,59 @@ const Catalog = (props: Props) => {
               </div>
             </div>
             <div className="catalog__manufacturer-filter-box">
-              
-             
+              <h2 className="catalog__manufacturer-filter-title">
+                Производитель
+              </h2>
+              <SearchForm />
+              <ul className="catalog__manufacturer-filter-list">
+                {manufacturers.map((manufacturer) => (
+                  <li
+                    key={manufacturer}
+                    className="catalog__manufacturer-filter-item"
+                  >
+                    <label className="catalog__manufacturer-filter-label">
+                      <input
+                        type="checkbox"
+                        className="catalog__manufacturer-filter-checkbox"
+                      />
+                      {manufacturer}
+                    </label>
+                  </li>
+                ))}
+              </ul>
+              <button
+                className="catalog__manufacturer-filter-btn"
+                type="button"
+              >
+                <span className="show">Показать все </span>
+                <img
+                  src={arrowDown}
+                  alt="arrow down"
+                  className="catalog__sort-icon show"
+                />
+                <span className="hide">Свернуть </span>
+                <img
+                  src={arrowUp}
+                  alt="arrow up"
+                  className="catalog__sort-icon hide"
+                />
+              </button>
+              <div className="catalog__manufacturer-filter-divider"></div>
+            </div>
+            <div className="catalog__side-filters-categories-box">
+              <ul className="catalog__side-filters-categories-list">
+                {categories.map((categorie) => (
+                  <li
+                    key={categorie}
+                    className="catalog__side-filters-categories-item"
+                  >
+                    {categorie}
+                  </li>
+                ))}
+              </ul>
             </div>
           </section>
+          section.
         </section>
       </div>
     </section>

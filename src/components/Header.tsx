@@ -3,10 +3,10 @@ import location from '../assets/icons/location.svg';
 import mail from '../assets/icons/mail.svg';
 import logoHeader from '../assets/images/logo-header.svg';
 import catalogBtnIcon from '../assets/icons/catalog-in-btn.svg';
-import searchBtn from '../assets/icons/search-btn.svg';
 import contactImg from '../assets/images/person-online.svg';
 import priceListBtnIcon from '../assets/icons/price-list-in-btn.svg';
 import cartIcon from '../assets/icons/cart.svg';
+import SearchForm from './SearchForm';
 
 type Props = {};
 
@@ -74,29 +74,7 @@ const Header = (props: Props) => {
               className="header__catalogBtn-icon"
             />
           </button>
-          <form className="header__search-form">
-            <input
-              name="text"
-              type="text"
-              placeholder="Поиск..."
-              className="header__search-input"
-            />
-            <input
-              name="btn"
-              type="submit"
-              className="header__search-btn"
-              value=""
-              style={{
-                backgroundImage: `url(${searchBtn})`,
-                border: 'none',
-                borderRadius: '50%',
-                backgroundRepeat: 'no-repeat',
-                backgroundSize: '100% 100%',
-                width: '40px',
-                height: '40px',
-              }}
-            />
-          </form>
+          <SearchForm />
           <div className="header__contact-wrapper">
             <div className="header__contact-text-wrapper">
               <h2 className="header__contact-title">+7 (777) 490-00-91</h2>
