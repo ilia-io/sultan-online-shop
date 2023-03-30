@@ -6,6 +6,7 @@ import SearchForm from './SearchForm';
 import typeBottleIcon from '../assets/icons/type-bottle.svg';
 import typeSolidBoxIcon from '../assets/icons/type-solid-box.svg';
 import cartBtnIcon from '../assets/icons/product-cart-in-btn.svg';
+import ManufacturersList from './ManufacturersList';
 
 type Props = {};
 
@@ -23,8 +24,9 @@ interface IProduct {
 }
 
 const categories: string[] = DB.careTypes;
-const manufacturers: string[] = DB.manufacturers;
+export const manufacturers: string[] = DB.manufacturers;
 const PRODUCTS: IProduct[] = DB.products;
+
 
 const Catalog = (props: Props) => {
   return (
@@ -87,28 +89,30 @@ const Catalog = (props: Props) => {
             ))}
           </ul>
         </section>
-        <section className="catalog-main">
+        <section className="catalog__main">
           <section className="catalog__side-filters">
             <h2 className="catalog__side-filters-title">
               ПОДБОР ПО ПАРАМЕТРАМ
             </h2>
             <div className="catalog__price-filter-box">
               <h2 className="catalog__price-filter-title">
-                Цена <span>₸</span>
+                Цена <span className="catalog__price-filter-currency">₸</span>
               </h2>
-              <div className="catalog-price-filter-inputs">
+              <div className="catalog__price-filter-inputs">
                 <label htmlFor="priceMin"></label>
                 <input
                   id="priceMin"
                   type="text"
-                  className="catalog-price-filter-min"
+                  className="catalog__price-filter-min"
+                  placeholder="0"
                 />
-                <p className="catalog-price-filter-divider">-</p>
+                <p className="catalog__price-filter-divider">-</p>
                 <label htmlFor="priceMax"></label>
                 <input
                   id="priceMax"
                   type="text"
-                  className="catalog-price-filter-min"
+                  className="catalog__price-filter-max"
+                  placeholder="10 000"
                 />
               </div>
             </div>
@@ -117,39 +121,8 @@ const Catalog = (props: Props) => {
                 Производитель
               </h2>
               <SearchForm />
-              <ul className="catalog__manufacturer-filter-list">
-                {manufacturers.map((manufacturer) => (
-                  <li
-                    key={manufacturer}
-                    className="catalog__manufacturer-filter-item"
-                  >
-                    <label className="catalog__manufacturer-filter-label">
-                      <input
-                        type="checkbox"
-                        className="catalog__manufacturer-filter-checkbox"
-                      />
-                      {manufacturer}
-                    </label>
-                  </li>
-                ))}
-              </ul>
-              <button
-                className="catalog__manufacturer-filter-btn"
-                type="button"
-              >
-                <span className="show">Показать все </span>
-                <img
-                  src={arrowDown}
-                  alt="arrow down"
-                  className="catalog__sort-icon show"
-                />
-                <span className="hide">Свернуть </span>
-                <img
-                  src={arrowUp}
-                  alt="arrow up"
-                  className="catalog__sort-icon hide"
-                />
-              </button>
+              <ManufacturersList />
+              
               <div className="catalog__manufacturer-filter-divider"></div>
             </div>
             <div className="catalog__side-filters-categories-box">

@@ -5,17 +5,31 @@ type Props = {};
 
 const SearchForm = (props: Props) => {
   return (
-    <form className="header__search-form">
+    <form
+      className="search-form"
+      style={{
+        borderRadius: '36px',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
+    >
       <input
         name="text"
         type="text"
         placeholder="Поиск..."
-        className="header__search-input"
+        className="search-input"
+        style={{
+          border: 'none',
+          outline: 'none',
+          backgroundColor: 'inherit',
+          opacity: '0.6',
+        }}
       />
       <input
         name="btn"
         type="submit"
-        className="header__search-btn"
+        className="search-btn"
         value=""
         style={{
           backgroundImage: `url(${searchBtn})`,
@@ -25,6 +39,7 @@ const SearchForm = (props: Props) => {
           backgroundSize: '100% 100%',
           width: '40px',
           height: '40px',
+          cursor: 'pointer',
         }}
       />
     </form>

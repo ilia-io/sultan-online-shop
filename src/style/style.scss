@@ -175,35 +175,20 @@ body {
     width: 15px;
   }
 
-  &__search-form {
+  & .search-form {
+    width: 263px;
+    height: 59px;
     font-size: 12px;
     line-height: 18px;
     color: #5C6370;
-
-    height: 59px;
-    min-width: 263px;
-    border-radius: 36px;
     background-color: #EDEDED;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 
-  &__search-input {
-    border: none;
-    outline: none;
-    background-color: inherit;
+  & .search-input {
     width: 192px;
-    opacity: 0.6;
   }
 
-  &__search-btn {
-    height: 39px;
-    width: 39px;
-    border-radius: [object Object]px;
-    cursor: pointer;
-  }
+  & .search-btn {}
 
   &__contact-wrapper {
     height: 92px;
@@ -667,4 +652,192 @@ body {
     text-align: center;
     cursor: pointer;
   }
+
+
+  // -----------------------------main section -----------------------------
+
+  &__main {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  &__side-filters {
+    width: 238px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__side-filters-title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: $_1;
+    margin-bottom: 10px;
+  }
+
+  &__price-filter-box {
+    margin-bottom: 30px;
+  }
+
+  &__price-filter-title {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 150%;
+    color: $_2;
+    margin-bottom: 16px;
+  }
+
+  &__price-filter-currency {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+    color: $_1;
+  }
+
+  &__price-filter-inputs {
+    height: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__price-filter-min {
+    display: block;
+    min-width: 100px;
+    height: 23px;
+
+    background: linear-gradient(90deg, rgba(255, 198, 80, 0.3) 0%, rgba(254, 202, 110, 0.3) 97.25%);
+    border-radius: 1000px;
+
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    color: $_2;
+    border: none;
+  }
+
+  &__price-filter-divider {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    color: $_2;
+    margin: 0 10px;
+  }
+
+  &__price-filter-max {
+    display: block;
+    min-width: 100px;
+    height: 23px;
+
+    background: linear-gradient(90deg, rgba(255, 198, 80, 0.3) 0%, rgba(254, 202, 110, 0.3) 97.25%);
+    border-radius: 1000px;
+
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    color: $_2;
+    border: none;
+  }
+
+  &__manufacturer-filter-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &__manufacturer-filter-title {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 150%;
+      color: $_1;
+      margin-bottom: 15px;
+  }
+
+    & .search-form {
+      width: 238px;
+      height: 59px;
+      font-size: 12px;
+      line-height: 18px;
+      color: #5C6370;
+      background-color: #EDEDED;
+      margin-bottom: 15px;
+    }
+  
+    & .search-input {
+      width: 168px;
+    }
+  
+    & .search-btn {}
+
+  &__manufacturer-filter-list {
+    list-style: none;
+  }
+
+  &__manufacturer-filter-item {
+    margin-bottom: 5px;
+      line-height: 150%;
+      color: $_2;
+  }
+
+  &__manufacturer-filter-label {
+    display: flex;
+    align-items: center;
+  }
+
+  &__manufacturer-filter-checkbox {
+    margin-right: 10px;
+  }
+
+  &__manufacturer-filter-btn {}
+
+  &__manufacturer-showAll {}
+
+  &__sort-icon {}
+
+  &__manufacturer-hideAll {
+    // display: none;
+  }
+
+  &__manufacturer-filter-divider {}
+
+  &__side-filters-categories-box {}
+
+  &__side-filters-categories-list {}
+
+  &__side-filters-categories-item {}
+
+  &__products {}
+
+  &__products-list {}
+
+  &__product {}
+
+  &__product-img {
+    width: 220px;
+    height: 220px;
+  }
+
+  &__product-type-box {}
+
+  &__product-type-icon {}
+
+  &__product-type-text {}
+
+  &__product-title {}
+
+  &__product-barcode {}
+
+  &__product-manufacturer {}
+
+  &__product-price-box {}
+
+  &__product-price {}
+
+  &__product-cartBtn {}
+
+  &__product-cartBtn-icon {}
+
 }
