@@ -27,7 +27,6 @@ const categories: string[] = DB.careTypes;
 export const manufacturers: string[] = DB.manufacturers;
 const PRODUCTS: IProduct[] = DB.products;
 
-
 const Catalog = (props: Props) => {
   return (
     <section className="catalog">
@@ -122,7 +121,7 @@ const Catalog = (props: Props) => {
               </h2>
               <SearchForm />
               <ManufacturersList />
-              
+
               <div className="catalog__manufacturer-filter-divider"></div>
             </div>
             <div className="catalog__side-filters-categories-box">
@@ -163,13 +162,22 @@ const Catalog = (props: Props) => {
                   </div>
                   <h2 className="catalog__product-title">{product.name}</h2>
                   <p className="catalog__product-barcode">
-                    Штрихкод: {product.barcode}
+                    Штрихкод:{' '}
+                    <span className="catalog__product-barcode_value">
+                      {product.barcode}
+                    </span>
                   </p>
                   <p className="catalog__product-manufacturer">
-                    Производитель: {product.manufacturer}
+                    Производитель:{' '}
+                    <span className="catalog__product-manufacturer_value">
+                      {product.manufacturer}
+                    </span>
                   </p>
-                  <p className="catalog__product-manufacturer">
-                    Бренд: {product.brand}
+                  <p className="catalog__product-brand">
+                    Бренд:{' '}
+                    <span className="catalog__product-brand_value">
+                      {product.brand}
+                    </span>
                   </p>
                   <div className="catalog__product-price-box">
                     <p className="catalog__product-price">{product.price} ₸</p>
