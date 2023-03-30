@@ -660,6 +660,7 @@ body {
     display: flex;
     justify-content: space-between;
     gap: 10px;
+    margin-top: 66px;
   }
 
   &__side-filters {
@@ -749,28 +750,28 @@ body {
   }
 
   &__manufacturer-filter-title {
-      font-weight: 500;
-      font-size: 16px;
-      line-height: 150%;
-      color: $_1;
-      margin-bottom: 15px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: $_1;
+    margin-bottom: 15px;
   }
 
-    & .search-form {
-      width: 238px;
-      height: 59px;
-      font-size: 12px;
-      line-height: 18px;
-      color: #5C6370;
-      background-color: #EDEDED;
-      margin-bottom: 15px;
-    }
-  
-    & .search-input {
-      width: 168px;
-    }
-  
-    & .search-btn {}
+  & .search-form {
+    width: 238px;
+    height: 59px;
+    font-size: 12px;
+    line-height: 18px;
+    color: #5C6370;
+    background-color: #EDEDED;
+    margin-bottom: 15px;
+  }
+
+  & .search-input {
+    width: 168px;
+  }
+
+  & .search-btn {}
 
   &__manufacturer-filter-list {
     list-style: none;
@@ -778,8 +779,8 @@ body {
 
   &__manufacturer-filter-item {
     margin-bottom: 5px;
-      line-height: 150%;
-      color: $_2;
+    line-height: 150%;
+    color: $_2;
   }
 
   &__manufacturer-filter-label {
@@ -791,23 +792,48 @@ body {
     margin-right: 10px;
   }
 
-  &__manufacturer-filter-btn {}
+  &__manufacturer-filter-btn {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 150%;
+    color: $_2;
+    cursor: pointer;
+    background: none;
+    border: none;
+    width: 92px;
+    height: 18px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    text-align: left;
+  }
 
   &__manufacturer-showAll {}
 
   &__sort-icon {}
 
-  &__manufacturer-hideAll {
-    // display: none;
-  }
+  &__manufacturer-hideAll {}
 
-  &__manufacturer-filter-divider {}
+  &__manufacturer-filter-divider {
+    width: 238px;
+    opacity: 0.3;
+    border-top: 1px dashed $_2;
+    margin-bottom: 20px;
+  }
 
   &__side-filters-categories-box {}
 
-  &__side-filters-categories-list {}
+  &__side-filters-categories-list {
+    list-style: none;
+  }
 
-  &__side-filters-categories-item {}
+  &__side-filters-categories-item {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    text-transform: uppercase;
+    color: $_1;
+    margin-bottom: 20px;
+  }
 
   &__products {}
 
