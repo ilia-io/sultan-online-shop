@@ -25,7 +25,7 @@ interface IProduct {
 
 const categories: string[] = DB.careTypes;
 export const manufacturers: string[] = DB.manufacturers;
-const PRODUCTS: IProduct[] = DB.products;
+export const PRODUCTS: IProduct[] = DB.products;
 
 const Catalog = (props: Props) => {
   return (
