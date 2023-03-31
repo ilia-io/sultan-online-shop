@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { IProduct, PRODUCTS } from './Catalog';
 import typeBottleIcon from '../assets/icons/type-bottle.svg';
 import typeSolidBoxIcon from '../assets/icons/type-solid-box.svg';
 import deleteIcon from '../assets/icons/cart-delete.svg';
+import Modal from './Modal';
 
 type Props = {};
 
@@ -13,9 +15,30 @@ const totalPrice: number = cartItems.reduce(
   0
 );
 
+
+
+const chi = <div>asdasdadddads</div>;
+
+function PortalExample() {
+  const [showModal, setShowModal] = useState(false);
+  return (
+    <>
+      <button onClick={() => setShowModal(true)}>
+        Show modal using a portal
+      </button>
+      {showModal &&
+        createPortal(
+          <Modal onClose={() => setShowModal(false)} children={chi} />,
+          document.body
+        )}
+    </>
+  );
+}
+
 const Cart = (props: Props) => {
   return (
     <section className="cart">
+      <PortalExample />
       <div className="cart__wrapper container">
         <h1 className="cart__title">Корзина</h1>
         <div className="cart__horizontal-line"></div>

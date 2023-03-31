@@ -1481,3 +1481,29 @@ body {
     color: $_1;
   }
 }
+
+.modal-bg {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  left: 0px;
+  top: 0px;
+  background: $_1;
+  opacity: 0.5;
+  overflow: hidden;
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
+  background-color: white;
+  border: 2px solid rgb(240, 240, 240);
+  border-radius: 12px;
+  position: absolute;
+  width: 250px;
+  height: 50px;
+  top: 50%;
+  left: calc(50% - 125px);
+}
