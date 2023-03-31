@@ -1,4 +1,5 @@
 import React from 'react'
+import closeicon from '../assets/icons/order-modal-close.svg';
 
 type Props = {
   onClose: () => void;
@@ -11,9 +12,9 @@ const Modal: React.FC<Props> = ({ onClose, children }) => {
       <div className="modal-bg"></div>
       <div className="modal">
         <button className="modal__closeBtn" onClick={onClose}>
-          Close
+          <img src={closeicon} alt="x" className="modal__closeBtn-icon" />
         </button>
-        <div className="modal__children"> {children}</div>
+        <div className="modal__children">{children}</div>
       </div>
     </>
   );

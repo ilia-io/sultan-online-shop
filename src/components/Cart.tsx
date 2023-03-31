@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { createPortal } from 'react-dom';
 import { IProduct, PRODUCTS } from './Catalog';
 import typeBottleIcon from '../assets/icons/type-bottle.svg';
 import typeSolidBoxIcon from '../assets/icons/type-solid-box.svg';
 import deleteIcon from '../assets/icons/cart-delete.svg';
+import { createPortal } from 'react-dom';
 import Modal from './Modal';
+import orderCheckIcon from '../assets/icons/order-double-check.svg';
 
 type Props = {};
 
@@ -15,30 +16,49 @@ const totalPrice: number = cartItems.reduce(
   0
 );
 
+const orderComplete = (
+  <div className="order-complete">
+    <div className="order-complete__icon-wrapper">
+      <img
+        src={orderCheckIcon}
+        alt="double check"
+        className="order-complete__icon"
+      />
+    </div>
 
+    <h2 className="order-complete__title">Спасибо за заказ</h2>
+    <p className="order-complete_text">
+      Наш менеджер свяжется с вами в ближайшее время
+    </p>
+  </div>
+);
 
-const chi = <div>asdasdadddads</div>;
-
-function PortalExample() {
+const CartOrderComplete = (props: Props) => {
   const [showModal, setShowModal] = useState(false);
   return (
     <>
-      <button onClick={() => setShowModal(true)}>
-        Show modal using a portal
+      <button
+        onClick={() => setShowModal(true)}
+        type="button"
+        className="cart__orderBtn"
+      >
+        Оформить заказ
       </button>
       {showModal &&
         createPortal(
-          <Modal onClose={() => setShowModal(false)} children={chi} />,
+          <Modal
+            onClose={() => setShowModal(false)}
+            children={orderComplete}
+          />,
           document.body
         )}
     </>
   );
-}
+};
 
 const Cart = (props: Props) => {
   return (
     <section className="cart">
-      <PortalExample />
       <div className="cart__wrapper container">
         <h1 className="cart__title">Корзина</h1>
         <div className="cart__horizontal-line"></div>
@@ -99,9 +119,7 @@ const Cart = (props: Props) => {
           ))}
         </ul>
         <div className="cart__order-box">
-          <button type="button" className="cart__orderBtn">
-            Оформить заказ
-          </button>
+          <CartOrderComplete />
           <p className="cart__total-price">{totalPrice} ₸</p>
         </div>
       </div>
