@@ -10,7 +10,7 @@ import ManufacturersList from './ManufacturersList';
 
 type Props = {};
 
-interface IProduct {
+export interface IProduct {
   imageURL: string;
   name: string;
   type: string;
