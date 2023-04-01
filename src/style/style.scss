@@ -627,7 +627,7 @@ a {
 
   &__sort-box {
     height: 24px;
-    width: 193px;
+    min-width: 199px;
     position: relative;
   }
 
@@ -655,18 +655,31 @@ a {
 
   &__sort-list {
     list-style: none;
-    display: none;
 
     position: absolute;
     top: 20;
     right: -0;
     margin-right: 7px;
-
+    background-color: #fff
   }
 
-  &__sort-option {}
+  &__sort-option {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
 
-  &__sort-icon {}
+    &:hover {
+      background-color: $_5;
+    }
+  }
+
+
+
+  &__sort-icon {
+    margin-left: 5px;
+  }
 
   &__top-line-categories {}
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import arrowDown from '../assets/icons/sort-arrow-down.svg';
 import arrowUp from '../assets/icons/sort-arrow-up.svg';
 import DB from '../assets/db.json';
@@ -19,12 +19,63 @@ const categories: string[] = DB.careTypes;
 export const manufacturers: string[] = DB.manufacturers;
 // export const PRODUCTS: IProduct[] = DB.products;
 
+interface ISortOption {
+  type: 'name' | 'price';
+  reversed: boolean;
+}
+
+const sortOptionsArr: ISortOption[] = [
+  { type: 'name', reversed: false },
+  { type: 'name', reversed: true },
+  { type: 'price', reversed: false },
+  { type: 'price', reversed: true },
+];
+
 const Catalog = (props: Props) => {
+  const [showSortOptions, setShowSortOptions] = useState(false);
+
   const PRODUCTS = useAppSelector((state: RootState) => state.product.items);
   const dispatch = useAppDispatch();
 
   function dispatchBarcode(barcode: number) {
     dispatch(getCurrentItem(barcode));
+  }
+
+  function toggleSortOptions() {
+    setShowSortOptions(!showSortOptions);
+  }
+
+  const [activeSortOption, setActiveSortOption] = useState(sortOptionsArr[0]);
+
+  function handleSort(option: ISortOption) {
+    setActiveSortOption(option);
+    setShowSortOptions(false);
+    sort(option);
+  }
+
+  const [filteredProducts, setFilteredProducts] = useState(PRODUCTS);
+
+  function sort(option: ISortOption) {
+    const itemsCopy = [...filteredProducts];
+
+    if (option.type === 'name') {
+      itemsCopy.sort((itemA, itemB) => {
+        if (option.reversed) {
+          return itemB.name.localeCompare(itemA.name);
+        }
+        return itemA.name.localeCompare(itemB.name);
+      });
+      setFilteredProducts(itemsCopy);
+    } else {
+      itemsCopy.sort((itemA, itemB) => {
+        if (option.reversed) {
+          return itemA.price - itemB.price;
+        }
+        return itemB.price - itemA.price;
+      });
+      setFilteredProducts(itemsCopy);
+      // setSorted({ sorted: 'amount', reversed: !sorted.reversed });
+    }
   }
 
   return (
@@ -34,48 +85,37 @@ const Catalog = (props: Props) => {
           <h1 className="catalog__title">Косметика и гигиена</h1>
           <div className="catalog__sort-box">
             <p className="catalog__sort-text">Сортировка:</p>
-            <button className="catalog__sort-btn" type="button">
-              Название{' '}
+            <button
+              onClick={toggleSortOptions}
+              className="catalog__sort-btn"
+              type="button"
+            >
+              {activeSortOption.type === 'name' ? 'Название' : 'Цена'}
               <img
-                src={arrowDown}
+                src={activeSortOption.reversed ? arrowUp : arrowDown}
                 alt="arrow down"
                 className="catalog__sort-icon"
               />
             </button>
-            <ul className="catalog__sort-list">
-              <li className="catalog__sort-option">
-                Название{' '}
-                <img
-                  src={arrowDown}
-                  alt="arrow down"
-                  className="catalog__sort-icon"
-                />
-              </li>
-              <li className="catalog__sort-option">
-                Название{' '}
-                <img
-                  src={arrowUp}
-                  alt="arrow up"
-                  className="catalog__sort-icon"
-                />
-              </li>
-              <li className="catalog__sort-option">
-                Цена{' '}
-                <img
-                  src={arrowDown}
-                  alt="arrow down"
-                  className="catalog__sort-icon"
-                />
-              </li>
-              <li className="catalog__sort-option">
-                Цена{' '}
-                <img
-                  src={arrowUp}
-                  alt="arrow up"
-                  className="catalog__sort-icon"
-                />
-              </li>
-            </ul>
+
+            {showSortOptions && (
+              <ul className="catalog__sort-list">
+                {sortOptionsArr.map((option, index) => (
+                  <li
+                    onClick={() => handleSort(option)}
+                    key={index}
+                    className="catalog__sort-option"
+                  >
+                    {option.type === 'name' ? 'Название' : 'Цена'}
+                    <img
+                      src={option.reversed ? arrowUp : arrowDown}
+                      alt="arrow down"
+                      className="catalog__sort-icon"
+                    />
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         </section>
         <section className="catalog__top-line-categories">
@@ -138,7 +178,7 @@ const Catalog = (props: Props) => {
           </section>
           <section className="catalog__products">
             <ul className="catalog__products-list">
-              {PRODUCTS.map((product: IProduct) => (
+              {filteredProducts.map((product: IProduct) => (
                 <li key={product.barcode} className="catalog__product">
                   <img
                     src={product.imageURL}
