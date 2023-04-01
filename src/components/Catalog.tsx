@@ -9,7 +9,9 @@ import cartBtnIcon from '../assets/icons/product-cart-in-btn.svg';
 import ManufacturersList from './ManufacturersList';
 import { IProduct } from '../@types/Product';
 import { RootState } from '../app/store';
-import { useAppSelector } from '../app/hooks';
+import { useAppDispatch, useAppSelector } from '../app/hooks';
+import { Link } from 'react-router-dom';
+import { getCurrentItem } from '../app/reducers/productSlice';
 
 type Props = {};
 
@@ -19,6 +21,11 @@ export const manufacturers: string[] = DB.manufacturers;
 
 const Catalog = (props: Props) => {
   const PRODUCTS = useAppSelector((state: RootState) => state.product.items);
+  const dispatch = useAppDispatch();
+
+  function dispatchBarcode(barcode: number) {
+    dispatch(getCurrentItem(barcode));
+  }
 
   return (
     <section className="catalog">
@@ -152,7 +159,14 @@ const Catalog = (props: Props) => {
                       {product.size} {product.type === 'weight' ? 'г' : 'мл'}
                     </p>
                   </div>
-                  <h2 className="catalog__product-title">{product.name}</h2>
+                  <Link to={`/catalog/${product.barcode}`}>
+                    <h2
+                      onClick={() => dispatchBarcode(product.barcode)}
+                      className="catalog__product-title"
+                    >
+                      {product.name}
+                    </h2>
+                  </Link>
                   <p className="catalog__product-barcode">
                     Штрихкод:{' '}
                     <span className="catalog__product-barcode_value">

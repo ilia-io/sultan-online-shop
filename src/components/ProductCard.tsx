@@ -9,6 +9,8 @@ import arrowUp from '../assets/icons/sort-arrow-up.svg';
 import { IProduct } from '../@types/Product';
 import { useAppSelector } from '../app/hooks';
 import { RootState } from '../app/store';
+import { useParams } from 'react-router-dom';
+import { currentItemSelector, productsSelector } from '../app/reducers/productSlice';
 
 type Props = {};
 
@@ -24,9 +26,13 @@ const ProductCard = (props: Props) => {
     setShowProperties(!showProperties);
   }
 
-  const PRODUCTS = useAppSelector((state: RootState) => state.product.items);
+  const { barcode } = useParams<{ barcode: string }>();
 
-  const PRODUCT: IProduct = PRODUCTS[0];
+  const PRODUCTS = useAppSelector(productsSelector);
+
+  const PRODUCT = useAppSelector(currentItemSelector) || PRODUCTS[0]
+
+  console.log(PRODUCT);
   return (
     <section className="product-card container">
       <div className="product-card__img-wrapper">

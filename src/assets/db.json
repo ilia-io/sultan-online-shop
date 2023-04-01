@@ -22,7 +22,7 @@
   ],
   "products": [
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-1.png",
       "name": "AOS Ср-во для мытья посуды Апельсин+мятаh",
       "type": "weight",
       "size": 220,
@@ -38,7 +38,7 @@
       ]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-2.png",
       "name": "AOS Ср-во для мытья посуды Апельсин+мятаh",
       "type": "volume",
       "size": 290,
@@ -50,7 +50,7 @@
       "careType": ["Уход за руками", "Уход за лицом", "Бумажная продукция"]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "BioMio BIO-SOAP Экологичное туалетное мыло. Литсея и бергамот",
       "type": "weight",
       "size": 100,

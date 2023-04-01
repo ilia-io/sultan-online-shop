@@ -9,12 +9,12 @@ import AdminPage from './pages/AdminPage';
 function App() {
   return (
     <>
-      {/* <ProductPage /> */}
       <Routes>
         <Route path="*" element={<Navigate to="/catalog" replace />} />
         <Route path="/catalog" element={<CatalogPage />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/admin" element={<AdminPage />} />
+        <Route path="catalog/:barcode" element={<ProductPage />} />
       </Routes>
     </>
   );

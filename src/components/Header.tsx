@@ -7,6 +7,7 @@ import contactImg from '../assets/images/person-online.svg';
 import priceListBtnIcon from '../assets/icons/price-list-in-btn.svg';
 import cartIcon from '../assets/icons/cart.svg';
 import SearchForm from './SearchForm';
+import { Link } from 'react-router-dom';
 
 type Props = {};
 
@@ -65,15 +66,19 @@ const Header = (props: Props) => {
           </ul>
         </section>
         <section className="header__main-section">
-          <img src={logoHeader} alt="sultan" className="header__logo" />
-          <button className="header__catalogBtn" type="button">
-            Каталог{` `}
-            <img
-              src={catalogBtnIcon}
-              alt="4 squares"
-              className="header__catalogBtn-icon"
-            />
-          </button>
+          <Link to={'/'}>
+            <img src={logoHeader} alt="sultan" className="header__logo" />
+          </Link>
+          <Link to={'/catalog'}>
+            <button className="header__catalogBtn" type="button">
+              Каталог
+              <img
+                src={catalogBtnIcon}
+                alt="4 squares"
+                className="header__catalogBtn-icon"
+              />
+            </button>
+          </Link>
           <SearchForm />
           <div className="header__contact-wrapper">
             <div className="header__contact-text-wrapper">
@@ -99,13 +104,15 @@ const Header = (props: Props) => {
             />
           </button>
           <div className="header__main-vertical-line"></div>
-          <div className="header__cart">
-            <img src={cartIcon} alt="cart" className="header__cart-icon" />
-            <div className="header__cart-text-wrapper">
-              <p className="header__cart-text">Корзина</p>
-              <h2 className="header__cart-price">12 478 ₸ </h2>
+          <Link to={'/cart'}>
+            <div className="header__cart">
+              <img src={cartIcon} alt="cart" className="header__cart-icon" />
+              <div className="header__cart-text-wrapper">
+                <p className="header__cart-text">Корзина</p>
+                <h2 className="header__cart-price">12 478 ₸ </h2>
+              </div>
             </div>
-          </div>
+          </Link>
         </section>
       </div>
     </header>
