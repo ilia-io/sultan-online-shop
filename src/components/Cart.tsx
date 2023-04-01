@@ -6,8 +6,16 @@ import { createPortal } from 'react-dom';
 import Modal from './Modal';
 import orderCheckIcon from '../assets/icons/order-double-check.svg';
 import { IProduct } from '../@types/Product';
-import { useAppSelector } from '../app/hooks';
+import { useAppDispatch, useAppSelector } from '../app/hooks';
 import { RootState } from '../app/store';
+import {
+  addItem,
+  cartSelector,
+  clearCart,
+  minusItem,
+  removeItem,
+} from '../app/reducers/cartSlice';
+import { ICartItem } from '../@types/CartItem';
 
 type Props = {};
 
@@ -30,10 +38,18 @@ const orderComplete = (
 
 const CartOrderComplete = (props: Props) => {
   const [showModal, setShowModal] = useState(false);
+
+  const dispatch = useAppDispatch();
+
+  function handleOrderComplete() {
+    dispatch(clearCart());
+    setShowModal(true);
+  }
+
   return (
     <>
       <button
-        onClick={() => setShowModal(true)}
+        onClick={handleOrderComplete}
         type="button"
         className="cart__orderBtn"
       >
@@ -52,12 +68,22 @@ const CartOrderComplete = (props: Props) => {
 };
 
 const Cart = (props: Props) => {
-  const PRODUCTS = useAppSelector((state: RootState) => state.product.items);
-  const cartItems: IProduct[] = PRODUCTS.slice(0, 3);
-  const totalPrice: number = cartItems.reduce(
-    (prev, current) => prev + current.price,
-    0
-  );
+  const { items: cartItems, totalPrice } = useAppSelector(cartSelector);
+
+  const dispatch = useAppDispatch();
+
+  function handleAddItem(item: ICartItem) {
+    dispatch(addItem(item));
+  }
+
+  function handleMinusItem(barcode: number) {
+    dispatch(minusItem(barcode));
+  }
+
+  function handleRemoveItem(barcode: number) {
+    dispatch(removeItem(barcode));
+  }
+
   return (
     <section className="cart">
       <div className="cart__wrapper container">
@@ -96,18 +122,32 @@ const Cart = (props: Props) => {
                 </div>
                 <div className="cart__item-vertical-line"></div>
                 <div className="cart__amount-box">
-                  <button type="button" className="cart__dec">
+                  <button
+                    onClick={() => handleMinusItem(cartItem.barcode)}
+                    type="button"
+                    className="cart__dec"
+                  >
                     -
                   </button>
-                  <p className="cart__count">1</p>
-                  <button type="button" className="cart__inc">
+                  <p className="cart__count">{cartItem.count}</p>
+                  <button
+                    onClick={() => handleAddItem(cartItem)}
+                    type="button"
+                    className="cart__inc"
+                  >
                     +
                   </button>
                 </div>
                 <div className="cart__item-vertical-line"></div>
-                <p className="cart__item-price">{cartItem.price} ₸</p>
+                <p className="cart__item-price">
+                  {(cartItem.price * cartItem.count).toFixed(2)} ₸
+                </p>
                 <div className="cart__item-vertical-line"></div>
-                <button type="button" className="cart__item-deleteBtn">
+                <button
+                  onClick={() => handleRemoveItem(cartItem.barcode)}
+                  type="button"
+                  className="cart__item-deleteBtn"
+                >
                   <img
                     src={deleteIcon}
                     alt="trash bin"
@@ -121,7 +161,7 @@ const Cart = (props: Props) => {
         </ul>
         <div className="cart__order-box">
           <CartOrderComplete />
-          <p className="cart__total-price">{totalPrice} ₸</p>
+          <p className="cart__total-price">{totalPrice.toFixed(2)} ₸</p>
         </div>
       </div>
     </section>
