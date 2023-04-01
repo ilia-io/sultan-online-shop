@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { IProduct, PRODUCTS } from './Catalog';
 import typeBottleIcon from '../assets/icons/type-bottle.svg';
 import typeSolidBoxIcon from '../assets/icons/type-solid-box.svg';
 import cartBtnIcon from '../assets/icons/product-cart-in-btn.svg';
@@ -7,10 +6,11 @@ import shareIcon from '../assets/icons/product-share.svg';
 import priceListIcon from '../assets/icons/price-list-in-btn-dark.svg';
 import arrowDown from '../assets/icons/sort-arrow-down.svg';
 import arrowUp from '../assets/icons/sort-arrow-up.svg';
+import { IProduct } from '../@types/Product';
+import { useAppSelector } from '../app/hooks';
+import { RootState } from '../app/store';
 
 type Props = {};
-
-const PRODUCT: IProduct = PRODUCTS[0];
 
 const ProductCard = (props: Props) => {
   const [showDescription, setShowDescription] = useState(false);
@@ -24,6 +24,9 @@ const ProductCard = (props: Props) => {
     setShowProperties(!showProperties);
   }
 
+  const PRODUCTS = useAppSelector((state: RootState) => state.product.items);
+
+  const PRODUCT: IProduct = PRODUCTS[0];
   return (
     <section className="product-card container">
       <div className="product-card__img-wrapper">

@@ -7,27 +7,19 @@ import typeBottleIcon from '../assets/icons/type-bottle.svg';
 import typeSolidBoxIcon from '../assets/icons/type-solid-box.svg';
 import cartBtnIcon from '../assets/icons/product-cart-in-btn.svg';
 import ManufacturersList from './ManufacturersList';
+import { IProduct } from '../@types/Product';
+import { RootState } from '../app/store';
+import { useAppSelector } from '../app/hooks';
 
 type Props = {};
 
-export interface IProduct {
-  imageURL: string;
-  name: string;
-  type: string;
-  size: number;
-  barcode: number;
-  manufacturer: string;
-  brand: string;
-  description: string;
-  price: number;
-  careType: string[];
-}
-
 const categories: string[] = DB.careTypes;
 export const manufacturers: string[] = DB.manufacturers;
-export const PRODUCTS: IProduct[] = DB.products;
+// export const PRODUCTS: IProduct[] = DB.products;
 
 const Catalog = (props: Props) => {
+  const PRODUCTS = useAppSelector((state: RootState) => state.product.items);
+
   return (
     <section className="catalog">
       <div className="catalog__wrapper container">

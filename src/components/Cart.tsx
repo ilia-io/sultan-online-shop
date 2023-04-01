@@ -1,20 +1,15 @@
 import React, { useState } from 'react';
-import { IProduct, PRODUCTS } from './Catalog';
 import typeBottleIcon from '../assets/icons/type-bottle.svg';
 import typeSolidBoxIcon from '../assets/icons/type-solid-box.svg';
 import deleteIcon from '../assets/icons/cart-delete.svg';
 import { createPortal } from 'react-dom';
 import Modal from './Modal';
 import orderCheckIcon from '../assets/icons/order-double-check.svg';
+import { IProduct } from '../@types/Product';
+import { useAppSelector } from '../app/hooks';
+import { RootState } from '../app/store';
 
 type Props = {};
-
-const cartItems: IProduct[] = PRODUCTS.slice(0, 3);
-
-const totalPrice: number = cartItems.reduce(
-  (prev, current) => prev + current.price,
-  0
-);
 
 const orderComplete = (
   <div className="order-complete">
@@ -57,6 +52,12 @@ const CartOrderComplete = (props: Props) => {
 };
 
 const Cart = (props: Props) => {
+  const PRODUCTS = useAppSelector((state: RootState) => state.product.items);
+  const cartItems: IProduct[] = PRODUCTS.slice(0, 3);
+  const totalPrice: number = cartItems.reduce(
+    (prev, current) => prev + current.price,
+    0
+  );
   return (
     <section className="cart">
       <div className="cart__wrapper container">
