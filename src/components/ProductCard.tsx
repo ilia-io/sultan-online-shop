@@ -7,16 +7,34 @@ import priceListIcon from '../assets/icons/price-list-in-btn-dark.svg';
 import arrowDown from '../assets/icons/sort-arrow-down.svg';
 import arrowUp from '../assets/icons/sort-arrow-up.svg';
 import { IProduct } from '../@types/Product';
-import { useAppSelector } from '../app/hooks';
+import { useAppDispatch, useAppSelector } from '../app/hooks';
 import { RootState } from '../app/store';
 import { useParams } from 'react-router-dom';
-import { currentItemSelector, productsSelector } from '../app/reducers/productSlice';
+import {
+  currentItemSelector,
+  productsSelector,
+} from '../app/reducers/productSlice';
+import { addItem, cartSelector, minusItem } from '../app/reducers/cartSlice';
 
 type Props = {};
 
 const ProductCard = (props: Props) => {
   const [showDescription, setShowDescription] = useState(false);
   const [showProperties, setShowProperties] = useState(false);
+
+  const dispatch = useAppDispatch();
+
+  const PRODUCTS = useAppSelector(productsSelector);
+
+  const PRODUCT = useAppSelector(currentItemSelector) || PRODUCTS[0];
+
+  const { items } = useAppSelector(cartSelector);
+
+  const currentItemCount: number | undefined = items.find(
+    (item) => item.barcode === PRODUCT.barcode
+  )?.count;
+
+  // const { barcode } = useParams<{ barcode: string }>();
 
   function showHideDescription() {
     setShowDescription(!showDescription);
@@ -26,13 +44,14 @@ const ProductCard = (props: Props) => {
     setShowProperties(!showProperties);
   }
 
-  const { barcode } = useParams<{ barcode: string }>();
+  function handleAddItem() {
+    dispatch(addItem(PRODUCT));
+  }
 
-  const PRODUCTS = useAppSelector(productsSelector);
+  function handleMinusItem() {
+    dispatch(minusItem(PRODUCT.barcode));
+  }
 
-  const PRODUCT = useAppSelector(currentItemSelector) || PRODUCTS[0]
-
-  console.log(PRODUCT);
   return (
     <section className="product-card container">
       <div className="product-card__img-wrapper">
@@ -64,15 +83,27 @@ const ProductCard = (props: Props) => {
         <div className="product-card__product-price-box">
           <p className="product-card__product-price">{PRODUCT.price} ₸</p>
           <div className="product-card__amount-box">
-            <button type="button" className="product-card__dec">
+            <button
+              onClick={handleMinusItem}
+              type="button"
+              className="product-card__dec"
+            >
               -
             </button>
-            <p className="product-card__count">1</p>
-            <button type="button" className="product-card__inc">
+            <p className="product-card__count">{currentItemCount || 0}</p>
+            <button
+              onClick={handleAddItem}
+              type="button"
+              className="product-card__inc"
+            >
               +
             </button>
           </div>
-          <button type="button" className="product-card__product-cartBtn">
+          <button
+            onClick={handleAddItem}
+            type="button"
+            className="product-card__product-cartBtn"
+          >
             В корзину{' '}
             <img
               src={cartBtnIcon}
