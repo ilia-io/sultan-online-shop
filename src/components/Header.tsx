@@ -8,10 +8,17 @@ import priceListBtnIcon from '../assets/icons/price-list-in-btn.svg';
 import cartIcon from '../assets/icons/cart.svg';
 import SearchForm from './SearchForm';
 import { Link } from 'react-router-dom';
+import { useAppSelector } from '../app/hooks';
+import { cartSelector } from '../app/reducers/cartSlice';
 
 type Props = {};
 
 const Header = (props: Props) => {
+  const { items, totalPrice } = useAppSelector(cartSelector);
+  const totalCount: number = items.reduce(
+    (prev, current) => prev + current.count,
+    0
+  );
   return (
     <header className="header">
       <div className="header__wrapper container">
@@ -41,32 +48,24 @@ const Header = (props: Props) => {
           </div>
           <ul className="nav-list menu">
             <li className="nav-list__item">
-              <a href="/" className="nav-list__link">
-                О компании
-              </a>
+              <a className="nav-list__link">О компании</a>
             </li>
             <div className="header__menu-vertical-line"></div>
             <li className="nav-list__item">
-              <a href="/" className="nav-list__link">
-                Доставка и оплата
-              </a>
+              <a className="nav-list__link">Доставка и оплата</a>
             </li>
             <div className="header__menu-vertical-line"></div>
             <li className="nav-list__item">
-              <a href="/" className="nav-list__link">
-                Возврат
-              </a>
+              <a className="nav-list__link">Возврат</a>
             </li>
             <div className="header__menu-vertical-line"></div>
             <li className="nav-list__item">
-              <a href="/" className="nav-list__link">
-                Контакты
-              </a>
+              <a className="nav-list__link">Контакты</a>
             </li>
           </ul>
         </section>
         <section className="header__main-section">
-          <Link to={'/'}>
+          <Link to={'/catalog'}>
             <img src={logoHeader} alt="sultan" className="header__logo" />
           </Link>
           <Link to={'/catalog'}>
@@ -84,9 +83,7 @@ const Header = (props: Props) => {
             <div className="header__contact-text-wrapper">
               <h2 className="header__contact-title">+7 (777) 490-00-91</h2>
               <p className="header__contact-text">время работы: 9:00-20:00</p>
-              <a href="/" className="header__contact-link">
-                Заказать звонок
-              </a>
+              <a className="header__contact-link">Заказать звонок</a>
             </div>
             <img
               src={contactImg}
@@ -106,10 +103,19 @@ const Header = (props: Props) => {
           <div className="header__main-vertical-line"></div>
           <Link to={'/cart'}>
             <div className="header__cart">
-              <img src={cartIcon} alt="cart" className="header__cart-icon" />
+              <div className="header__cart-img-box">
+                <img src={cartIcon} alt="cart" className="header__cart-icon" />
+                <div className="header__cart-img-note-box">
+                  <span className="header__cart-img-note-text">
+                    {totalCount}
+                  </span>
+                </div>
+              </div>
               <div className="header__cart-text-wrapper">
                 <p className="header__cart-text">Корзина</p>
-                <h2 className="header__cart-price">12 478 ₸ </h2>
+                <h2 className="header__cart-price">
+                  {Math.round(totalPrice)} ₸
+                </h2>
               </div>
             </div>
           </Link>

@@ -7,7 +7,6 @@ import whatsapp from '../assets/icons/whatsapp.svg';
 import visa from '../assets/icons/visa.svg';
 import mastercard from '../assets/icons/m-card.svg';
 
-
 type Props = {};
 
 const Footer = (props: Props) => {
@@ -49,24 +48,16 @@ const Footer = (props: Props) => {
           <h2 className="footer__info-title">Меню сайта:</h2>
           <ul className="nav-list">
             <li className="nav-list__item">
-              <a href="/" className="nav-list__link">
-                О компании
-              </a>
+              <a className="nav-list__link">О компании</a>
             </li>
             <li className="nav-list__item">
-              <a href="/" className="nav-list__link">
-                Доставка и оплата
-              </a>
+              <a className="nav-list__link">Доставка и оплата</a>
             </li>
             <li className="nav-list__item">
-              <a href="/" className="nav-list__link">
-                Возврат
-              </a>
+              <a className="nav-list__link">Возврат</a>
             </li>
             <li className="nav-list__item">
-              <a href="/" className="nav-list__link">
-                Контакты
-              </a>
+              <a className="nav-list__link">Контакты</a>
             </li>
           </ul>
         </nav>
@@ -74,29 +65,19 @@ const Footer = (props: Props) => {
           <h2 className="footer__info-title">Категории:</h2>
           <ul className="nav-list">
             <li className="nav-list__item">
-              <a href="/" className="nav-list__link">
-                Бытовая химия
-              </a>
+              <a className="nav-list__link">Бытовая химия</a>
             </li>
             <li className="nav-list__item">
-              <a href="/" className="nav-list__link">
-                Косметика и гигиена
-              </a>
+              <a className="nav-list__link">Косметика и гигиена</a>
             </li>
             <li className="nav-list__item">
-              <a href="/" className="nav-list__link">
-                Товары для дома
-              </a>
+              <a className="nav-list__link">Товары для дома</a>
             </li>
             <li className="nav-list__item">
-              <a href="/" className="nav-list__link">
-                Товары для детей и мам
-              </a>
+              <a className="nav-list__link">Товары для детей и мам</a>
             </li>
             <li className="nav-list__item">
-              <a href="/" className="nav-list__link">
-                Посуда
-              </a>
+              <a className="nav-list__link">Посуда</a>
             </li>
           </ul>
         </nav>
@@ -121,9 +102,7 @@ const Footer = (props: Props) => {
           <div className="footer__contact-tel-box">
             <p className="footer__contact-tel">+7 (777) 490-00-91</p>
             <p className="footer__contact-text">время работы: 9:00-20:00</p>
-            <a href="/" className="footer__contact-link">
-              Заказать звонок
-            </a>
+            <a className="footer__contact-link">Заказать звонок</a>
           </div>
           <div className="footer__contact-mail-box">
             <p className="footer__contact-mail">opt.sultan@mail.ru</p>
