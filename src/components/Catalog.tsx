@@ -12,7 +12,12 @@ import { RootState } from '../app/store';
 import { useAppDispatch, useAppSelector } from '../app/hooks';
 import { Link } from 'react-router-dom';
 import { getCurrentItem } from '../app/reducers/productSlice';
-import { filterSelector, setActiveCaterogy } from '../app/reducers/filterSlice';
+import {
+  filterSelector,
+  setActiveCaterogy,
+  setPriceFilterMax,
+  setPriceFilterMin,
+} from '../app/reducers/filterSlice';
 
 type Props = {};
 
@@ -46,6 +51,8 @@ const Catalog = (props: Props) => {
     activeManufacturers,
     manufacturersFilter,
     manufacturersSearch,
+    priceFilterMin,
+    priceFilterMax,
   } = useAppSelector(filterSelector);
 
   function dispatchBarcode(barcode: number) {
@@ -94,55 +101,26 @@ const Catalog = (props: Props) => {
 
   const [inputPriceMin, setInputPriceMin] = useState('0');
   const [inputPriceMax, setInputPriceMax] = useState('10000');
-  // const cachedMin = useCallback(priceFilterMin, [inputPriceMin, PRODUCTS]);
-  // const cachedMax = useCallback(priceFilterMax, [inputPriceMax, PRODUCTS]);
 
   useEffect(() => {
     // if (inputPriceMin === '' || inputPriceMax === '') {
-    setFilteredProducts(PRODUCTS);
+    // setFilteredProducts(PRODUCTS);
     // } else {
-    priceFilter();
+    // priceFilter();
     sort();
     // }
 
     return () => {};
-  }, [activeSortOption, inputPriceMin, inputPriceMax]);
-
-  // function priceFilterMin(e: React.ChangeEvent<HTMLInputElement>) {
-  //   const itemsCopy = PRODUCTS.filter((item) => {
-  //     return item.price > Number(e.target.value);
-  //   });
-  //   setFilteredProducts(itemsCopy);
-  // }
+  }, [activeSortOption]);
 
   function handlePriceMin(e: React.ChangeEvent<HTMLInputElement>) {
     setInputPriceMin(e.target.value);
-    if (e.target.value === '') {
-      setFilteredProducts(PRODUCTS);
-    }
+    dispatch(setPriceFilterMin(e.target.value));
   }
-
-  // function priceFilterMax(e: React.ChangeEvent<HTMLInputElement>) {
-  //   const itemsCopy = PRODUCTS.filter((item) => {
-  //     return item.price < Number(e.target.value);
-  //   });
-  //   setFilteredProducts(itemsCopy);
-  // }
 
   function handlePriceMax(e: React.ChangeEvent<HTMLInputElement>) {
     setInputPriceMax(e.target.value);
-    if (e.target.value === '') {
-      setFilteredProducts(PRODUCTS);
-    }
-  }
-
-  function priceFilter() {
-    const itemsCopy = PRODUCTS.filter((item) => {
-      return (
-        item.price > Number(inputPriceMin) && item.price < Number(inputPriceMax)
-      );
-    });
-    setFilteredProducts(itemsCopy);
+    dispatch(setPriceFilterMax(e.target.value));
   }
 
   console.log(document.querySelectorAll('.catalog__product').length);
@@ -277,6 +255,8 @@ const Catalog = (props: Props) => {
                     .toLowerCase()
                     .includes(manufacturersSearch.toLowerCase())
                 )
+                .filter((item) => item.price > Number(priceFilterMin))
+                .filter((item) => item.price < Number(priceFilterMax))
                 .map((product: IProduct) => (
                   <li key={product.barcode} className="catalog__product">
                     <img
