@@ -62,7 +62,7 @@
       "careType": ["Бумажная продукция", "Гигиена полости рта", "Уход за телом"]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "BIMAX Порошок стиральный Автомат 100 пятен COMPACT",
       "type": "volume",
       "size": 570,
@@ -74,7 +74,7 @@
       "careType": ["Уход за волосами", "Уход за лицом", "Подарочные наборы"]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "BioMio BIO-SOAP Экологичное туалетное мыло. Литсея и бергамот",
       "type": "weight",
       "size": 500,
@@ -86,7 +86,7 @@
       "careType": ["Уход за лицом", "Уход за ногами", "Средства для загара"]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "BioMio BIO-SOAP Экологичное туалетное мыло. Литсея и бергамот",
       "type": "volume",
       "size": 480,
@@ -98,7 +98,7 @@
       "careType": ["Уход за волосами", "Уход за телом", "Уход за лицом"]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "AOS Ср-во для мытья посуды Апельсин+мятаh",
       "type": "weight",
       "size": 730,
@@ -114,7 +114,7 @@
       ]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "AOS средство для мытья посуды Crystal",
       "type": "weight",
       "size": 60,
@@ -126,7 +126,7 @@
       "careType": ["Уход за телом", "Уход за руками", "Бумажная продукция"]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "BioMio BIO-SOAP Экологичное туалетное мыло. Литсея и бергамот",
       "type": "volume",
       "size": 100,
@@ -138,7 +138,7 @@
       "careType": ["Уход за волосами", "Средства для бритья", "Уход за телом"]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "BIMAX Порошок стиральный Автомат 100 пятен COMPACT",
       "type": "volume",
       "size": 390,
@@ -154,7 +154,7 @@
       ]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "Апельсинка Булгари Грин",
       "type": "weight",
       "size": 10,
@@ -166,7 +166,7 @@
       "careType": ["Уход за руками", "Средства для загара", "Уход за лицом"]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "Апельсинка Булгари Грин",
       "type": "weight",
       "size": 890,
@@ -182,7 +182,7 @@
       ]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "AOS средство для мытья посуды Crystal",
       "type": "weight",
       "size": 40,
@@ -194,7 +194,7 @@
       "careType": ["Уход за лицом", "Уход за ногами", "Подарочные наборы"]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "Апельсинка Булгари Грин",
       "type": "weight",
       "size": 770,
@@ -206,7 +206,7 @@
       "careType": ["Уход за ногами", "Уход за руками", "Гигиена полости рта"]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "ARIEL Автмат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник",
       "type": "weight",
       "size": 820,
@@ -218,7 +218,7 @@
       "careType": ["Бумажная продукция", "Уход за ногами", "Подарочные наборы"]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "Апельсинка Булгари Грин",
       "type": "weight",
       "size": 430,
@@ -230,7 +230,7 @@
       "careType": ["Уход за телом", "Средства для бритья", "Бумажная продукция"]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "BIMAX Порошок стиральный Автомат 100 пятен COMPACT",
       "type": "weight",
       "size": 280,
@@ -242,7 +242,7 @@
       "careType": ["Средства для загара", "Уход за телом", "Бумажная продукция"]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "ARIEL Автмат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник",
       "type": "volume",
       "size": 910,
@@ -254,7 +254,7 @@
       "careType": ["Уход за лицом", "Уход за ногами", "Подарочные наборы"]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "Апельсинка Булгари Грин",
       "type": "weight",
       "size": 490,
@@ -266,7 +266,7 @@
       "careType": ["Средства для загара", "Уход за лицом", "Подарочные наборы"]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "Апельсинка Булгари Грин",
       "type": "volume",
       "size": 740,
@@ -278,7 +278,7 @@
       "careType": ["Средства для бритья", "Уход за ногами", "Подарочные наборы"]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "BIMAX Порошок стиральный Автомат 100 пятен COMPACT",
       "type": "weight",
       "size": 40,
@@ -290,7 +290,7 @@
       "careType": ["Уход за руками", "Уход за волосами", "Подарочные наборы"]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "AOS Ср-во для мытья посуды Апельсин+мятаh",
       "type": "volume",
       "size": 560,
@@ -302,7 +302,7 @@
       "careType": ["Уход за телом", "Средства для загара", "Подарочные наборы"]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "AOS средство для мытья посуды Crystal",
       "type": "weight",
       "size": 730,
@@ -314,7 +314,7 @@
       "careType": ["Уход за телом", "Подарочные наборы", "Уход за ногами"]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "AOS средство для мытья посуды Crystal",
       "type": "weight",
       "size": 340,
@@ -326,7 +326,7 @@
       "careType": ["Бумажная продукция", "Гигиена полости рта", "Уход за телом"]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "ARIEL Автмат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник",
       "type": "volume",
       "size": 650,
@@ -338,7 +338,7 @@
       "careType": ["Уход за лицом", "Уход за телом", "Уход за волосами"]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "Апельсинка Булгари Грин",
       "type": "weight",
       "size": 470,
@@ -354,7 +354,7 @@
       ]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "Апельсинка Булгари Грин",
       "type": "volume",
       "size": 790,
@@ -366,7 +366,7 @@
       "careType": ["Бумажная продукция", "Уход за телом", "Средства для бритья"]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "BioMio BIO-SOAP Экологичное туалетное мыло. Литсея и бергамот",
       "type": "volume",
       "size": 730,
@@ -382,7 +382,7 @@
       ]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "ARIEL Автмат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник",
       "type": "weight",
       "size": 740,
@@ -394,7 +394,7 @@
       "careType": ["Средства для бритья", "Уход за руками", "Уход за лицом"]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "BIMAX Порошок стиральный Автомат 100 пятен COMPACT",
       "type": "volume",
       "size": 420,
@@ -406,7 +406,7 @@
       "careType": ["Уход за лицом", "Уход за телом", "Уход за волосами"]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "BioMio BIO-SOAP Экологичное туалетное мыло. Литсея и бергамот",
       "type": "weight",
       "size": 940,
@@ -422,7 +422,7 @@
       ]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "AOS средство для мытья посуды Crystal",
       "type": "weight",
       "size": 510,
@@ -438,7 +438,7 @@
       ]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "AOS средство для мытья посуды Crystal",
       "type": "volume",
       "size": 570,
@@ -450,7 +450,7 @@
       "careType": ["Уход за лицом", "Средства для бритья", "Уход за телом"]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "AOS Ср-во для мытья посуды Апельсин+мятаh",
       "type": "volume",
       "size": 360,
@@ -462,7 +462,7 @@
       "careType": ["Уход за руками", "Уход за лицом", "Бумажная продукция"]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "AOS Ср-во для мытья посуды Апельсин+мятаh",
       "type": "weight",
       "size": 150,
@@ -474,7 +474,7 @@
       "careType": ["Подарочные наборы", "Уход за телом", "Уход за руками"]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "Апельсинка Булгари Грин",
       "type": "volume",
       "size": 410,
@@ -490,7 +490,7 @@
       ]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "AOS средство для мытья посуды Crystal",
       "type": "volume",
       "size": 70,
@@ -502,7 +502,7 @@
       "careType": ["Уход за руками", "Уход за волосами", "Уход за лицом"]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "BIMAX Порошок стиральный Автомат 100 пятен COMPACT",
       "type": "weight",
       "size": 940,
@@ -518,7 +518,7 @@
       ]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "BioMio BIO-SOAP Экологичное туалетное мыло. Литсея и бергамот",
       "type": "weight",
       "size": 490,
@@ -530,7 +530,7 @@
       "careType": ["Уход за лицом", "Уход за ногами", "Подарочные наборы"]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "AOS средство для мытья посуды Crystal",
       "type": "volume",
       "size": 160,
@@ -542,7 +542,7 @@
       "careType": ["Средства для бритья", "Уход за лицом", "Уход за руками"]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "AOS средство для мытья посуды Crystal",
       "type": "weight",
       "size": 530,
@@ -554,7 +554,7 @@
       "careType": ["Средства для бритья", "Уход за лицом", "Уход за ногами"]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "AOS Ср-во для мытья посуды Апельсин+мятаh",
       "type": "volume",
       "size": 890,
@@ -566,7 +566,7 @@
       "careType": ["Уход за ногами", "Подарочные наборы", "Бумажная продукция"]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "Апельсинка Булгари Грин",
       "type": "weight",
       "size": 10,
@@ -578,7 +578,7 @@
       "careType": ["Уход за телом", "Гигиена полости рта", "Уход за лицом"]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "Апельсинка Булгари Грин",
       "type": "volume",
       "size": 760,
@@ -590,7 +590,7 @@
       "careType": ["Уход за лицом", "Уход за ногами", "Гигиеническая продукция"]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "BIMAX Порошок стиральный Автомат 100 пятен COMPACT",
       "type": "weight",
       "size": 50,
@@ -606,7 +606,7 @@
       ]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "AOS средство для мытья посуды Crystal",
       "type": "volume",
       "size": 470,
@@ -618,7 +618,7 @@
       "careType": ["Уход за телом", "Уход за лицом", "Уход за ногами"]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "BIMAX Порошок стиральный Автомат 100 пятен COMPACT",
       "type": "volume",
       "size": 770,
@@ -634,7 +634,7 @@
       ]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "ARIEL Автмат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник",
       "type": "volume",
       "size": 350,
@@ -650,7 +650,7 @@
       ]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "AOS средство для мытья посуды Crystal",
       "type": "weight",
       "size": 940,
@@ -662,7 +662,7 @@
       "careType": ["Уход за лицом", "Средства для бритья", "Бумажная продукция"]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "BIMAX Порошок стиральный Автомат 100 пятен COMPACT",
       "type": "volume",
       "size": 910,
@@ -678,7 +678,7 @@
       ]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "BioMio BIO-SOAP Экологичное туалетное мыло. Литсея и бергамот",
       "type": "weight",
       "size": 30,
@@ -690,7 +690,7 @@
       "careType": ["Уход за лицом", "Уход за телом", "Бумажная продукция"]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "Апельсинка Булгари Грин",
       "type": "weight",
       "size": 190,
@@ -702,7 +702,7 @@
       "careType": ["Уход за лицом", "Средства для загара", "Бумажная продукция"]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "AOS средство для мытья посуды Crystal",
       "type": "volume",
       "size": 760,
@@ -718,7 +718,7 @@
       ]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "Апельсинка Булгари Грин",
       "type": "weight",
       "size": 240,
@@ -734,7 +734,7 @@
       ]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "AOS средство для мытья посуды Crystal",
       "type": "weight",
       "size": 480,
@@ -746,7 +746,7 @@
       "careType": ["Уход за ногами", "Средства для бритья", "Подарочные наборы"]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "AOS средство для мытья посуды Crystal",
       "type": "weight",
       "size": 660,
@@ -762,7 +762,7 @@
       ]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "AOS Ср-во для мытья посуды Апельсин+мятаh",
       "type": "weight",
       "size": 960,
@@ -774,7 +774,7 @@
       "careType": ["Уход за волосами", "Уход за руками", "Бумажная продукция"]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "AOS средство для мытья посуды Crystal",
       "type": "weight",
       "size": 310,
@@ -786,7 +786,7 @@
       "careType": ["Гигиеническая продукция", "Уход за телом", "Уход за руками"]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "BioMio BIO-SOAP Экологичное туалетное мыло. Литсея и бергамот",
       "type": "volume",
       "size": 280,
@@ -798,7 +798,7 @@
       "careType": ["Уход за телом", "Уход за руками", "Уход за ногами"]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "ARIEL Автмат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник",
       "type": "weight",
       "size": 310,
@@ -810,7 +810,7 @@
       "careType": ["Уход за руками", "Уход за лицом", "Средства для загара"]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "AOS Ср-во для мытья посуды Апельсин+мятаh",
       "type": "volume",
       "size": 240,
@@ -826,7 +826,7 @@
       ]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "AOS средство для мытья посуды Crystal",
       "type": "weight",
       "size": 290,
@@ -838,7 +838,7 @@
       "careType": ["Подарочные наборы", "Уход за ногами", "Уход за волосами"]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "Апельсинка Булгари Грин",
       "type": "volume",
       "size": 660,
@@ -850,7 +850,7 @@
       "careType": ["Уход за ногами", "Уход за лицом", "Бумажная продукция"]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "Апельсинка Булгари Грин",
       "type": "volume",
       "size": 10,
@@ -866,7 +866,7 @@
       ]
     },
     {
-      "imageURL": "https://loremflickr.com/970/970/cosmetics,product,bottle,care/all",
+      "imageURL": "/images/products/product-4.png",
       "name": "BIMAX Порошок стиральный Автомат 100 пятен COMPACT",
       "type": "weight",
       "size": 400,

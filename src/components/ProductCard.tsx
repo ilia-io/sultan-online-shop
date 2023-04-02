@@ -15,6 +15,7 @@ import {
   productsSelector,
 } from '../app/reducers/productSlice';
 import { addItem, cartSelector, minusItem } from '../app/reducers/cartSlice';
+import BreadCrumbs from './BreadCrumbs';
 
 type Props = {};
 
@@ -53,211 +54,225 @@ const ProductCard = (props: Props) => {
   }
 
   return (
-    <section className="product-card container">
-      <div className="product-card__img-wrapper">
-        <img
-          src={PRODUCT.imageURL}
-          alt={PRODUCT.name}
-          className="product-card__img"
-          width={100}
-        />
-      </div>
-
-      <div className="product-card__data">
-        <p className="product-card__top-note">В наличии</p>
-        <h1 className="product-card__title">
-          {' '}
-          <span className="product-card__title_bold">{PRODUCT.brand}</span>{' '}
-          {PRODUCT.name}
-        </h1>
-        <div className="product-card__product-type-box">
+    <>
+      <BreadCrumbs activeItem={PRODUCT.name} section="Каталог" />
+      <section className="product-card container">
+        <div className="product-card__img-wrapper">
           <img
-            src={PRODUCT.type === 'weight' ? typeSolidBoxIcon : typeBottleIcon}
-            alt={PRODUCT.type === 'weight' ? 'solid box' : 'bottle'}
-            className="product-card__product-type-icon"
+            src={PRODUCT.imageURL}
+            alt={PRODUCT.name}
+            className="product-card__img"
+            width={100}
           />
-          <p className="product-card__product-type-text">
-            {PRODUCT.size} {PRODUCT.type === 'weight' ? 'г' : 'мл'}
-          </p>
         </div>
-        <div className="product-card__product-price-box">
-          <p className="product-card__product-price">{PRODUCT.price} ₸</p>
-          <div className="product-card__amount-box">
-            <button
-              onClick={handleMinusItem}
-              type="button"
-              className="product-card__dec"
-            >
-              -
-            </button>
-            <p className="product-card__count">{currentItemCount || 0}</p>
+
+        <div className="product-card__data">
+          <p className="product-card__top-note">В наличии</p>
+          <h1 className="product-card__title">
+            {' '}
+            <span className="product-card__title_bold">
+              {PRODUCT.brand}
+            </span>{' '}
+            {PRODUCT.name}
+          </h1>
+          <div className="product-card__product-type-box">
+            <img
+              src={
+                PRODUCT.type === 'weight' ? typeSolidBoxIcon : typeBottleIcon
+              }
+              alt={PRODUCT.type === 'weight' ? 'solid box' : 'bottle'}
+              className="product-card__product-type-icon"
+            />
+            <p className="product-card__product-type-text">
+              {PRODUCT.size} {PRODUCT.type === 'weight' ? 'г' : 'мл'}
+            </p>
+          </div>
+          <div className="product-card__product-price-box">
+            <p className="product-card__product-price">{PRODUCT.price} ₸</p>
+            <div className="product-card__amount-box">
+              <button
+                onClick={handleMinusItem}
+                type="button"
+                className="product-card__dec"
+              >
+                -
+              </button>
+              <p className="product-card__count">{currentItemCount || 0}</p>
+              <button
+                onClick={handleAddItem}
+                type="button"
+                className="product-card__inc"
+              >
+                +
+              </button>
+            </div>
             <button
               onClick={handleAddItem}
               type="button"
-              className="product-card__inc"
+              className="product-card__product-cartBtn"
             >
-              +
+              В корзину{' '}
+              <img
+                src={cartBtnIcon}
+                alt="cart"
+                className="product-card__product-cartBtn-icon"
+              />
             </button>
           </div>
-          <button
-            onClick={handleAddItem}
-            type="button"
-            className="product-card__product-cartBtn"
-          >
-            В корзину{' '}
-            <img
-              src={cartBtnIcon}
-              alt="cart"
-              className="product-card__product-cartBtn-icon"
-            />
-          </button>
-        </div>
-        <div className="product-card__ad-box">
-          <button disabled className="product-card__share-link">
-            <img
-              src={shareIcon}
-              alt="share"
-              className="product-card__share-icon"
-            />
-          </button>
-          <div className="product-card__ad-text-box">
-            <p className="product-card__ad-text">
-              При покупке от
-              <span className="product-card__ad-text_bold"> 10 000 ₸ </span>
-              бесплатная доставка по Кокчетаву и области
-            </p>
-          </div>
+          <div className="product-card__ad-box">
+            <button disabled className="product-card__share-link">
+              <img
+                src={shareIcon}
+                alt="share"
+                className="product-card__share-icon"
+              />
+            </button>
+            <div className="product-card__ad-text-box">
+              <p className="product-card__ad-text">
+                При покупке от
+                <span className="product-card__ad-text_bold"> 10 000 ₸ </span>
+                бесплатная доставка по Кокчетаву и области
+              </p>
+            </div>
 
-          <button disabled className="product-card__priceListBtn">
-            Прайс-лист{' '}
+            <button disabled className="product-card__priceListBtn">
+              Прайс-лист{' '}
+              <img
+                src={priceListIcon}
+                alt="arrow down"
+                className="product-card__priceListBtn-icon"
+              />
+            </button>
+          </div>
+          <ul className="product-card__prop-list">
+            <li className="product-card__prop">
+              Производитель:{' '}
+              <span className="product-card__prop_value">
+                {PRODUCT.manufacturer}
+              </span>
+            </li>
+            <li className="product-card__prop">
+              Бренд:{' '}
+              <span className="product-card__prop_value">{PRODUCT.brand}</span>
+            </li>
+            <li className="product-card__prop">
+              Артикул: <span className="product-card__prop_value">460404</span>
+            </li>
+            <li className="product-card__prop">
+              Кол-во в коробке:{' '}
+              <span className="product-card__prop_value">2</span>
+            </li>
+            <li className="product-card__prop">
+              Штрихкод:{' '}
+              <span className="product-card__prop_value">
+                {PRODUCT.barcode}
+              </span>
+            </li>
+            <li className="product-card__prop">
+              Размеры коробки(Д*Ш*В):{' '}
+              <span className="product-card__prop_value">10х10х10</span>
+            </li>
+            <li className="product-card__prop">
+              Вес коробки:{' '}
+              <span className="product-card__prop_value">1020 г</span>
+            </li>
+          </ul>
+          <button
+            className="product-card__description-btn"
+            type="button"
+            onClick={showHideDescription}
+          >
+            <span className="product-card__description-btn-text">
+              Описание{' '}
+            </span>
             <img
-              src={priceListIcon}
+              src={arrowDown}
               alt="arrow down"
-              className="product-card__priceListBtn-icon"
+              className="product-card__description-btn-icon"
+              hidden={showDescription ? true : false}
+            />
+            <img
+              src={arrowUp}
+              alt="arrow up"
+              className="product-card__description-btn-icon"
+              hidden={showDescription ? false : true}
             />
           </button>
-        </div>
-        <ul className="product-card__prop-list">
-          <li className="product-card__prop">
-            Производитель:{' '}
-            <span className="product-card__prop_value">
-              {PRODUCT.manufacturer}
-            </span>
-          </li>
-          <li className="product-card__prop">
-            Бренд:{' '}
-            <span className="product-card__prop_value">{PRODUCT.brand}</span>
-          </li>
-          <li className="product-card__prop">
-            Артикул: <span className="product-card__prop_value">460404</span>
-          </li>
-          <li className="product-card__prop">
-            Кол-во в коробке:{' '}
-            <span className="product-card__prop_value">2</span>
-          </li>
-          <li className="product-card__prop">
-            Штрихкод:{' '}
-            <span className="product-card__prop_value">{PRODUCT.barcode}</span>
-          </li>
-          <li className="product-card__prop">
-            Размеры коробки(Д*Ш*В):{' '}
-            <span className="product-card__prop_value">10х10х10</span>
-          </li>
-          <li className="product-card__prop">
-            Вес коробки:{' '}
-            <span className="product-card__prop_value">1020 г</span>
-          </li>
-        </ul>
-        <button
-          className="product-card__description-btn"
-          type="button"
-          onClick={showHideDescription}
-        >
-          <span className="product-card__description-btn-text">Описание </span>
-          <img
-            src={arrowDown}
-            alt="arrow down"
-            className="product-card__description-btn-icon"
-            hidden={showDescription ? true : false}
-          />
-          <img
-            src={arrowUp}
-            alt="arrow up"
-            className="product-card__description-btn-icon"
+          <p
             hidden={showDescription ? false : true}
-          />
-        </button>
-        <p
-          hidden={showDescription ? false : true}
-          className="product-card__description"
-        >
-          {PRODUCT.description}
-        </p>
-        <div className="product-card__divider"></div>
-        <button
-          className="product-card__properties-btn"
-          type="button"
-          onClick={showHideProperties}
-        >
-          <span className="product-card__properties-btn-text">
-            Характеристики{' '}
-          </span>
-          <img
-            src={arrowDown}
-            alt="arrow down"
-            className="product-card__properties-btn-icon"
-            hidden={showProperties ? true : false}
-          />
-          <img
-            src={arrowUp}
-            alt="arrow up"
-            className="product-card__properties-btn-icon"
-            hidden={showProperties ? false : true}
-          />
-        </button>
-        <ul
-          hidden={showProperties ? false : true}
-          className="product-card__all-properties-list"
-        >
-          <li className="product-card__prop">
-            Назначение: <span className="product-card__prop_value">BioMio</span>
-          </li>
-          <li className="product-card__prop">
-            Тип: <span className="product-card__prop_value">BioMio</span>
-          </li>
-          <li className="product-card__prop">
-            Производитель:{' '}
-            <span className="product-card__prop_value">
-              {PRODUCT.manufacturer}
+            className="product-card__description"
+          >
+            {PRODUCT.description}
+          </p>
+          <div className="product-card__divider"></div>
+          <button
+            className="product-card__properties-btn"
+            type="button"
+            onClick={showHideProperties}
+          >
+            <span className="product-card__properties-btn-text">
+              Характеристики{' '}
             </span>
-          </li>
-          <li className="product-card__prop">
-            Бренд:{' '}
-            <span className="product-card__prop_value">{PRODUCT.brand}</span>
-          </li>
-          <li className="product-card__prop">
-            Артикул:{' '}
-            <span className="product-card__prop_value">4604049097548</span>
-          </li>
-          <li className="product-card__prop">
-            Штрихкод:{' '}
-            <span className="product-card__prop_value">{PRODUCT.barcode}</span>
-          </li>
-          <li className="product-card__prop">
-            Вес:{' '}
-            <span className="product-card__prop_value">{PRODUCT.size}</span>
-          </li>
-          <li className="product-card__prop">
-            Объем:{' '}
-            <span className="product-card__prop_value">{PRODUCT.size}</span>
-          </li>
-          <li className="product-card__prop">
-            Кол-во в коробке:{' '}
-            <span className="product-card__prop_value">90 г</span>
-          </li>
-        </ul>
-      </div>
-    </section>
+            <img
+              src={arrowDown}
+              alt="arrow down"
+              className="product-card__properties-btn-icon"
+              hidden={showProperties ? true : false}
+            />
+            <img
+              src={arrowUp}
+              alt="arrow up"
+              className="product-card__properties-btn-icon"
+              hidden={showProperties ? false : true}
+            />
+          </button>
+          <ul
+            hidden={showProperties ? false : true}
+            className="product-card__all-properties-list"
+          >
+            <li className="product-card__prop">
+              Назначение:{' '}
+              <span className="product-card__prop_value">BioMio</span>
+            </li>
+            <li className="product-card__prop">
+              Тип: <span className="product-card__prop_value">BioMio</span>
+            </li>
+            <li className="product-card__prop">
+              Производитель:{' '}
+              <span className="product-card__prop_value">
+                {PRODUCT.manufacturer}
+              </span>
+            </li>
+            <li className="product-card__prop">
+              Бренд:{' '}
+              <span className="product-card__prop_value">{PRODUCT.brand}</span>
+            </li>
+            <li className="product-card__prop">
+              Артикул:{' '}
+              <span className="product-card__prop_value">4604049097548</span>
+            </li>
+            <li className="product-card__prop">
+              Штрихкод:{' '}
+              <span className="product-card__prop_value">
+                {PRODUCT.barcode}
+              </span>
+            </li>
+            <li className="product-card__prop">
+              Вес:{' '}
+              <span className="product-card__prop_value">{PRODUCT.size}</span>
+            </li>
+            <li className="product-card__prop">
+              Объем:{' '}
+              <span className="product-card__prop_value">{PRODUCT.size}</span>
+            </li>
+            <li className="product-card__prop">
+              Кол-во в коробке:{' '}
+              <span className="product-card__prop_value">90 г</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </>
   );
 };
 

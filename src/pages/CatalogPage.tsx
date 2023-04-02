@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
 import BreadCrumbs from '../components/BreadCrumbs';
 import Catalog from '../components/Catalog';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 
-type Props = {}
+type Props = {};
 
 const CatalogPage = (props: Props) => {
   return (
@@ -17,6 +17,6 @@ const CatalogPage = (props: Props) => {
       <Footer />
     </>
   );
-}
+};
 
-export default CatalogPage
+export default CatalogPage;

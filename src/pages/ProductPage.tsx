@@ -11,7 +11,6 @@ const ProductPage = (props: Props) => {
     <>
       <Header />
       <main className="main">
-        <BreadCrumbs />
         <ProductCard />
       </main>
       <Footer />

@@ -41,7 +41,8 @@ export const productSlice = createSlice({
 });
 
 export const productsSelector = (state: RootState) => state.product.items;
-export const currentItemSelector = (state: RootState) => state.product.currentItem;
+export const currentItemSelector = (state: RootState) =>
+  state.product.currentItem;
 
 export const { getCurrentItem } = productSlice.actions;
 

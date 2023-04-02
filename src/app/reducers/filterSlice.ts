@@ -23,7 +23,7 @@ const initialState: FilterState = {
   manufacturersFilter: false,
   manufacturersSearch: '',
   priceFilterMin: '',
-  priceFilterMax: '',
+  priceFilterMax: '10000',
 };
 
 export const filterSlice = createSlice({
