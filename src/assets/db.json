@@ -22,7 +22,7 @@
   ],
   "products": [
     {
-      "imageURL": "/images/products/product-1.png",
+      "imageURL": "https://ir.ozone.ru/s3/multimedia-8/wc700/6350869616.jpg",
       "name": "AOS Ср-во для мытья посуды Апельсин+мятаh",
       "type": "weight",
       "size": 220,
@@ -38,7 +38,7 @@
       ]
     },
     {
-      "imageURL": "/images/products/product-2.png",
+      "imageURL": "https://ir.ozone.ru/s3/multimedia-8/wc700/6350869616.jpg",
       "name": "AOS Ср-во для мытья посуды Апельсин+мятаh",
       "type": "volume",
       "size": 290,
@@ -50,7 +50,7 @@
       "careType": ["Уход за руками", "Уход за лицом", "Бумажная продукция"]
     },
     {
-      "imageURL": "/images/products/product-4.png",
+      "imageURL": "https://ir.ozone.ru/s3/multimedia-8/wc700/6350869616.jpg",
       "name": "BioMio BIO-SOAP Экологичное туалетное мыло. Литсея и бергамот",
       "type": "weight",
       "size": 100,
@@ -62,7 +62,7 @@
       "careType": ["Бумажная продукция", "Гигиена полости рта", "Уход за телом"]
     },
     {
-      "imageURL": "/images/products/product-4.png",
+      "imageURL": "https://ir.ozone.ru/s3/multimedia-8/wc700/6350869616.jpg",
       "name": "BIMAX Порошок стиральный Автомат 100 пятен COMPACT",
       "type": "volume",
       "size": 570,
@@ -74,7 +74,7 @@
       "careType": ["Уход за волосами", "Уход за лицом", "Подарочные наборы"]
     },
     {
-      "imageURL": "/images/products/product-4.png",
+      "imageURL": "https://ir.ozone.ru/s3/multimedia-8/wc700/6350869616.jpg",
       "name": "BioMio BIO-SOAP Экологичное туалетное мыло. Литсея и бергамот",
       "type": "weight",
       "size": 500,
@@ -86,7 +86,7 @@
       "careType": ["Уход за лицом", "Уход за ногами", "Средства для загара"]
     },
     {
-      "imageURL": "/images/products/product-4.png",
+      "imageURL": "https://ir.ozone.ru/s3/multimedia-8/wc700/6350869616.jpg",
       "name": "BioMio BIO-SOAP Экологичное туалетное мыло. Литсея и бергамот",
       "type": "volume",
       "size": 480,
@@ -98,7 +98,7 @@
       "careType": ["Уход за волосами", "Уход за телом", "Уход за лицом"]
     },
     {
-      "imageURL": "/images/products/product-4.png",
+      "imageURL": "https://ir.ozone.ru/s3/multimedia-8/wc700/6350869616.jpg",
       "name": "AOS Ср-во для мытья посуды Апельсин+мятаh",
       "type": "weight",
       "size": 730,
@@ -114,7 +114,7 @@
       ]
     },
     {
-      "imageURL": "/images/products/product-4.png",
+      "imageURL": "https://ir.ozone.ru/s3/multimedia-8/wc700/6350869616.jpg",
       "name": "AOS средство для мытья посуды Crystal",
       "type": "weight",
       "size": 60,
@@ -126,7 +126,7 @@
       "careType": ["Уход за телом", "Уход за руками", "Бумажная продукция"]
     },
     {
-      "imageURL": "/images/products/product-4.png",
+      "imageURL": "https://ir.ozone.ru/s3/multimedia-8/wc700/6350869616.jpg",
       "name": "BioMio BIO-SOAP Экологичное туалетное мыло. Литсея и бергамот",
       "type": "volume",
       "size": 100,
@@ -138,7 +138,7 @@
       "careType": ["Уход за волосами", "Средства для бритья", "Уход за телом"]
     },
     {
-      "imageURL": "/images/products/product-4.png",
+      "imageURL": "https://ir.ozone.ru/s3/multimedia-8/wc700/6350869616.jpg",
       "name": "BIMAX Порошок стиральный Автомат 100 пятен COMPACT",
       "type": "volume",
       "size": 390,
@@ -154,7 +154,7 @@
       ]
     },
     {
-      "imageURL": "/images/products/product-4.png",
+      "imageURL": "https://ir.ozone.ru/s3/multimedia-8/wc700/6350869616.jpg",
       "name": "Апельсинка Булгари Грин",
       "type": "weight",
       "size": 10,
@@ -166,7 +166,7 @@
       "careType": ["Уход за руками", "Средства для загара", "Уход за лицом"]
     },
     {
-      "imageURL": "/images/products/product-4.png",
+      "imageURL": "https://ir.ozone.ru/s3/multimedia-8/wc700/6350869616.jpg",
       "name": "Апельсинка Булгари Грин",
       "type": "weight",
       "size": 890,
@@ -182,7 +182,7 @@
       ]
     },
     {
-      "imageURL": "/images/products/product-4.png",
+      "imageURL": "https://ir.ozone.ru/s3/multimedia-8/wc700/6350869616.jpg",
       "name": "AOS средство для мытья посуды Crystal",
       "type": "weight",
       "size": 40,
@@ -194,7 +194,7 @@
       "careType": ["Уход за лицом", "Уход за ногами", "Подарочные наборы"]
     },
     {
-      "imageURL": "/images/products/product-4.png",
+      "imageURL": "https://ir.ozone.ru/s3/multimedia-8/wc700/6350869616.jpg",
       "name": "Апельсинка Булгари Грин",
       "type": "weight",
       "size": 770,
@@ -206,7 +206,7 @@
       "careType": ["Уход за ногами", "Уход за руками", "Гигиена полости рта"]
     },
     {
-      "imageURL": "/images/products/product-4.png",
+      "imageURL": "https://ir.ozone.ru/s3/multimedia-8/wc700/6350869616.jpg",
       "name": "ARIEL Автмат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник",
       "type": "weight",
       "size": 820,
@@ -218,7 +218,7 @@
       "careType": ["Бумажная продукция", "Уход за ногами", "Подарочные наборы"]
     },
     {
-      "imageURL": "/images/products/product-4.png",
+      "imageURL": "https://ir.ozone.ru/s3/multimedia-8/wc700/6350869616.jpg",
       "name": "Апельсинка Булгари Грин",
       "type": "weight",
       "size": 430,
@@ -230,7 +230,7 @@
       "careType": ["Уход за телом", "Средства для бритья", "Бумажная продукция"]
     },
     {
-      "imageURL": "/images/products/product-4.png",
+      "imageURL": "https://ir.ozone.ru/s3/multimedia-8/wc700/6350869616.jpg",
       "name": "BIMAX Порошок стиральный Автомат 100 пятен COMPACT",
       "type": "weight",
       "size": 280,
@@ -242,7 +242,7 @@
       "careType": ["Средства для загара", "Уход за телом", "Бумажная продукция"]
     },
     {
-      "imageURL": "/images/products/product-4.png",
+      "imageURL": "https://ir.ozone.ru/s3/multimedia-8/wc700/6350869616.jpg",
       "name": "ARIEL Автмат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник",
       "type": "volume",
       "size": 910,
@@ -254,7 +254,7 @@
       "careType": ["Уход за лицом", "Уход за ногами", "Подарочные наборы"]
     },
     {
-      "imageURL": "/images/products/product-4.png",
+      "imageURL": "https://ir.ozone.ru/s3/multimedia-8/wc700/6350869616.jpg",
       "name": "Апельсинка Булгари Грин",
       "type": "weight",
       "size": 490,
@@ -266,7 +266,7 @@
       "careType": ["Средства для загара", "Уход за лицом", "Подарочные наборы"]
     },
     {
-      "imageURL": "/images/products/product-4.png",
+      "imageURL": "https://ir.ozone.ru/s3/multimedia-8/wc700/6350869616.jpg",
       "name": "Апельсинка Булгари Грин",
       "type": "volume",
       "size": 740,
@@ -278,7 +278,7 @@
       "careType": ["Средства для бритья", "Уход за ногами", "Подарочные наборы"]
     },
     {
-      "imageURL": "/images/products/product-4.png",
+      "imageURL": "https://ir.ozone.ru/s3/multimedia-8/wc700/6350869616.jpg",
       "name": "BIMAX Порошок стиральный Автомат 100 пятен COMPACT",
       "type": "weight",
       "size": 40,
@@ -290,7 +290,7 @@
       "careType": ["Уход за руками", "Уход за волосами", "Подарочные наборы"]
     },
     {
-      "imageURL": "/images/products/product-4.png",
+      "imageURL": "https://ir.ozone.ru/s3/multimedia-8/wc700/6350869616.jpg",
       "name": "AOS Ср-во для мытья посуды Апельсин+мятаh",
       "type": "volume",
       "size": 560,
@@ -302,7 +302,7 @@
       "careType": ["Уход за телом", "Средства для загара", "Подарочные наборы"]
     },
     {
-      "imageURL": "/images/products/product-4.png",
+      "imageURL": "https://ir.ozone.ru/s3/multimedia-8/wc700/6350869616.jpg",
       "name": "AOS средство для мытья посуды Crystal",
       "type": "weight",
       "size": 730,
@@ -314,7 +314,7 @@
       "careType": ["Уход за телом", "Подарочные наборы", "Уход за ногами"]
     },
     {
-      "imageURL": "/images/products/product-4.png",
+      "imageURL": "https://ir.ozone.ru/s3/multimedia-8/wc700/6350869616.jpg",
       "name": "AOS средство для мытья посуды Crystal",
       "type": "weight",
       "size": 340,
@@ -326,7 +326,7 @@
       "careType": ["Бумажная продукция", "Гигиена полости рта", "Уход за телом"]
     },
     {
-      "imageURL": "/images/products/product-4.png",
+      "imageURL": "https://ir.ozone.ru/s3/multimedia-8/wc700/6350869616.jpg",
       "name": "ARIEL Автмат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник",
       "type": "volume",
       "size": 650,
@@ -338,7 +338,7 @@
       "careType": ["Уход за лицом", "Уход за телом", "Уход за волосами"]
     },
     {
-      "imageURL": "/images/products/product-4.png",
+      "imageURL": "https://ir.ozone.ru/s3/multimedia-8/wc700/6350869616.jpg",
       "name": "Апельсинка Булгари Грин",
       "type": "weight",
       "size": 470,
@@ -354,7 +354,7 @@
       ]
     },
     {
-      "imageURL": "/images/products/product-4.png",
+      "imageURL": "https://ir.ozone.ru/s3/multimedia-8/wc700/6350869616.jpg",
       "name": "Апельсинка Булгари Грин",
       "type": "volume",
       "size": 790,
@@ -366,7 +366,7 @@
       "careType": ["Бумажная продукция", "Уход за телом", "Средства для бритья"]
     },
     {
-      "imageURL": "/images/products/product-4.png",
+      "imageURL": "https://ir.ozone.ru/s3/multimedia-8/wc700/6350869616.jpg",
       "name": "BioMio BIO-SOAP Экологичное туалетное мыло. Литсея и бергамот",
       "type": "volume",
       "size": 730,
@@ -382,7 +382,7 @@
       ]
     },
     {
-      "imageURL": "/images/products/product-4.png",
+      "imageURL": "https://ir.ozone.ru/s3/multimedia-8/wc700/6350869616.jpg",
       "name": "ARIEL Автмат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник",
       "type": "weight",
       "size": 740,
@@ -394,7 +394,7 @@
       "careType": ["Средства для бритья", "Уход за руками", "Уход за лицом"]
     },
     {
-      "imageURL": "/images/products/product-4.png",
+      "imageURL": "https://ir.ozone.ru/s3/multimedia-8/wc700/6350869616.jpg",
       "name": "BIMAX Порошок стиральный Автомат 100 пятен COMPACT",
       "type": "volume",
       "size": 420,
@@ -404,482 +404,6 @@
       "description": "Irure cupidatat ea anim ex sit nisi in. In ipsum culpa et elit quis aliquip nulla non laboris amet. Labore eu culpa labore velit mollit elit. Nulla consequat Lorem elit ad est tempor enim aliquip do. Amet in id sunt nulla aute pariatur magna elit occaecat adipisicing. Nisi consectetur in esse cupidatat nostrud nisi adipisicing duis culpa et et Lorem.",
       "price": 395.6,
       "careType": ["Уход за лицом", "Уход за телом", "Уход за волосами"]
-    },
-    {
-      "imageURL": "/images/products/product-4.png",
-      "name": "BioMio BIO-SOAP Экологичное туалетное мыло. Литсея и бергамот",
-      "type": "weight",
-      "size": 940,
-      "barcode": 2486510208641,
-      "manufacturer": "Нэфис",
-      "brand": "Nivea",
-      "description": "Irure enim deserunt deserunt elit non tempor esse eiusmod dolore incididunt proident id anim. Eiusmod sit occaecat qui aute eiusmod sint duis sunt mollit culpa ipsum minim. Deserunt proident deserunt quis ea id dolor. Velit non ex irure irure incididunt. Laborum ipsum aute adipisicing dolor Lorem excepteur pariatur velit adipisicing enim nostrud in dolore. Qui pariatur sint laboris sunt esse.",
-      "price": 920.85,
-      "careType": [
-        "Уход за лицом",
-        "Гигиеническая продукция",
-        "Средства для бритья"
-      ]
-    },
-    {
-      "imageURL": "/images/products/product-4.png",
-      "name": "AOS средство для мытья посуды Crystal",
-      "type": "weight",
-      "size": 510,
-      "barcode": 6927695633328,
-      "manufacturer": "BioMio",
-      "brand": "AOS",
-      "description": "Et velit reprehenderit cupidatat aliquip est fugiat laborum velit id voluptate aliqua commodo. Amet pariatur nulla sunt nulla Lorem officia ex ullamco excepteur. Mollit pariatur qui eiusmod cillum elit amet ut velit fugiat sit amet cupidatat. Excepteur adipisicing ad sint ullamco occaecat voluptate magna. Aute minim aliquip irure id cillum. Non commodo labore velit ex quis enim aute enim enim.",
-      "price": 4.46,
-      "careType": [
-        "Средства для бритья",
-        "Уход за ногами",
-        "Гигиена полости рта"
-      ]
-    },
-    {
-      "imageURL": "/images/products/product-4.png",
-      "name": "AOS средство для мытья посуды Crystal",
-      "type": "volume",
-      "size": 570,
-      "barcode": 1822314597577,
-      "manufacturer": "Нэфис",
-      "brand": "Домашний сундук",
-      "description": "Id cillum deserunt et ad. Adipisicing aute pariatur reprehenderit ipsum officia excepteur sint ipsum ipsum. Nostrud cupidatat tempor anim et tempor. Id dolore elit laboris laborum sit. Aliqua esse dolore non pariatur laboris. Cillum esse pariatur in ex enim ullamco velit Lorem excepteur.",
-      "price": 528.27,
-      "careType": ["Уход за лицом", "Средства для бритья", "Уход за телом"]
-    },
-    {
-      "imageURL": "/images/products/product-4.png",
-      "name": "AOS Ср-во для мытья посуды Апельсин+мятаh",
-      "type": "volume",
-      "size": 360,
-      "barcode": 735144417975,
-      "manufacturer": "BioMio",
-      "brand": "GRIFON",
-      "description": "Minim adipisicing officia culpa officia sit dolore cupidatat. Voluptate velit esse quis mollit. Mollit culpa reprehenderit in ut commodo non dolor nulla velit dolore mollit. Incididunt eiusmod in adipisicing consectetur consectetur sint sint enim voluptate. Enim irure sit non laborum ullamco laborum officia enim laborum enim ut. Esse tempor minim cillum velit id sint adipisicing Lorem commodo.",
-      "price": 384.42,
-      "careType": ["Уход за руками", "Уход за лицом", "Бумажная продукция"]
-    },
-    {
-      "imageURL": "/images/products/product-4.png",
-      "name": "AOS Ср-во для мытья посуды Апельсин+мятаh",
-      "type": "weight",
-      "size": 150,
-      "barcode": 5038941540231,
-      "manufacturer": "Нэфис",
-      "brand": "Домашний сундук",
-      "description": "Elit mollit cupidatat esse duis duis ad elit non dolore proident consectetur voluptate. Ad deserunt consequat mollit velit. Adipisicing qui ipsum officia elit exercitation esse anim sint ipsum excepteur labore ea. Eiusmod ipsum labore aliquip ullamco laborum nostrud voluptate voluptate commodo est mollit. Cupidatat anim voluptate proident ea exercitation est veniam tempor veniam anim adipisicing esse. Culpa amet Lorem cillum deserunt consectetur minim adipisicing voluptate veniam incididunt enim.",
-      "price": 597.85,
-      "careType": ["Подарочные наборы", "Уход за телом", "Уход за руками"]
-    },
-    {
-      "imageURL": "/images/products/product-4.png",
-      "name": "Апельсинка Булгари Грин",
-      "type": "volume",
-      "size": 410,
-      "barcode": 6576512048670,
-      "manufacturer": "BioMio",
-      "brand": "HELP",
-      "description": "Veniam minim dolore veniam labore ut dolore irure elit sint et. Dolor deserunt voluptate eu veniam mollit. Proident qui amet aute fugiat dolor eiusmod esse aute mollit nulla aliqua Lorem. Laboris esse sint magna tempor cillum magna. Quis reprehenderit magna non magna nulla. Sint veniam fugiat nisi nulla ea consectetur quis laboris sunt sint sint proident minim officia.",
-      "price": 280.62,
-      "careType": [
-        "Уход за телом",
-        "Средства для бритья",
-        "Гигиеническая продукция"
-      ]
-    },
-    {
-      "imageURL": "/images/products/product-4.png",
-      "name": "AOS средство для мытья посуды Crystal",
-      "type": "volume",
-      "size": 70,
-      "barcode": 5940202623792,
-      "manufacturer": "Grifon",
-      "brand": "GRIFON",
-      "description": "Duis qui elit consectetur ut et proident. Pariatur commodo non ad deserunt eu amet magna Lorem id deserunt dolor. Laboris cupidatat aliquip est velit dolor excepteur mollit cillum et cillum. Adipisicing elit eu quis dolor Lorem ea. Commodo exercitation ut Lorem nostrud enim sit ad ea deserunt pariatur. Sunt fugiat quis qui enim qui et pariatur consectetur.",
-      "price": 952.74,
-      "careType": ["Уход за руками", "Уход за волосами", "Уход за лицом"]
-    },
-    {
-      "imageURL": "/images/products/product-4.png",
-      "name": "BIMAX Порошок стиральный Автомат 100 пятен COMPACT",
-      "type": "weight",
-      "size": 940,
-      "barcode": 6624193687843,
-      "manufacturer": "Boyscout",
-      "brand": "GRIFON",
-      "description": "Nisi aliqua amet minim voluptate Lorem ea exercitation cillum Lorem sunt. Amet consequat non ullamco non dolore do sint aliqua. Consequat mollit consectetur ad sint. Aliqua laboris nisi nostrud exercitation labore dolor culpa exercitation. Enim elit velit est duis officia adipisicing cillum enim adipisicing quis voluptate. Exercitation Lorem ea culpa ad.",
-      "price": 998.15,
-      "careType": [
-        "Средства для загара",
-        "Уход за волосами",
-        "Бумажная продукция"
-      ]
-    },
-    {
-      "imageURL": "/images/products/product-4.png",
-      "name": "BioMio BIO-SOAP Экологичное туалетное мыло. Литсея и бергамот",
-      "type": "weight",
-      "size": 490,
-      "barcode": 480775858127,
-      "manufacturer": "Paclan",
-      "brand": "HELP",
-      "description": "Do ullamco id id ea aliquip eiusmod amet sint quis commodo occaecat. Adipisicing adipisicing magna consequat cillum. Exercitation duis anim cupidatat cillum minim incididunt duis ipsum sit sit. Velit ut occaecat deserunt ex cupidatat cupidatat occaecat duis nisi reprehenderit minim excepteur deserunt irure. Dolore eiusmod irure laborum velit culpa velit mollit sunt ut veniam qui in laborum. Irure occaecat ex dolor elit cillum nisi minim reprehenderit qui aliqua.",
-      "price": 874.58,
-      "careType": ["Уход за лицом", "Уход за ногами", "Подарочные наборы"]
-    },
-    {
-      "imageURL": "/images/products/product-4.png",
-      "name": "AOS средство для мытья посуды Crystal",
-      "type": "volume",
-      "size": 160,
-      "barcode": 8055787261017,
-      "manufacturer": "Boyscout",
-      "brand": "HELP",
-      "description": "Exercitation qui culpa pariatur reprehenderit mollit do irure. Est in exercitation amet ad ipsum pariatur excepteur aute fugiat in incididunt. Nostrud minim eu aliquip cupidatat consectetur reprehenderit Lorem et. Nostrud exercitation mollit aute aliquip eiusmod officia nostrud in reprehenderit in laborum laborum magna esse. Cillum labore eu proident laboris exercitation ut cupidatat quis velit nisi eu dolor mollit. Consectetur nisi aliqua quis qui irure dolor ea non velit ipsum aliquip aliqua velit veniam.",
-      "price": 49.3,
-      "careType": ["Средства для бритья", "Уход за лицом", "Уход за руками"]
-    },
-    {
-      "imageURL": "/images/products/product-4.png",
-      "name": "AOS средство для мытья посуды Crystal",
-      "type": "weight",
-      "size": 530,
-      "barcode": 1058138474737,
-      "manufacturer": "Boyscout",
-      "brand": "Домашний сундук",
-      "description": "Commodo qui anim nisi non laborum et aliquip minim pariatur ipsum ut fugiat aliqua. Adipisicing incididunt duis consectetur aliquip dolor. Consequat ad exercitation esse aliqua non id consequat mollit. Aute exercitation deserunt fugiat pariatur elit esse mollit. Incididunt elit ipsum excepteur reprehenderit magna mollit sint ea Lorem consequat. Irure adipisicing quis est duis eu do esse elit.",
-      "price": 222.39,
-      "careType": ["Средства для бритья", "Уход за лицом", "Уход за ногами"]
-    },
-    {
-      "imageURL": "/images/products/product-4.png",
-      "name": "AOS Ср-во для мытья посуды Апельсин+мятаh",
-      "type": "volume",
-      "size": 890,
-      "barcode": 7273685514261,
-      "manufacturer": "Boyscout",
-      "brand": "GRIFON",
-      "description": "Excepteur id in commodo eiusmod proident anim culpa in ex tempor tempor nisi. Nulla adipisicing magna ullamco veniam id consequat do. Elit qui fugiat minim in est pariatur cillum. Cupidatat ipsum duis eu minim non veniam ad aliqua laboris velit nulla eu mollit. Veniam sit irure sunt non eu laborum aute veniam reprehenderit non ullamco eiusmod dolore. Et ad labore officia elit culpa non pariatur Lorem labore non mollit.",
-      "price": 679.19,
-      "careType": ["Уход за ногами", "Подарочные наборы", "Бумажная продукция"]
-    },
-    {
-      "imageURL": "/images/products/product-4.png",
-      "name": "Апельсинка Булгари Грин",
-      "type": "weight",
-      "size": 10,
-      "barcode": 2679939864861,
-      "manufacturer": "Paclan",
-      "brand": "Nivea",
-      "description": "Sunt sit incididunt incididunt fugiat do id excepteur elit occaecat adipisicing amet aliquip magna. Eu proident incididunt id exercitation. Ea laboris sit Lorem amet. Consectetur aliqua nostrud nostrud deserunt nostrud elit enim incididunt elit adipisicing sunt excepteur qui enim. Minim adipisicing officia aliqua dolor consequat officia non culpa consequat elit minim commodo quis. Ad et in deserunt non dolore adipisicing minim aute incididunt tempor amet sunt ex.",
-      "price": 951.5,
-      "careType": ["Уход за телом", "Гигиена полости рта", "Уход за лицом"]
-    },
-    {
-      "imageURL": "/images/products/product-4.png",
-      "name": "Апельсинка Булгари Грин",
-      "type": "volume",
-      "size": 760,
-      "barcode": 1164673868717,
-      "manufacturer": "Нэфис",
-      "brand": "HELP",
-      "description": "Aliquip nisi commodo fugiat tempor cillum cillum. Non qui dolor duis aliquip do officia voluptate sint excepteur sunt commodo. Ea quis laborum consequat incididunt elit ut adipisicing eu est. Non fugiat ullamco laborum nisi ullamco aliqua aliqua id eiusmod eu. Sit irure veniam in dolore exercitation reprehenderit aliqua ad consequat ad ex proident qui cillum. Ipsum eu qui fugiat est culpa cillum ea minim ea incididunt duis.",
-      "price": 328.38,
-      "careType": ["Уход за лицом", "Уход за ногами", "Гигиеническая продукция"]
-    },
-    {
-      "imageURL": "/images/products/product-4.png",
-      "name": "BIMAX Порошок стиральный Автомат 100 пятен COMPACT",
-      "type": "weight",
-      "size": 50,
-      "barcode": 4900529708948,
-      "manufacturer": "Булгари Грин",
-      "brand": "GRIFON",
-      "description": "Amet qui adipisicing quis incididunt proident elit voluptate non. Ut voluptate ea culpa ex. Sint aliquip nisi amet enim enim occaecat exercitation amet. Proident incididunt cillum sit in nisi elit mollit minim nostrud ipsum irure laborum laborum excepteur. Mollit elit aliquip aliqua consectetur cillum proident amet qui aliqua anim eiusmod velit. Sit elit officia ad cupidatat.",
-      "price": 762.21,
-      "careType": [
-        "Средства для загара",
-        "Гигиена полости рта",
-        "Подарочные наборы"
-      ]
-    },
-    {
-      "imageURL": "/images/products/product-4.png",
-      "name": "AOS средство для мытья посуды Crystal",
-      "type": "volume",
-      "size": 470,
-      "barcode": 1923222028977,
-      "manufacturer": "Grifon",
-      "brand": "AOS",
-      "description": "Labore eu aliquip officia commodo exercitation dolore. Laboris dolore Lorem do eu dolor in. Exercitation ea mollit dolor minim consectetur adipisicing pariatur enim qui cupidatat. Proident exercitation occaecat cupidatat esse deserunt veniam mollit nostrud ex elit est nisi minim. Id enim duis ad non ut deserunt ex proident. Qui aute eu mollit nisi mollit dolor sunt nulla ea reprehenderit quis cillum irure.",
-      "price": 949.71,
-      "careType": ["Уход за телом", "Уход за лицом", "Уход за ногами"]
-    },
-    {
-      "imageURL": "/images/products/product-4.png",
-      "name": "BIMAX Порошок стиральный Автомат 100 пятен COMPACT",
-      "type": "volume",
-      "size": 770,
-      "barcode": 6192636446223,
-      "manufacturer": "Paclan",
-      "brand": "BioMio",
-      "description": "Dolor laboris adipisicing incididunt exercitation nostrud quis. Duis elit irure elit ea aute ullamco laboris anim ex. Incididunt dolor amet minim nostrud aute cillum aliqua ea sunt. Ad occaecat incididunt qui occaecat occaecat Lorem eiusmod. Sint duis velit laborum fugiat magna ullamco exercitation eiusmod. Irure consequat tempor do culpa nisi fugiat aute dolore reprehenderit laborum aliqua voluptate eu incididunt.",
-      "price": 854.76,
-      "careType": [
-        "Гигиеническая продукция",
-        "Уход за телом",
-        "Гигиена полости рта"
-      ]
-    },
-    {
-      "imageURL": "/images/products/product-4.png",
-      "name": "ARIEL Автмат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник",
-      "type": "volume",
-      "size": 350,
-      "barcode": 6987230108629,
-      "manufacturer": "BioMio",
-      "brand": "HELP",
-      "description": "Velit officia ea eu nulla consequat dolore nisi mollit aliquip nisi ut occaecat aliquip. Ipsum labore exercitation laborum exercitation elit sunt labore eu aliqua enim pariatur mollit ut. Id aliqua quis labore fugiat ea irure. Nostrud occaecat amet cillum Lorem ad nostrud pariatur eiusmod duis do esse. Laborum cupidatat voluptate irure cupidatat dolor minim. Fugiat sunt est minim reprehenderit cillum elit consequat consectetur nulla.",
-      "price": 666.98,
-      "careType": [
-        "Уход за волосами",
-        "Гигиена полости рта",
-        "Гигиеническая продукция"
-      ]
-    },
-    {
-      "imageURL": "/images/products/product-4.png",
-      "name": "AOS средство для мытья посуды Crystal",
-      "type": "weight",
-      "size": 940,
-      "barcode": 4754849402508,
-      "manufacturer": "Paclan",
-      "brand": "Nivea",
-      "description": "Sunt proident voluptate eu aliquip excepteur labore tempor ipsum. Ea deserunt proident duis irure nulla est nisi irure elit. Dolore velit deserunt pariatur irure do Lorem cupidatat dolor est commodo ex aliqua deserunt pariatur. Excepteur commodo velit ipsum anim ut esse enim nulla eiusmod veniam voluptate velit. Tempor ex culpa mollit laborum. Do sunt irure aliquip nulla reprehenderit voluptate anim tempor sint.",
-      "price": 832.79,
-      "careType": ["Уход за лицом", "Средства для бритья", "Бумажная продукция"]
-    },
-    {
-      "imageURL": "/images/products/product-4.png",
-      "name": "BIMAX Порошок стиральный Автомат 100 пятен COMPACT",
-      "type": "volume",
-      "size": 910,
-      "barcode": 7348728776879,
-      "manufacturer": "BioMio",
-      "brand": "BioMio",
-      "description": "Adipisicing eu fugiat cupidatat officia reprehenderit commodo consectetur eiusmod nostrud mollit aliquip Lorem. Ipsum esse est elit nisi non in. Ullamco tempor occaecat officia tempor officia nulla magna. Cupidatat minim elit proident elit. Excepteur in sint laborum exercitation excepteur veniam cillum. Mollit fugiat nulla excepteur veniam do elit dolor nostrud nisi enim sint incididunt do nostrud.",
-      "price": 13.24,
-      "careType": [
-        "Уход за телом",
-        "Гигиена полости рта",
-        "Гигиеническая продукция"
-      ]
-    },
-    {
-      "imageURL": "/images/products/product-4.png",
-      "name": "BioMio BIO-SOAP Экологичное туалетное мыло. Литсея и бергамот",
-      "type": "weight",
-      "size": 30,
-      "barcode": 5931143476865,
-      "manufacturer": "Boyscout",
-      "brand": "GRIFON",
-      "description": "Ea ipsum fugiat culpa commodo irure commodo irure ea laborum. Aliquip aute laboris quis do aliqua voluptate occaecat sint velit mollit exercitation. Voluptate deserunt culpa ullamco amet adipisicing magna amet labore mollit incididunt tempor exercitation ad occaecat. In fugiat ullamco deserunt aliquip adipisicing veniam irure dolore nulla quis voluptate aliquip in consectetur. Et labore reprehenderit proident reprehenderit incididunt adipisicing. Amet excepteur elit id Lorem aliqua nostrud.",
-      "price": 325.64,
-      "careType": ["Уход за лицом", "Уход за телом", "Бумажная продукция"]
-    },
-    {
-      "imageURL": "/images/products/product-4.png",
-      "name": "Апельсинка Булгари Грин",
-      "type": "weight",
-      "size": 190,
-      "barcode": 8242357886905,
-      "manufacturer": "Нэфис",
-      "brand": "GRIFON",
-      "description": "Dolor cupidatat aliqua tempor adipisicing deserunt amet in sint consectetur nostrud labore adipisicing. Ipsum labore mollit eu id velit. Dolore dolor do Lorem adipisicing consequat deserunt do enim occaecat. Non culpa voluptate adipisicing dolore ex. Anim sit proident irure sint ea nulla sit incididunt. Culpa adipisicing nostrud culpa voluptate.",
-      "price": 565.89,
-      "careType": ["Уход за лицом", "Средства для загара", "Бумажная продукция"]
-    },
-    {
-      "imageURL": "/images/products/product-4.png",
-      "name": "AOS средство для мытья посуды Crystal",
-      "type": "volume",
-      "size": 760,
-      "barcode": 4843210310138,
-      "manufacturer": "BioMio",
-      "brand": "GRIFON",
-      "description": "Fugiat ad id quis commodo anim fugiat qui do excepteur consectetur tempor. Ut nisi id minim aliqua aliquip labore ad laboris nulla consectetur laborum. Labore cillum enim velit ipsum qui aliquip sit nostrud ad pariatur. Eiusmod voluptate tempor consequat et eiusmod fugiat mollit non incididunt. Velit sunt sit adipisicing reprehenderit dolore labore ut. Voluptate aliqua est aliquip sint ex non reprehenderit cupidatat ea est.",
-      "price": 385.68,
-      "careType": [
-        "Подарочные наборы",
-        "Средства для бритья",
-        "Средства для загара"
-      ]
-    },
-    {
-      "imageURL": "/images/products/product-4.png",
-      "name": "Апельсинка Булгари Грин",
-      "type": "weight",
-      "size": 240,
-      "barcode": 6788024679034,
-      "manufacturer": "Grifon",
-      "brand": "AOS",
-      "description": "Magna mollit ipsum pariatur est id incididunt. Nisi ipsum sit adipisicing duis dolor excepteur. Eiusmod pariatur velit id aliquip deserunt id labore elit. Labore adipisicing laborum excepteur ex. Proident do proident exercitation nostrud occaecat enim officia incididunt aliquip ullamco est. Et mollit ex est tempor ullamco est enim dolore.",
-      "price": 906.77,
-      "careType": [
-        "Уход за лицом",
-        "Гигиеническая продукция",
-        "Подарочные наборы"
-      ]
-    },
-    {
-      "imageURL": "/images/products/product-4.png",
-      "name": "AOS средство для мытья посуды Crystal",
-      "type": "weight",
-      "size": 480,
-      "barcode": 9341214037312,
-      "manufacturer": "Нэфис",
-      "brand": "AOS",
-      "description": "Nisi qui enim amet velit ullamco incididunt magna in irure pariatur dolore in adipisicing. Eiusmod ipsum pariatur in consequat officia irure ipsum do. Et magna in ea sit laborum est. Adipisicing fugiat proident sint excepteur. Elit enim laboris nisi commodo enim. Nisi aliqua labore sunt dolore adipisicing sint voluptate ad culpa occaecat.",
-      "price": 484.97,
-      "careType": ["Уход за ногами", "Средства для бритья", "Подарочные наборы"]
-    },
-    {
-      "imageURL": "/images/products/product-4.png",
-      "name": "AOS средство для мытья посуды Crystal",
-      "type": "weight",
-      "size": 660,
-      "barcode": 8602389669767,
-      "manufacturer": "BioMio",
-      "brand": "AOS",
-      "description": "Labore nisi aute anim consectetur ipsum et proident exercitation sint ea fugiat. Lorem laboris adipisicing Lorem consequat amet voluptate duis. Reprehenderit quis aliquip fugiat duis cillum Lorem exercitation veniam tempor enim ut voluptate nostrud. Duis qui eu consequat ea labore incididunt est ea ad exercitation. Adipisicing et voluptate aliquip cillum adipisicing. Velit laborum exercitation occaecat culpa officia dolor ex ea eiusmod eiusmod.",
-      "price": 496.74,
-      "careType": [
-        "Уход за волосами",
-        "Подарочные наборы",
-        "Гигиена полости рта"
-      ]
-    },
-    {
-      "imageURL": "/images/products/product-4.png",
-      "name": "AOS Ср-во для мытья посуды Апельсин+мятаh",
-      "type": "weight",
-      "size": 960,
-      "barcode": 3696790386846,
-      "manufacturer": "Булгари Грин",
-      "brand": "HELP",
-      "description": "Voluptate officia velit laborum id eiusmod officia occaecat exercitation esse. Culpa ex laboris ad ullamco magna proident ullamco mollit non excepteur. Commodo id enim occaecat cillum consequat cupidatat irure fugiat cillum proident laborum sunt sit labore. Proident proident est reprehenderit enim proident ut exercitation sunt. Aute officia do dolore excepteur veniam nostrud labore aliqua pariatur Lorem occaecat tempor. Deserunt do labore nulla minim ullamco.",
-      "price": 607.64,
-      "careType": ["Уход за волосами", "Уход за руками", "Бумажная продукция"]
-    },
-    {
-      "imageURL": "/images/products/product-4.png",
-      "name": "AOS средство для мытья посуды Crystal",
-      "type": "weight",
-      "size": 310,
-      "barcode": 6422426381478,
-      "manufacturer": "BioMio",
-      "brand": "Домашний сундук",
-      "description": "Magna consequat culpa ad quis est minim occaecat fugiat deserunt elit proident sit. Commodo laborum quis dolor laboris nostrud consectetur nulla laborum. Laboris non excepteur Lorem qui enim magna voluptate id culpa voluptate sint. Labore nisi consequat anim nostrud duis sunt magna ut ut do enim deserunt Lorem. Ut voluptate pariatur aliquip enim esse magna voluptate. Esse exercitation culpa laboris qui enim.",
-      "price": 881.58,
-      "careType": ["Гигиеническая продукция", "Уход за телом", "Уход за руками"]
-    },
-    {
-      "imageURL": "/images/products/product-4.png",
-      "name": "BioMio BIO-SOAP Экологичное туалетное мыло. Литсея и бергамот",
-      "type": "volume",
-      "size": 280,
-      "barcode": 1432726085502,
-      "manufacturer": "Булгари Грин",
-      "brand": "AOS",
-      "description": "Excepteur est officia do dolor ex tempor aliquip deserunt mollit id id id irure duis. Sunt amet duis fugiat non reprehenderit ullamco labore elit dolore pariatur. Consectetur fugiat consectetur excepteur occaecat culpa adipisicing ipsum officia. Ex exercitation aliquip labore sint proident fugiat. Velit elit pariatur consequat fugiat aliquip officia anim excepteur exercitation pariatur minim magna tempor ipsum. Nulla sunt aliqua non enim exercitation occaecat aute sunt occaecat irure.",
-      "price": 599.75,
-      "careType": ["Уход за телом", "Уход за руками", "Уход за ногами"]
-    },
-    {
-      "imageURL": "/images/products/product-4.png",
-      "name": "ARIEL Автмат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник",
-      "type": "weight",
-      "size": 310,
-      "barcode": 8193582139783,
-      "manufacturer": "Boyscout",
-      "brand": "AOS",
-      "description": "Ullamco in nostrud nostrud tempor ullamco ipsum ad sint ea proident labore irure. Ipsum irure elit irure proident sit esse minim laborum. Voluptate esse laborum aute amet in aliqua excepteur non cillum aliquip aliqua ullamco. Culpa culpa do eiusmod nulla et incididunt. Aliquip officia aliqua enim minim occaecat magna fugiat in nisi quis do pariatur proident. Commodo eu officia laboris dolore.",
-      "price": 112,
-      "careType": ["Уход за руками", "Уход за лицом", "Средства для загара"]
-    },
-    {
-      "imageURL": "/images/products/product-4.png",
-      "name": "AOS Ср-во для мытья посуды Апельсин+мятаh",
-      "type": "volume",
-      "size": 240,
-      "barcode": 8122969114404,
-      "manufacturer": "Булгари Грин",
-      "brand": "HELP",
-      "description": "Consequat cillum ullamco fugiat dolore minim ad. Fugiat fugiat velit non duis non amet elit aliquip sit. Culpa aute velit reprehenderit ipsum ipsum consequat elit laboris officia nulla. Fugiat ea duis minim pariatur Lorem est elit ullamco nostrud. Laboris minim ullamco officia ex aliquip dolor irure. Culpa irure anim ullamco consequat eiusmod nostrud amet tempor cillum occaecat mollit et Lorem.",
-      "price": 943.45,
-      "careType": [
-        "Гигиеническая продукция",
-        "Средства для бритья",
-        "Уход за телом"
-      ]
-    },
-    {
-      "imageURL": "/images/products/product-4.png",
-      "name": "AOS средство для мытья посуды Crystal",
-      "type": "weight",
-      "size": 290,
-      "barcode": 6803079576553,
-      "manufacturer": "Нэфис",
-      "brand": "Домашний сундук",
-      "description": "Mollit nulla sint dolore laboris elit consequat do non dolore proident consequat ex excepteur. Adipisicing sint dolor nisi anim deserunt anim commodo ipsum proident. Consectetur consequat laboris officia cillum quis consequat et. Magna sit irure non reprehenderit. Proident officia consequat ullamco ex commodo non deserunt tempor ipsum dolor est velit voluptate. Enim proident ad voluptate in do dolor id in est magna sit irure duis.",
-      "price": 813.19,
-      "careType": ["Подарочные наборы", "Уход за ногами", "Уход за волосами"]
-    },
-    {
-      "imageURL": "/images/products/product-4.png",
-      "name": "Апельсинка Булгари Грин",
-      "type": "volume",
-      "size": 660,
-      "barcode": 7830324988208,
-      "manufacturer": "Нэфис",
-      "brand": "HELP",
-      "description": "Labore occaecat cillum do veniam magna non tempor est elit irure ad. Anim aliqua pariatur pariatur ut mollit esse nostrud officia in culpa cupidatat mollit consectetur minim. Do deserunt non mollit elit nisi reprehenderit duis tempor id incididunt non amet. Sunt reprehenderit exercitation ut ipsum dolore ad esse elit laborum. Adipisicing magna excepteur excepteur do irure laborum dolore eu. Lorem aute nulla dolore officia mollit incididunt consequat eiusmod sint consequat.",
-      "price": 406.43,
-      "careType": ["Уход за ногами", "Уход за лицом", "Бумажная продукция"]
-    },
-    {
-      "imageURL": "/images/products/product-4.png",
-      "name": "Апельсинка Булгари Грин",
-      "type": "volume",
-      "size": 10,
-      "barcode": 4565355299284,
-      "manufacturer": "Boyscout",
-      "brand": "GRIFON",
-      "description": "Qui consectetur labore quis ut eiusmod occaecat deserunt excepteur sunt ad fugiat veniam incididunt. Nulla eu labore cupidatat non. Dolor sint et enim veniam veniam aliquip anim amet. Ullamco ex pariatur ullamco reprehenderit aute minim officia. Officia eu nulla esse nostrud ipsum proident mollit in esse labore excepteur tempor dolor. Do excepteur ipsum reprehenderit magna amet nulla duis.",
-      "price": 820.04,
-      "careType": [
-        "Бумажная продукция",
-        "Подарочные наборы",
-        "Уход за волосами"
-      ]
-    },
-    {
-      "imageURL": "/images/products/product-4.png",
-      "name": "BIMAX Порошок стиральный Автомат 100 пятен COMPACT",
-      "type": "weight",
-      "size": 400,
-      "barcode": 7031816045167,
-      "manufacturer": "Булгари Грин",
-      "brand": "BioMio",
-      "description": "Aute nostrud ipsum eiusmod eu eiusmod qui minim anim aliquip esse. Nostrud id quis ut eiusmod in fugiat dolor adipisicing enim. Pariatur sit culpa incididunt occaecat ullamco in eu aute laborum sit laborum id. Nostrud incididunt ex proident fugiat tempor laboris laborum esse. Eu ullamco nulla eu nulla tempor nisi irure. Voluptate laboris officia nisi dolor ex nulla eu sint nisi ad.",
-      "price": 762.17,
-      "careType": [
-        "Бумажная продукция",
-        "Гигиеническая продукция",
-        "Уход за ногами"
-      ]
     }
   ]
 }

@@ -27,6 +27,9 @@ const Pagination = ({
         src={leftIcon}
         alt="arrow pointing left"
         className="pagination__icon"
+        onClick={() => {
+          paginate(currentPage === 1 ? 1 : currentPage - 1);
+        }}
       />
       <ul className="pagination__list">
         {pageNumbers.map((number, index) => (
@@ -58,6 +61,11 @@ const Pagination = ({
         src={rightIcon}
         alt="arrow pointing right"
         className="pagination__icon"
+        onClick={() => {
+          paginate(
+            currentPage < pageNumbers.length ? currentPage + 1 : currentPage
+          );
+        }}
       />
     </nav>
   );
