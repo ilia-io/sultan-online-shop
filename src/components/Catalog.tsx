@@ -45,6 +45,7 @@ const Catalog = (props: Props) => {
     categories,
     activeManufacturers,
     manufacturersFilter,
+    manufacturersSearch,
   } = useAppSelector(filterSelector);
 
   function dispatchBarcode(barcode: number) {
@@ -270,6 +271,11 @@ const Catalog = (props: Props) => {
                   manufacturersFilter
                     ? activeManufacturers.includes(item.manufacturer)
                     : true
+                )
+                .filter((item) =>
+                  item.manufacturer
+                    .toLowerCase()
+                    .includes(manufacturersSearch.toLowerCase())
                 )
                 .map((product: IProduct) => (
                   <li key={product.barcode} className="catalog__product">
