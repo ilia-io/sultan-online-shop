@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import arrowDown from '../assets/icons/sort-arrow-down.svg';
 import arrowUp from '../assets/icons/sort-arrow-up.svg';
 import DB from '../assets/db.json';
@@ -12,6 +12,7 @@ import { RootState } from '../app/store';
 import { useAppDispatch, useAppSelector } from '../app/hooks';
 import { Link } from 'react-router-dom';
 import { getCurrentItem } from '../app/reducers/productSlice';
+import { filterSelector, setActiveCaterogy } from '../app/reducers/filterSlice';
 
 type Props = {};
 
@@ -34,8 +35,10 @@ const sortOptionsArr: ISortOption[] = [
 const Catalog = (props: Props) => {
   const [showSortOptions, setShowSortOptions] = useState(false);
 
-  const PRODUCTS = useAppSelector((state: RootState) => state.product.items);
   const dispatch = useAppDispatch();
+
+  const PRODUCTS = useAppSelector((state: RootState) => state.product.items);
+  const { activeCategory } = useAppSelector(filterSelector);
 
   function dispatchBarcode(barcode: number) {
     dispatch(getCurrentItem(barcode));
@@ -45,22 +48,26 @@ const Catalog = (props: Props) => {
     setShowSortOptions(!showSortOptions);
   }
 
+  function handleClickCategory(categorie: string) {
+    dispatch(setActiveCaterogy(categorie));
+  }
+
   const [activeSortOption, setActiveSortOption] = useState(sortOptionsArr[0]);
 
   function handleSort(option: ISortOption) {
     setActiveSortOption(option);
     setShowSortOptions(false);
-    sort(option);
+    sort();
   }
 
-  const [filteredProducts, setFilteredProducts] = useState(PRODUCTS);
+  const [filteredProducts, setFilteredProducts] = useState(PRODUCTS || []);
 
-  function sort(option: ISortOption) {
+  function sort() {
     const itemsCopy = [...filteredProducts];
 
-    if (option.type === 'name') {
+    if (activeSortOption.type === 'name') {
       itemsCopy.sort((itemA, itemB) => {
-        if (option.reversed) {
+        if (activeSortOption.reversed) {
           return itemB.name.localeCompare(itemA.name);
         }
         return itemA.name.localeCompare(itemB.name);
@@ -68,16 +75,69 @@ const Catalog = (props: Props) => {
       setFilteredProducts(itemsCopy);
     } else {
       itemsCopy.sort((itemA, itemB) => {
-        if (option.reversed) {
+        if (activeSortOption.reversed) {
           return itemA.price - itemB.price;
         }
         return itemB.price - itemA.price;
       });
       setFilteredProducts(itemsCopy);
-      // setSorted({ sorted: 'amount', reversed: !sorted.reversed });
     }
   }
 
+  const [inputPriceMin, setInputPriceMin] = useState('0');
+  const [inputPriceMax, setInputPriceMax] = useState('10000');
+  // const cachedMin = useCallback(priceFilterMin, [inputPriceMin, PRODUCTS]);
+  // const cachedMax = useCallback(priceFilterMax, [inputPriceMax, PRODUCTS]);
+
+  useEffect(() => {
+    // if (inputPriceMin === '' || inputPriceMax === '') {
+    setFilteredProducts(PRODUCTS);
+    // } else {
+    priceFilter();
+    sort();
+    // }
+
+    return () => {};
+  }, [activeSortOption, inputPriceMin, inputPriceMax]);
+
+  // function priceFilterMin(e: React.ChangeEvent<HTMLInputElement>) {
+  //   const itemsCopy = PRODUCTS.filter((item) => {
+  //     return item.price > Number(e.target.value);
+  //   });
+  //   setFilteredProducts(itemsCopy);
+  // }
+
+  function handlePriceMin(e: React.ChangeEvent<HTMLInputElement>) {
+    setInputPriceMin(e.target.value);
+    if (e.target.value === '') {
+      setFilteredProducts(PRODUCTS);
+    }
+  }
+
+  // function priceFilterMax(e: React.ChangeEvent<HTMLInputElement>) {
+  //   const itemsCopy = PRODUCTS.filter((item) => {
+  //     return item.price < Number(e.target.value);
+  //   });
+  //   setFilteredProducts(itemsCopy);
+  // }
+
+  function handlePriceMax(e: React.ChangeEvent<HTMLInputElement>) {
+    setInputPriceMax(e.target.value);
+    if (e.target.value === '') {
+      setFilteredProducts(PRODUCTS);
+    }
+  }
+
+  function priceFilter() {
+    const itemsCopy = PRODUCTS.filter((item) => {
+      return (
+        item.price > Number(inputPriceMin) && item.price < Number(inputPriceMax)
+      );
+    });
+    setFilteredProducts(itemsCopy);
+  }
+
+  console.log(filteredProducts.length);
   return (
     <section className="catalog">
       <div className="catalog__wrapper container">
@@ -121,7 +181,15 @@ const Catalog = (props: Props) => {
         <section className="catalog__top-line-categories">
           <ul className="catalog__top-line-categories-list">
             {categories.map((categorie) => (
-              <li key={categorie} className="catalog__top-line-categories-item">
+              <li
+                onClick={() => handleClickCategory(categorie)}
+                key={categorie}
+                className={
+                  activeCategory === categorie
+                    ? 'catalog__top-line-categories-item catalog__top-line-categories-item_active'
+                    : 'catalog__top-line-categories'
+                }
+              >
                 {categorie}
               </li>
             ))}
@@ -140,17 +208,21 @@ const Catalog = (props: Props) => {
                 <label htmlFor="priceMin"></label>
                 <input
                   id="priceMin"
-                  type="text"
+                  type="number"
                   className="catalog__price-filter-min"
                   placeholder="0"
+                  value={inputPriceMin}
+                  onChange={(e) => handlePriceMin(e)}
                 />
                 <p className="catalog__price-filter-divider">-</p>
                 <label htmlFor="priceMax"></label>
                 <input
                   id="priceMax"
-                  type="text"
+                  type="number"
                   className="catalog__price-filter-max"
                   placeholder="10 000"
+                  value={inputPriceMax}
+                  onChange={(e) => handlePriceMax(e)}
                 />
               </div>
             </div>
@@ -167,8 +239,13 @@ const Catalog = (props: Props) => {
               <ul className="catalog__side-filters-categories-list">
                 {categories.map((categorie) => (
                   <li
+                    onClick={() => handleClickCategory(categorie)}
                     key={categorie}
-                    className="catalog__side-filters-categories-item"
+                    className={
+                      activeCategory === categorie
+                        ? 'catalog__side-filters-categories-item catalog__side-filters-categories-item_active'
+                        : 'catalog__side-filters-categories-item'
+                    }
                   >
                     {categorie}
                   </li>
@@ -178,66 +255,73 @@ const Catalog = (props: Props) => {
           </section>
           <section className="catalog__products">
             <ul className="catalog__products-list">
-              {filteredProducts.map((product: IProduct) => (
-                <li key={product.barcode} className="catalog__product">
-                  <img
-                    src={product.imageURL}
-                    alt={product.name}
-                    className="catalog__product-img"
-                  />
-                  <div className="catalog__product-type-box">
+              {filteredProducts
+                .filter((item) => item.careType.includes(activeCategory))
+                .map((product: IProduct) => (
+                  <li key={product.barcode} className="catalog__product">
                     <img
-                      src={
-                        product.type === 'weight'
-                          ? typeSolidBoxIcon
-                          : typeBottleIcon
-                      }
-                      alt={product.type === 'weight' ? 'solid box' : 'bottle'}
-                      className="catalog__product-type-icon"
+                      src={product.imageURL}
+                      alt={product.name}
+                      className="catalog__product-img"
                     />
-                    <p className="catalog__product-type-text">
-                      {product.size} {product.type === 'weight' ? 'г' : 'мл'}
-                    </p>
-                  </div>
-                  <Link to={`/catalog/${product.barcode}`}>
-                    <h2
-                      onClick={() => dispatchBarcode(product.barcode)}
-                      className="catalog__product-title"
-                    >
-                      {product.name}
-                    </h2>
-                  </Link>
-                  <p className="catalog__product-barcode">
-                    Штрихкод:{' '}
-                    <span className="catalog__product-barcode_value">
-                      {product.barcode}
-                    </span>
-                  </p>
-                  <p className="catalog__product-manufacturer">
-                    Производитель:{' '}
-                    <span className="catalog__product-manufacturer_value">
-                      {product.manufacturer}
-                    </span>
-                  </p>
-                  <p className="catalog__product-brand">
-                    Бренд:{' '}
-                    <span className="catalog__product-brand_value">
-                      {product.brand}
-                    </span>
-                  </p>
-                  <div className="catalog__product-price-box">
-                    <p className="catalog__product-price">{product.price} ₸</p>
-                    <button type="button" className="catalog__product-cartBtn">
-                      В КОРЗИНУ{' '}
+                    <div className="catalog__product-type-box">
                       <img
-                        src={cartBtnIcon}
-                        alt="cart"
-                        className="catalog__product-cartBtn-icon"
+                        src={
+                          product.type === 'weight'
+                            ? typeSolidBoxIcon
+                            : typeBottleIcon
+                        }
+                        alt={product.type === 'weight' ? 'solid box' : 'bottle'}
+                        className="catalog__product-type-icon"
                       />
-                    </button>
-                  </div>
-                </li>
-              ))}
+                      <p className="catalog__product-type-text">
+                        {product.size} {product.type === 'weight' ? 'г' : 'мл'}
+                      </p>
+                    </div>
+                    <Link to={`/catalog/${product.barcode}`}>
+                      <h2
+                        onClick={() => dispatchBarcode(product.barcode)}
+                        className="catalog__product-title"
+                      >
+                        {product.name}
+                      </h2>
+                    </Link>
+                    <p className="catalog__product-barcode">
+                      Штрихкод:{' '}
+                      <span className="catalog__product-barcode_value">
+                        {product.barcode}
+                      </span>
+                    </p>
+                    <p className="catalog__product-manufacturer">
+                      Производитель:{' '}
+                      <span className="catalog__product-manufacturer_value">
+                        {product.manufacturer}
+                      </span>
+                    </p>
+                    <p className="catalog__product-brand">
+                      Бренд:{' '}
+                      <span className="catalog__product-brand_value">
+                        {product.brand}
+                      </span>
+                    </p>
+                    <div className="catalog__product-price-box">
+                      <p className="catalog__product-price">
+                        {product.price} ₸
+                      </p>
+                      <button
+                        type="button"
+                        className="catalog__product-cartBtn"
+                      >
+                        В КОРЗИНУ{' '}
+                        <img
+                          src={cartBtnIcon}
+                          alt="cart"
+                          className="catalog__product-cartBtn-icon"
+                        />
+                      </button>
+                    </div>
+                  </li>
+                ))}
             </ul>
           </section>
         </section>

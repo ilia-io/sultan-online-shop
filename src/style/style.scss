@@ -686,7 +686,9 @@ a {
   &__top-line-categories-list {
     list-style: none;
     display: flex;
+    align-items: center;
     gap: 11px;
+    text-align: center;
   }
 
   &__top-line-categories-item {
@@ -695,9 +697,11 @@ a {
     background: #FFFFFF;
     box-shadow: 0px 15px 70px -11px rgba(43, 28, 1, 0.04);
     border-radius: 10px;
-
-    text-align: center;
     cursor: pointer;
+
+    &_active {
+      background-color: $_5;
+    }
   }
 
 
@@ -879,7 +883,14 @@ a {
     line-height: 150%;
     text-transform: uppercase;
     color: $_1;
+    padding: 6px;
     margin-bottom: 20px;
+    cursor: pointer;
+    border-radius: 8px;
+
+    &_active {
+      background-color: $_5;
+    }
   }
 
   // -------------------------------products
