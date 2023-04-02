@@ -18,6 +18,7 @@ import {
   setPriceFilterMax,
   setPriceFilterMin,
 } from '../app/reducers/filterSlice';
+import Pagination from './Pagination';
 
 type Props = {};
 
@@ -122,6 +123,15 @@ const Catalog = (props: Props) => {
     setInputPriceMax(e.target.value);
     dispatch(setPriceFilterMax(e.target.value));
   }
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(15);
+
+   const indexOfLastPost = currentPage * postsPerPage;
+   const indexOfFirstPost = indexOfLastPost - postsPerPage;
+   const currentPosts = filteredProducts.slice(indexOfFirstPost, indexOfLastPost);
+
+  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
   console.log(document.querySelectorAll('.catalog__product').length);
   return (
@@ -240,8 +250,14 @@ const Catalog = (props: Props) => {
             </div>
           </section>
           <section className="catalog__products">
+            <Pagination
+              postsPerPage={postsPerPage}
+              totalPosts={filteredProducts.length}
+              paginate={paginate}
+              currentPage={currentPage}
+            />
             <ul className="catalog__products-list">
-              {filteredProducts
+              {currentPosts
                 .filter((item) =>
                   categoryFilter ? item.careType.includes(activeCategory) : true
                 )
