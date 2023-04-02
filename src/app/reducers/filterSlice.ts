@@ -5,11 +5,19 @@ import { RootState } from '../store';
 export interface FilterState {
   categories: string[];
   activeCategory: string;
+  categoryFilter: boolean;
+  manufacturers: string[];
+  activeManufacturers: string[];
+  manufacturersFilter: boolean;
 }
 
 const initialState: FilterState = {
   categories: DB.careTypes,
   activeCategory: '',
+  categoryFilter: false,
+  manufacturers: DB.manufacturers,
+  activeManufacturers: [],
+  manufacturersFilter: false,
 };
 
 export const filterSlice = createSlice({
@@ -17,7 +25,27 @@ export const filterSlice = createSlice({
   initialState,
   reducers: {
     setActiveCaterogy: (state, action: PayloadAction<string>) => {
-      state.activeCategory = action.payload
+      if (state.activeCategory === action.payload) {
+        state.categoryFilter = false;
+        state.activeCategory = '';
+      } else {
+        state.categoryFilter = true;
+        state.activeCategory = action.payload;
+      }
+    },
+    setActiveManufacturers: (state, action: PayloadAction<string>) => {
+      state.manufacturersFilter = true;
+      if (state.activeManufacturers.includes(action.payload)) {
+        state.activeManufacturers = state.activeManufacturers.filter(
+          (item) => item !== action.payload
+        );
+      } else {
+        state.activeManufacturers.push(action.payload);
+      }
+
+      if (state.activeManufacturers.length === 0) {
+        state.manufacturersFilter = false;
+      }
     },
   },
   // The `extraReducers` field lets the slice handle actions defined elsewhere,
@@ -39,6 +67,7 @@ export const filterSlice = createSlice({
 
 export const filterSelector = (state: RootState) => state.filter;
 
-export const { setActiveCaterogy } = filterSlice.actions;
+export const { setActiveCaterogy, setActiveManufacturers } =
+  filterSlice.actions;
 
 export default filterSlice.reducer;

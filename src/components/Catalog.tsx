@@ -16,8 +16,8 @@ import { filterSelector, setActiveCaterogy } from '../app/reducers/filterSlice';
 
 type Props = {};
 
-const categories: string[] = DB.careTypes;
-export const manufacturers: string[] = DB.manufacturers;
+// const categories: string[] = DB.careTypes;
+// export const manufacturers: string[] = DB.manufacturers;
 // export const PRODUCTS: IProduct[] = DB.products;
 
 interface ISortOption {
@@ -38,7 +38,14 @@ const Catalog = (props: Props) => {
   const dispatch = useAppDispatch();
 
   const PRODUCTS = useAppSelector((state: RootState) => state.product.items);
-  const { activeCategory } = useAppSelector(filterSelector);
+  const {
+    activeCategory,
+    categoryFilter,
+    manufacturers,
+    categories,
+    activeManufacturers,
+    manufacturersFilter,
+  } = useAppSelector(filterSelector);
 
   function dispatchBarcode(barcode: number) {
     dispatch(getCurrentItem(barcode));
@@ -137,7 +144,7 @@ const Catalog = (props: Props) => {
     setFilteredProducts(itemsCopy);
   }
 
-  console.log(filteredProducts.length);
+  console.log(document.querySelectorAll('.catalog__product').length);
   return (
     <section className="catalog">
       <div className="catalog__wrapper container">
@@ -256,7 +263,14 @@ const Catalog = (props: Props) => {
           <section className="catalog__products">
             <ul className="catalog__products-list">
               {filteredProducts
-                .filter((item) => item.careType.includes(activeCategory))
+                .filter((item) =>
+                  categoryFilter ? item.careType.includes(activeCategory) : true
+                )
+                .filter((item) =>
+                  manufacturersFilter
+                    ? activeManufacturers.includes(item.manufacturer)
+                    : true
+                )
                 .map((product: IProduct) => (
                   <li key={product.barcode} className="catalog__product">
                     <img

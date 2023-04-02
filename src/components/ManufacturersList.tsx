@@ -1,15 +1,25 @@
 import React, { useState } from 'react';
-import { manufacturers } from './Catalog';
 import arrowDown from '../assets/icons/sort-arrow-down.svg';
 import arrowUp from '../assets/icons/sort-arrow-up.svg';
+import { useAppDispatch, useAppSelector } from '../app/hooks';
+import {
+  filterSelector,
+  setActiveManufacturers,
+} from '../app/reducers/filterSlice';
 
 type Props = {};
 
 const ManufacturersList = (props: Props) => {
   const [show, setShow] = useState(true);
+  const { manufacturers } = useAppSelector(filterSelector);
+  const dispatch = useAppDispatch();
 
   function manufacturerShowHideAll() {
     setShow(!show);
+  }
+
+  function handleClickManufacturer(manufacturer: string) {
+    dispatch(setActiveManufacturers(manufacturer));
   }
 
   return (
@@ -23,6 +33,7 @@ const ManufacturersList = (props: Props) => {
             >
               <label className="catalog__manufacturer-filter-label">
                 <input
+                  onChange={() => handleClickManufacturer(manufacturer)}
                   type="checkbox"
                   className="catalog__manufacturer-filter-checkbox"
                 />
