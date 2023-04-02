@@ -5,9 +5,7 @@ import deleteIcon from '../assets/icons/cart-delete.svg';
 import { createPortal } from 'react-dom';
 import Modal from './Modal';
 import orderCheckIcon from '../assets/icons/order-double-check.svg';
-import { IProduct } from '../@types/Product';
 import { useAppDispatch, useAppSelector } from '../app/hooks';
-import { RootState } from '../app/store';
 import {
   addItem,
   cartSelector,

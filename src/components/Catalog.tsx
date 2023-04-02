@@ -19,6 +19,7 @@ import {
   setPriceFilterMin,
 } from '../app/reducers/filterSlice';
 import Pagination from './Pagination';
+import { addItem } from '../app/reducers/cartSlice';
 
 type Props = {};
 
@@ -136,7 +137,11 @@ const Catalog = (props: Props) => {
 
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
-  console.log(document.querySelectorAll('.catalog__product').length);
+  function handleAddItem(product: IProduct) {
+    dispatch(addItem(product));
+  }
+
+  // console.log(document.querySelectorAll('.catalog__product').length);
   return (
     <section className="catalog">
       <div className="catalog__wrapper container">
@@ -186,7 +191,7 @@ const Catalog = (props: Props) => {
                 className={
                   activeCategory === categorie
                     ? 'catalog__top-line-categories-item catalog__top-line-categories-item_active'
-                    : 'catalog__top-line-categories'
+                    : 'catalog__top-line-categories-item'
                 }
               >
                 {categorie}
@@ -229,7 +234,7 @@ const Catalog = (props: Props) => {
               <h2 className="catalog__manufacturer-filter-title">
                 Производитель
               </h2>
-              <SearchForm classPrefix='catalog' />
+              <SearchForm classPrefix="catalog" />
               <ManufacturersList />
 
               <div className="catalog__manufacturer-filter-divider"></div>
@@ -322,6 +327,7 @@ const Catalog = (props: Props) => {
                         {product.price} ₸
                       </p>
                       <button
+                        onClick={() => handleAddItem(product)}
                         type="button"
                         className="catalog__product-cartBtn"
                       >

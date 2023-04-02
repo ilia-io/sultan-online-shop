@@ -692,12 +692,14 @@ a {
   &__top-line-categories-list {
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 11px;
     text-align: center;
   }
 
   &__top-line-categories-item {
+    width: 110px;
     height: 70px;
     padding: 10px;
     background-color: #FFFFFF;
@@ -901,9 +903,14 @@ a {
   }
 
   // -------------------------------products
-  &__products {}
+  &__products {
+    width: 100%;
+    height: 100%;
+  }
 
   &__products-list {
+    min-height: 30vh;
+    min-width: 100%;
     list-style: none;
     max-width: 1025px;
     display: flex;
@@ -913,7 +920,7 @@ a {
   }
 
   &__product {
-    max-width: 326px;
+    width: 326px;
     padding: 35px 28px;
     min-height: 490px;
     background: #FFFFFF;
@@ -947,6 +954,7 @@ a {
   }
 
   &__product-title {
+    max-width: 282px;
     font-weight: 700;
     font-size: 16px;
     line-height: 130%;
@@ -1384,6 +1392,7 @@ a {
     min-height: 191px;
     max-width: 1369px;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
   }

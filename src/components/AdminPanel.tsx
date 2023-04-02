@@ -39,7 +39,7 @@ const AdminPanel = (props: Props) => {
         value.push(options[i].value);
       }
     }
-    console.log(value);
+
     setCareTypeOption(value);
   }
 
