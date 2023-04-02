@@ -127,9 +127,12 @@ const Catalog = (props: Props) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(15);
 
-   const indexOfLastPost = currentPage * postsPerPage;
-   const indexOfFirstPost = indexOfLastPost - postsPerPage;
-   const currentPosts = filteredProducts.slice(indexOfFirstPost, indexOfLastPost);
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = filteredProducts.slice(
+    indexOfFirstPost,
+    indexOfLastPost
+  );
 
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
@@ -250,12 +253,6 @@ const Catalog = (props: Props) => {
             </div>
           </section>
           <section className="catalog__products">
-            <Pagination
-              postsPerPage={postsPerPage}
-              totalPosts={filteredProducts.length}
-              paginate={paginate}
-              currentPage={currentPage}
-            />
             <ul className="catalog__products-list">
               {currentPosts
                 .filter((item) =>
@@ -339,6 +336,12 @@ const Catalog = (props: Props) => {
                   </li>
                 ))}
             </ul>
+            <Pagination
+              postsPerPage={postsPerPage}
+              totalPosts={filteredProducts.length}
+              paginate={paginate}
+              currentPage={currentPage}
+            />
           </section>
         </section>
       </div>
