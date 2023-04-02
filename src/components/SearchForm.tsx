@@ -3,9 +3,11 @@ import searchBtn from '../assets/icons/search-btn.svg';
 import { useAppDispatch } from '../app/hooks';
 import { setManufacturersSearch } from '../app/reducers/filterSlice';
 
-type Props = {};
+type Props = {
+  classPrefix: string;
+};
 
-const SearchForm = (props: Props) => {
+const SearchForm = ({ classPrefix }: Props) => {
   const [searchValue, setSearchValue] = useState('');
   const dispatch = useAppDispatch();
   function handleSearch(e: React.FormEvent<HTMLFormElement>) {
@@ -15,10 +17,9 @@ const SearchForm = (props: Props) => {
   return (
     <form
       onSubmit={(e) => handleSearch(e)}
-      className="search-form"
+      className={`${classPrefix}__search-form`}
       style={{
         borderRadius: '36px',
-        display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
       }}
@@ -29,7 +30,7 @@ const SearchForm = (props: Props) => {
         name="text"
         type="text"
         placeholder="Поиск..."
-        className="search-input"
+        className={`${classPrefix}__search-input`}
         style={{
           border: 'none',
           outline: 'none',
@@ -40,7 +41,7 @@ const SearchForm = (props: Props) => {
       <input
         name="btn"
         type="submit"
-        className="search-btn"
+        className={`${classPrefix}__search-btn`}
         value=""
         style={{
           backgroundImage: `url(${searchBtn})`,

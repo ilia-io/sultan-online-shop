@@ -151,6 +151,13 @@ a {
     gap: 10px;
   }
 
+  &__mobile-burger-menu {
+    display: none;
+  }
+
+  &__mobile-burger-img {}
+
+
   &__logo {
     height: 66px;
     width: 156px;
@@ -179,7 +186,8 @@ a {
     width: 15px;
   }
 
-  & .search-form {
+  &__search-form {
+    display: flex;
     width: 263px;
     height: 59px;
     font-size: 12px;
@@ -188,11 +196,11 @@ a {
     background-color: #EDEDED;
   }
 
-  & .search-input {
+  &__search-input {
     width: 192px;
   }
 
-  & .search-btn {}
+  &__search-btn {}
 
   &__contact-wrapper {
     height: 92px;
@@ -675,8 +683,6 @@ a {
     }
   }
 
-
-
   &__sort-icon {
     margin-left: 5px;
   }
@@ -808,7 +814,8 @@ a {
     margin-bottom: 15px;
   }
 
-  & .search-form {
+  &__search-form {
+    display: flex;
     width: 238px;
     height: 59px;
     font-size: 12px;
@@ -818,11 +825,11 @@ a {
     margin-bottom: 15px;
   }
 
-  & .search-input {
+  &__search-input {
     width: 168px;
   }
 
-  & .search-btn {}
+  &__search-btn {}
 
   &__manufacturer-filter-list {
     list-style: none;
@@ -1731,5 +1738,77 @@ a {
   &__prop-input {
     width: 250px;
     padding: 4px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 550px;
+    padding: 0 10px;
+  }
+
+  .mobile-hide {
+    display: none;
+  }
+
+  .header {
+    padding-top: 15px;
+
+    &__wrapper {}
+
+    &__menu-wrapper {
+      display: none;
+    }
+
+    &__main-section {}
+
+    &__catalogBtn {
+      display: none;
+    }
+
+    &__search-form {
+      display: none;
+    }
+
+    &__contact-wrapper {
+      display: none;
+    }
+
+    &__main-vertical-line {
+      display: none;
+    }
+
+    &__price-list-btn {
+      display: none;
+    }
+
+    &__cart {
+      min-width: auto;
+    }
+
+    &__cart-text-wrapper {
+      display: none;
+    }
+
+    &__mobile-burger-menu {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $_5;
+      border-radius: 1000px;
+    }
+
+    &__mobile-burger-img {
+      width: 12px;
+      height: 12px;
+    }
+  }
+
+  .catalog {
+    &__top-line-categories {
+      display: none;
+    }
   }
 }

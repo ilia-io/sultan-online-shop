@@ -10,6 +10,7 @@ import SearchForm from './SearchForm';
 import { Link } from 'react-router-dom';
 import { useAppSelector } from '../app/hooks';
 import { cartSelector } from '../app/reducers/cartSlice';
+import burgerIcon from '../assets/icons/burger-menu.svg';
 
 type Props = {};
 
@@ -65,10 +66,17 @@ const Header = (props: Props) => {
           </ul>
         </section>
         <section className="header__main-section">
+          <div className="header__mobile-burger-menu">
+            <img
+              src={burgerIcon}
+              alt="burger menu"
+              className="header__mobile-burger-img"
+            />
+          </div>
           <Link to={'/catalog'}>
             <img src={logoHeader} alt="sultan" className="header__logo" />
           </Link>
-          <Link to={'/catalog'}>
+          <Link to={'/catalog'} className="mobile-hide">
             <button className="header__catalogBtn" type="button">
               Каталог
               <img
@@ -78,7 +86,7 @@ const Header = (props: Props) => {
               />
             </button>
           </Link>
-          <SearchForm />
+          <SearchForm classPrefix="header" />
           <div className="header__contact-wrapper">
             <div className="header__contact-text-wrapper">
               <h2 className="header__contact-title">+7 (777) 490-00-91</h2>
@@ -120,6 +128,9 @@ const Header = (props: Props) => {
             </div>
           </Link>
         </section>
+        <div className="header__mobile-buttons">
+          
+        </div>
       </div>
     </header>
   );
