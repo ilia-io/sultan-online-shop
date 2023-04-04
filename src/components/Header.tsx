@@ -11,6 +11,8 @@ import { Link } from 'react-router-dom';
 import { useAppSelector } from '../app/hooks';
 import { cartSelector } from '../app/reducers/cartSlice';
 import burgerIcon from '../assets/icons/burger-menu.svg';
+import mobileCatalogIcon from '../assets/icons/mobile-catalog.svg';
+import mobileSearchIcon from '../assets/icons/mobile-search.svg';
 
 type Props = {};
 
@@ -129,7 +131,25 @@ const Header = (props: Props) => {
           </Link>
         </section>
         <div className="header__mobile-buttons">
-          
+          <div className="header__mobile-buttons-wrapper">
+            <button className="header__mobile-buttons-catalog">
+              <img
+                src={mobileCatalogIcon}
+                alt="catalog"
+                className="header__mobile-buttons-catalog-img"
+              />
+              Каталог
+            </button>
+            <div className="header__mobile-vertical-line"></div>
+            <button className="header__mobile-buttons-search">
+              <img
+                src={mobileSearchIcon}
+                alt="magnifying glass"
+                className="header__mobile-buttons-search-img"
+              />
+              Поиск
+            </button>
+          </div>
         </div>
       </div>
     </header>
