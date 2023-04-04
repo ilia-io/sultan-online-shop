@@ -89,6 +89,7 @@ const Cart = (props: Props) => {
         <div className="cart__horizontal-line"></div>
         <ul className="cart__list">
           {cartItems.map((cartItem) => (
+            <div key={cartItem.barcode} className="cart__item-wrapper">
               <li key={cartItem.barcode} className="cart__item">
                 <img
                   src={cartItem.imageURL}
@@ -118,42 +119,45 @@ const Cart = (props: Props) => {
                   </p>
                 </div>
                 <div className="cart__item-vertical-line"></div>
-                <div className="cart__amount-box">
+                <div className="cart__item-actions">
+                  <div className="cart__amount-box">
+                    <button
+                      onClick={() => handleMinusItem(cartItem.barcode)}
+                      type="button"
+                      className="cart__dec"
+                    >
+                      -
+                    </button>
+                    <p className="cart__count">{cartItem.count}</p>
+                    <button
+                      onClick={() => handleAddItem(cartItem)}
+                      type="button"
+                      className="cart__inc"
+                    >
+                      +
+                    </button>
+                  </div>
+                  <div className="cart__item-vertical-line"></div>
+                  <p className="cart__item-price">
+                    {(cartItem.price * cartItem.count).toFixed(2)} ₸
+                  </p>
+                  <div className="cart__item-vertical-line"></div>
                   <button
-                    onClick={() => handleMinusItem(cartItem.barcode)}
+                    onClick={() => handleRemoveItem(cartItem.barcode)}
                     type="button"
-                    className="cart__dec"
+                    className="cart__item-deleteBtn"
                   >
-                    -
-                  </button>
-                  <p className="cart__count">{cartItem.count}</p>
-                  <button
-                    onClick={() => handleAddItem(cartItem)}
-                    type="button"
-                    className="cart__inc"
-                  >
-                    +
+                    <img
+                      src={deleteIcon}
+                      alt="trash bin"
+                      className="cart__item-deleteBtn-icon"
+                    />
                   </button>
                 </div>
-                <div className="cart__item-vertical-line"></div>
-                <p className="cart__item-price">
-                  {(cartItem.price * cartItem.count).toFixed(2)} ₸
-                </p>
-                <div className="cart__item-vertical-line"></div>
-                <button
-                  onClick={() => handleRemoveItem(cartItem.barcode)}
-                  type="button"
-                  className="cart__item-deleteBtn"
-                >
-                  <img
-                    src={deleteIcon}
-                    alt="trash bin"
-                    className="cart__item-deleteBtn-icon"
-                  />
-                </button>
               </li>
+              <div className="cart__horizontal-line"></div>
+            </div>
           ))}
-          <div className="cart__horizontal-line"></div>
         </ul>
         <div className="cart__order-box">
           <CartOrderComplete />
