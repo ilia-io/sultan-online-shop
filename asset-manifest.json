@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/sultan-online-shop/static/css/main.4b913b44.css",
-    "main.js": "/sultan-online-shop/static/js/main.4478960a.js",
+    "main.js": "/sultan-online-shop/static/js/main.4d75502f.js",
     "static/media/person-online.svg": "/sultan-online-shop/static/media/person-online.8ae7fd87199e160e38790d99ab54bd3e.svg",
     "static/media/logo-header.svg": "/sultan-online-shop/static/media/logo-header.1a5963ad41a9a045e45ab84f01418760.svg",
     "static/media/logo-footer.svg": "/sultan-online-shop/static/media/logo-footer.18600ba6450c54512a99f98a551a8556.svg",
@@ -15,9 +15,9 @@
     "static/media/order-modal-close.svg": "/sultan-online-shop/static/media/order-modal-close.ba6fc45b1c4861388bc548a5aac3811e.svg",
     "static/media/mail.svg": "/sultan-online-shop/static/media/mail.3e3846c4f8765fe5313a394940923dde.svg",
     "static/media/type-bottle.svg": "/sultan-online-shop/static/media/type-bottle.6877fce18dd3cc68b930073c312225e0.svg",
+    "index.html": "/sultan-online-shop/index.html",
     "static/media/telegram.svg": "/sultan-online-shop/static/media/telegram.f6f58dc267bbddf9768e67fb3adb4c94.svg",
     "static/media/type-solid-box.svg": "/sultan-online-shop/static/media/type-solid-box.f9a356492718e6a17ada8c78a0623d26.svg",
-    "index.html": "/sultan-online-shop/index.html",
     "static/media/location.svg": "/sultan-online-shop/static/media/location.ac8d5a925aa65f28f8c1f78a97674963.svg",
     "static/media/catalog-in-btn.svg": "/sultan-online-shop/static/media/catalog-in-btn.4756189f8fb2f4cdf0b38c581c7033d8.svg",
     "static/media/search-btn.svg": "/sultan-online-shop/static/media/search-btn.8ccdf0814cd4cac3b494d27af02aeabe.svg",
@@ -31,10 +31,10 @@
     "static/media/sort-arrow-down.svg": "/sultan-online-shop/static/media/sort-arrow-down.260e242d67fc23d29ab014c3406116d8.svg",
     "static/media/sort-arrow-up.svg": "/sultan-online-shop/static/media/sort-arrow-up.5e5d30daddeae7614a94f9346edb1e23.svg",
     "main.4b913b44.css.map": "/sultan-online-shop/static/css/main.4b913b44.css.map",
-    "main.4478960a.js.map": "/sultan-online-shop/static/js/main.4478960a.js.map"
+    "main.4d75502f.js.map": "/sultan-online-shop/static/js/main.4d75502f.js.map"
   },
   "entrypoints": [
     "static/css/main.4b913b44.css",
-    "static/js/main.4478960a.js"
+    "static/js/main.4d75502f.js"
   ]
 }
