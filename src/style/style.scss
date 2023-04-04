@@ -157,10 +157,13 @@ a {
 
   &__mobile-burger-img {}
 
+  &__mobile-buttons {
+    display: none;
+  }
 
   &__logo {
     height: 66px;
-    width: 156px;
+    width: 156px;ы
   }
 
   &__catalogBtn {
@@ -1825,6 +1828,7 @@ a {
     &__mobile-burger-img {
       width: 12px;
       height: 12px;
+      position: relative;
     }
 
     &__mobile-buttons {
