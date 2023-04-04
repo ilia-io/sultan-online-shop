@@ -5,7 +5,7 @@ import { RootState } from '../store';
 
 export interface ProductState {
   items: IProduct[];
-  currentItem: IProduct | undefined;
+  currentItem: IProduct;
 }
 
 const initialState: ProductState = {
@@ -20,7 +20,7 @@ export const productSlice = createSlice({
     getCurrentItem: (state, action: PayloadAction<number>) => {
       state.currentItem = state.items.find(
         (item) => item.barcode === action.payload
-      );
+      ) as IProduct;
     },
   },
   // The `extraReducers` field lets the slice handle actions defined elsewhere,

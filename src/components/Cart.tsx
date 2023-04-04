@@ -89,8 +89,7 @@ const Cart = (props: Props) => {
         <div className="cart__horizontal-line"></div>
         <ul className="cart__list">
           {cartItems.map((cartItem) => (
-            <>
-              <li className="cart__item">
+              <li key={cartItem.barcode} className="cart__item">
                 <img
                   src={cartItem.imageURL}
                   alt={cartItem.name}
@@ -153,9 +152,8 @@ const Cart = (props: Props) => {
                   />
                 </button>
               </li>
-              <div className="cart__horizontal-line"></div>
-            </>
           ))}
+          <div className="cart__horizontal-line"></div>
         </ul>
         <div className="cart__order-box">
           <CartOrderComplete />

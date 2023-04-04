@@ -1,22 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import { useAppSelector } from '../app/hooks';
 import { IProduct } from '../@types/Product';
-import { productsSelector } from '../app/reducers/productSlice';
+import { productsSelector, currentItemSelector } from '../app/reducers/productSlice';
 
 type Props = {};
 
 const AdminPanel = (props: Props) => {
   const PRODUCTS: IProduct[] = useAppSelector(productsSelector);
+const currenItemRTK: IProduct = useAppSelector(currentItemSelector)
 
-  const [localProducts, setLocalProducts] = useState(
-    JSON.parse(localStorage.getItem('products') as string)
+  useEffect(() => {
+    if (!localStorage.getItem('products')) {
+      localStorage.setItem('products', JSON.stringify(PRODUCTS));
+    } else {
+      setLocalProducts(JSON.parse(localStorage.getItem('products') as string));
+    }
+    return () => {};
+  }, [PRODUCTS]);
+
+
+
+  const [localProducts, setLocalProducts] = useState();
+  const [currentProduct, setCurrentProduct] = useState(currenItemRTK);
+  const [mainInput, setMainInput] = useState(String(currentProduct.barcode));
+
+  const [currentKeys, setCurrentKeys] = useState(
+    Object.keys(currentProduct || {}) || []
   );
-  const [mainInput, setMainInput] = useState(String(localProducts[0].barcode));
-  const [currentProduct, setCurrentProduct] = useState(localProducts[0]);
-
-  const [currentKeys, setCurrentKeys] = useState(Object.keys(currentProduct));
   const [currentValues, setCurrentValues] = useState(
-    Object.values(currentProduct)
+    Object.values(currentProduct || {})
   );
 
   const [imageURL, setImageURL] = useState(currentProduct.imageURL);
