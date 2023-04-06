@@ -1,29 +1,37 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useAppSelector } from '../app/hooks';
 import { IProduct } from '../@types/Product';
-import { productsSelector, currentItemSelector } from '../app/reducers/productSlice';
+import {
+  productsSelector,
+  currentItemSelector,
+  localItemsSelector,
+  setLocalItems,
+  getCurrentItem,
+} from '../app/reducers/productSlice';
+import { render } from 'react-dom';
+import { filterSelector } from '../app/reducers/filterSlice';
+
+// useEffect(() => {
+//   setLocalProducts(JSON.parse(localStorage.getItem('products') as string));
+
+//   return () => {};
+// }, []);
+
+// const [localProducts, setLocalProducts] = useState();
 
 type Props = {};
 
 const AdminPanel = (props: Props) => {
   const PRODUCTS: IProduct[] = useAppSelector(productsSelector);
-const currenItemRTK: IProduct = useAppSelector(currentItemSelector)
+  const currentProduct: IProduct = useAppSelector(currentItemSelector);
+  const localProducts = useAppSelector(localItemsSelector);
+  const { categories } = useAppSelector(filterSelector);
 
-  useEffect(() => {
-    if (!localStorage.getItem('products')) {
-      localStorage.setItem('products', JSON.stringify(PRODUCTS));
-    } else {
-      setLocalProducts(JSON.parse(localStorage.getItem('products') as string));
-    }
-    return () => {};
-  }, [PRODUCTS]);
-
-
-
-  const [localProducts, setLocalProducts] = useState();
-  const [currentProduct, setCurrentProduct] = useState(currenItemRTK);
-  const [mainInput, setMainInput] = useState(String(currentProduct.barcode));
-
+  const [selectedOption, setSelectedOption] = useState(currentProduct.barcode);
+  // const [currentProd, setCurrentProd] = useState(currentProduct);
+  // const [mainInputBarcode, setMainInputBarcode] = useState(
+  //   String(currentProduct.barcode)
+  // );
   const [currentKeys, setCurrentKeys] = useState(
     Object.keys(currentProduct || {}) || []
   );
@@ -41,56 +49,79 @@ const currenItemRTK: IProduct = useAppSelector(currentItemSelector)
   const [description, setDescription] = useState(currentProduct.description);
   const [price, setPrice] = useState(currentProduct.price);
   const [careType, setCareType] = useState(currentProduct.careType);
-  const [careTypeOption, setCareTypeOption] = useState(currentProduct.careType);
+  // const [careTypeOption, setCareTypeOption] = useState(currentProduct.careType);
 
   function handleCareType(e: React.ChangeEvent<HTMLSelectElement>) {
-    var options = e.target.options;
-    var value = [];
+    let options = e.target.options;
+    let value = [];
     for (var i = 0, l = options.length; i < l; i++) {
       if (options[i].selected) {
         value.push(options[i].value);
       }
     }
-
-    setCareTypeOption(value);
+    setCareTypeValue(value);
   }
 
-  useEffect(() => {
-    setLocalProducts(JSON.parse(localStorage.getItem('products') as string));
-
-    return () => {};
-  }, []);
+  function setCareTypeValue(value: string[]) {
+    setCareType(value);
+  }
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    localStorage.setItem(
-      'products',
-      JSON.stringify({
-        imageURL,
-        name,
-        type,
-        size,
-        barcode,
-        manufacturer,
-        brand,
-        description,
-        price,
-        careType,
-      })
-    );
+    // setPrice(currentProduct.price);
+    // localStorage.setItem(
+    //   'products',
+    //   JSON.stringify({
+    //     imageURL,
+    //     name,
+    //     type,
+    //     size,
+    //     barcode,
+    //     manufacturer,
+    //     brand,
+    //     description,
+    //     price,
+    //     careType,
+    //   })
+    // );
   };
+
+  useEffect(() => {
+    fillUpInputs(currentProduct);
+    setCareTypeValue(careType);
+    // return () => {};
+  }, [currentProduct, careType]);
 
   function handleLoadData() {
     localStorage.setItem('products', JSON.stringify(PRODUCTS));
-    setLocalProducts(JSON.parse(localStorage.getItem('products') as string));
+    // setLocalProducts(JSON.parse(localStorage.getItem('products') as string));
+
+    setLocalItems(PRODUCTS);
   }
 
-  function handleChange(e: React.ChangeEvent<HTMLSelectElement>) {
-    setMainInput(e.target.value);
-    setCurrentProduct(
-      PRODUCTS.find((item) => item.barcode === Number(mainInput)) || PRODUCTS[0]
+  // const cachedFill = useCallback(fillUpInputs, []);
+
+  function fillUpInputs(currentProduct: IProduct) {
+    setImageURL(currentProduct.imageURL);
+    setName(currentProduct.name);
+    setType(currentProduct.type);
+    setSize(currentProduct.size);
+    setBarcode(currentProduct.barcode);
+    setManufacturer(currentProduct.manufacturer);
+    setBrand(currentProduct.brand);
+    setDescription(currentProduct.description);
+    setPrice(currentProduct.price);
+    setCareType(currentProduct.careType);
+  }
+
+  function handleCurrentProductChange(e: React.ChangeEvent<HTMLSelectElement>) {
+    setSelectedOption(Number(e.target.value));
+    getCurrentItem(Number(e.target.value));
+    const getItem = localProducts.find(
+      (item) => item.barcode === Number(e.target.value)
     );
+    fillUpInputs(getItem as IProduct);
   }
   return (
     <section className="admin-panel">
@@ -101,20 +132,20 @@ const currenItemRTK: IProduct = useAppSelector(currentItemSelector)
           onClick={handleLoadData}
           className="admin-panel__loadBtn"
         >
-          Подгрузить данные из JSON
+          Подгрузить данные из исходного JSON
         </button>
 
         <select
-          onChange={(e) => handleChange(e)}
-          value={mainInput}
-          id={String(currentProduct.barcode)}
+          onChange={(e) => handleCurrentProductChange(e)}
+          value={selectedOption}
+          // id={String(currentProduct.barcode)}
           className="admin-panel__main-select"
         >
           {PRODUCTS.map((item) => (
             <option
               className="admin-panel__products-option"
               key={item.barcode}
-              value={item.name}
+              value={item.barcode}
             >
               {item.name}
             </option>
@@ -230,12 +261,12 @@ const currenItemRTK: IProduct = useAppSelector(currentItemSelector)
                 /> */}
                 <select
                   multiple
+                  defaultValue={careType}
                   onChange={(e) => handleCareType(e)}
                   className="admin-panel__prop-input"
-                  name=""
-                  id=""
+                  size={categories.length}
                 >
-                  {careType.map((option: string) => (
+                  {categories.map((option: string) => (
                     <option key={option} value={option}>
                       {option}
                     </option>

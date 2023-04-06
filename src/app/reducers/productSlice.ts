@@ -1,4 +1,4 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import DB from '../../assets/db.json';
 import { IProduct } from '../../@types/Product';
 import { RootState } from '../store';
@@ -6,21 +6,43 @@ import { RootState } from '../store';
 export interface ProductState {
   items: IProduct[];
   currentItem: IProduct;
+  localItems: IProduct[];
 }
 
 const initialState: ProductState = {
   items: DB.products,
   currentItem: DB.products[0],
+  localItems: [],
 };
+
+// const fetchProducts = createAsyncThunk(
+//   'product/fetch',
+//   async (_, thunkAPI) => {
+//     try {
+
+//       const response = await axios.get<IUser[]>(API_URL!);
+//       return response.data;
+//     } catch (error) {
+//       return thunkAPI.rejectWithValue('Не удалось загрузить пользователей');
+//     }
+//   }
+// );
 
 export const productSlice = createSlice({
   name: 'product',
   initialState,
   reducers: {
     getCurrentItem: (state, action: PayloadAction<number>) => {
-      state.currentItem = state.items.find(
+      state.currentItem = state.localItems.find(
         (item) => item.barcode === action.payload
       ) as IProduct;
+    },
+    setLocalItems: (state, action: PayloadAction<IProduct[]>) => {
+      state.localItems = action.payload;
+    },
+    removeSelected: (state, action: PayloadAction<IProduct>) => {
+      state.localItems = state.localItems.filter(item=>item.barcode === action.payload.barcode)
+      state.currentItem = state.localItems[0]
     },
   },
   // The `extraReducers` field lets the slice handle actions defined elsewhere,
@@ -43,7 +65,9 @@ export const productSlice = createSlice({
 export const productsSelector = (state: RootState) => state.product.items;
 export const currentItemSelector = (state: RootState) =>
   state.product.currentItem;
+export const localItemsSelector = (state: RootState) =>
+  state.product.localItems;
 
-export const { getCurrentItem } = productSlice.actions;
+export const { getCurrentItem, setLocalItems, removeSelected } = productSlice.actions;
 
 export default productSlice.reducer;

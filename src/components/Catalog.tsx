@@ -11,7 +11,10 @@ import { IProduct } from '../@types/Product';
 import { RootState } from '../app/store';
 import { useAppDispatch, useAppSelector } from '../app/hooks';
 import { Link } from 'react-router-dom';
-import { getCurrentItem } from '../app/reducers/productSlice';
+import {
+  getCurrentItem,
+  localItemsSelector,
+} from '../app/reducers/productSlice';
 import {
   filterSelector,
   setActiveCaterogy,
@@ -44,7 +47,9 @@ const Catalog = (props: Props) => {
 
   const dispatch = useAppDispatch();
 
-  const PRODUCTS = useAppSelector((state: RootState) => state.product.items);
+  // const PRODUCTS = useAppSelector((state: RootState) => state.product.items);
+  const localItems = useAppSelector(localItemsSelector);
+
   const {
     activeCategory,
     categoryFilter,
@@ -77,7 +82,13 @@ const Catalog = (props: Props) => {
     sort();
   }
 
-  const [filteredProducts, setFilteredProducts] = useState(PRODUCTS || []);
+  const [filteredProducts, setFilteredProducts] = useState(localItems);
+
+  useEffect(() => {
+    setFilteredProducts(localItems);
+
+    return () => {};
+  }, [localItems]);
 
   function sort() {
     const itemsCopy = [...filteredProducts];
@@ -130,7 +141,7 @@ const Catalog = (props: Props) => {
 
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = filteredProducts.slice(
+  const currentProducts = filteredProducts.slice(
     indexOfFirstPost,
     indexOfLastPost
   );
@@ -259,7 +270,7 @@ const Catalog = (props: Props) => {
           </section>
           <section className="catalog__products">
             <ul className="catalog__products-list">
-              {currentPosts
+              {currentProducts
                 .filter((item) =>
                   categoryFilter ? item.careType.includes(activeCategory) : true
                 )

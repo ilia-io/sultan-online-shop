@@ -1,12 +1,32 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './app.scss';
 import CatalogPage from './pages/CatalogPage';
 import ProductPage from './pages/ProductPage';
 import CartPage from './pages/CartPage';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import AdminPage from './pages/AdminPage';
+import { useAppDispatch, useAppSelector } from './app/hooks';
+import {
+  productsSelector,
+  setLocalItems,
+} from './app/reducers/productSlice';
 
 function App() {
+  const dispatch = useAppDispatch();
+  const products = useAppSelector(productsSelector);
+
+  useEffect(() => {
+    if (!localStorage.getItem('products')) {
+      localStorage.setItem('products', JSON.stringify(products));
+      dispatch(setLocalItems(products));
+    } else {
+      const local = JSON.parse(localStorage.getItem('products') as string);
+      dispatch(setLocalItems(local));
+    }
+
+    return () => {};
+  }, [dispatch, products]);
+
   return (
     <>
       <Routes>
