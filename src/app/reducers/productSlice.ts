@@ -15,6 +15,18 @@ const initialState: ProductState = {
   localItems: [],
 };
 
+export const emptyProduct: IProduct = {
+  imageURL: '',
+  name: '',
+  type: '',
+  size: 0,
+  barcode: 0,
+  manufacturer: '',
+  brand: '',
+  description: '',
+  price: 0,
+  careType: [''],
+};
 // const fetchProducts = createAsyncThunk(
 //   'product/fetch',
 //   async (_, thunkAPI) => {
@@ -47,18 +59,8 @@ export const productSlice = createSlice({
       state.currentItem = state.localItems[0];
     },
     addNew: (state) => {
-      state.localItems.unshift({
-        imageURL: '',
-        name: '',
-        type: '',
-        size: 0,
-        barcode: 0,
-        manufacturer: '',
-        brand: '',
-        description: '',
-        price: 0,
-        careType: [''],
-      });
+      state.localItems.unshift(emptyProduct);
+      state.currentItem = emptyProduct;
     },
   },
   // The `extraReducers` field lets the slice handle actions defined elsewhere,

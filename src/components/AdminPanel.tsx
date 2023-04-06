@@ -9,6 +9,7 @@ import {
   getCurrentItem,
   removeSelected,
   addNew,
+  emptyProduct,
 } from '../app/reducers/productSlice';
 import { render } from 'react-dom';
 import { filterSelector } from '../app/reducers/filterSlice';
@@ -145,6 +146,8 @@ const AdminPanel = (props: Props) => {
 
   function addEmptyProduct() {
     dispatch(addNew());
+    fillUpInputs(emptyProduct);
+    writeToLS([...localProducts, emptyProduct]);
   }
   return (
     <section className="admin-panel">
@@ -173,8 +176,12 @@ const AdminPanel = (props: Props) => {
             </option>
           ))}
         </select>
-        или{' '}
-        <button type="button" className="admin-panel__add-new-btn">
+        {'или'}
+        <button
+          onClick={addEmptyProduct}
+          type="button"
+          className="admin-panel__add-new-btn"
+        >
           Добавить новый
         </button>
         <div className="admin-panel__form">
