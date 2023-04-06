@@ -1765,6 +1765,21 @@ a {
     width: 250px;
     padding: 4px;
   }
+
+  &__buttons {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__submit-btn {
+    padding: 6px;
+  }
+
+  &__remove-btn {
+    padding: 6px;
+  }
+
+
 }
 
 @media (max-width: 768px) {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { useAppSelector } from '../app/hooks';
+import { useAppDispatch, useAppSelector } from '../app/hooks';
 import { IProduct } from '../@types/Product';
 import {
   productsSelector,
@@ -7,6 +7,8 @@ import {
   localItemsSelector,
   setLocalItems,
   getCurrentItem,
+  removeSelected,
+  addNew,
 } from '../app/reducers/productSlice';
 import { render } from 'react-dom';
 import { filterSelector } from '../app/reducers/filterSlice';
@@ -28,16 +30,18 @@ const AdminPanel = (props: Props) => {
   const { categories } = useAppSelector(filterSelector);
 
   const [selectedOption, setSelectedOption] = useState(currentProduct.barcode);
+
+  const dispatch = useAppDispatch();
   // const [currentProd, setCurrentProd] = useState(currentProduct);
   // const [mainInputBarcode, setMainInputBarcode] = useState(
   //   String(currentProduct.barcode)
   // );
-  const [currentKeys, setCurrentKeys] = useState(
-    Object.keys(currentProduct || {}) || []
-  );
-  const [currentValues, setCurrentValues] = useState(
-    Object.values(currentProduct || {})
-  );
+  // const [currentKeys, setCurrentKeys] = useState(
+  //   Object.keys(currentProduct || {}) || []
+  // );
+  // const [currentValues, setCurrentValues] = useState(
+  //   Object.values(currentProduct || {})
+  // );
 
   const [imageURL, setImageURL] = useState(currentProduct.imageURL);
   const [name, setName] = useState(currentProduct.name);
@@ -123,6 +127,25 @@ const AdminPanel = (props: Props) => {
     );
     fillUpInputs(getItem as IProduct);
   }
+
+  function removeProduct(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+    e.preventDefault();
+    dispatch(removeSelected(currentProduct));
+    fillUpInputs(currentProduct);
+    writeToLS(localProducts);
+  }
+
+  function readFromLS() {
+    const local = JSON.parse(localStorage.getItem('products') as string);
+    dispatch(setLocalItems(local));
+  }
+  function writeToLS(items: IProduct[]) {
+    localStorage.setItem('products', JSON.stringify(items));
+  }
+
+  function addEmptyProduct() {
+    dispatch(addNew());
+  }
   return (
     <section className="admin-panel">
       <div className="admin-panel__wrapper container">
@@ -134,14 +157,13 @@ const AdminPanel = (props: Props) => {
         >
           Подгрузить данные из исходного JSON
         </button>
-
         <select
           onChange={(e) => handleCurrentProductChange(e)}
           value={selectedOption}
           // id={String(currentProduct.barcode)}
           className="admin-panel__main-select"
         >
-          {PRODUCTS.map((item) => (
+          {localProducts.map((item) => (
             <option
               className="admin-panel__products-option"
               key={item.barcode}
@@ -151,7 +173,10 @@ const AdminPanel = (props: Props) => {
             </option>
           ))}
         </select>
-
+        или{' '}
+        <button type="button" className="admin-panel__add-new-btn">
+          Добавить новый
+        </button>
         <div className="admin-panel__form">
           <ul className="admin-panel__prop-list">
             {Object.keys(currentProduct).map((item) => (
@@ -274,9 +299,18 @@ const AdminPanel = (props: Props) => {
                 </select>
               </label>
             </div>
-            <button type="submit" className="admin-panel__submitBtn">
-              Изменить
-            </button>
+            <div className="admin-panel__buttons">
+              <button type="submit" className="admin-panel__submit-btn">
+                Изменить
+              </button>
+              <button
+                onClick={removeProduct}
+                type="button"
+                className="admin-panel__remove-btn"
+              >
+                Удалить товар
+              </button>
+            </div>
           </form>
         </div>
       </div>
