@@ -1792,7 +1792,104 @@ a {
     border: 2px solid $_5;
   }
 
+  &__form-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__create-box {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__edit-box {
+    flex-basis: 50%;
+  }
+
+  &__search {
+    width: 80%;
+    padding: 6px;
+    border-radius: 8px;
+    font-size: 16px;
+    border: 3px solid $_5;
+    margin: 10px;
+  }
+
+  &__edit-list {
+    list-style: none;
+
+  }
+
+  &__edit-item {}
 }
+
+.admin-product {
+
+  &__mini {
+    display: flex;
+    gap: 10px;
+    height: 120px;
+    border: 1px solid $_5;
+    border-radius: 8px;
+    margin: 15px 0;
+    padding: 0 10px;
+  }
+
+  &__mini-actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  &__edit-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: $_5;
+    border-radius: 6px;
+    padding: 4px;
+    cursor: pointer;
+  }
+
+  &__edit-btn-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  &__delete-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: $_5;
+    border-radius: 6px;
+    padding: 4px;
+    cursor: pointer;
+  }
+
+  &__delete-btn-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  &__mini-img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  &__mini-props {}
+
+  &__mini-prop {
+    font-size: 13px;
+
+    &_bold {
+      font-weight: 700;
+    }
+  }
+}
+
 
 @media (max-width: 768px) {
   .container {

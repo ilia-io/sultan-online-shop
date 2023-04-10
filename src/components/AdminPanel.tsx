@@ -15,6 +15,7 @@ import {
 import { render } from 'react-dom';
 import { filterSelector } from '../app/reducers/filterSlice';
 import EditForm from './EditForm';
+import AdminPanelProduct from './AdminPanelProduct';
 
 // useEffect(() => {
 //   setLocalProducts(JSON.parse(localStorage.getItem('products') as string));
@@ -151,110 +152,22 @@ const AdminPanel = (props: Props) => {
             />
           </div>
           <div className="admin-panel__edit-box">
-            <input type="text" className="admin-panel__search" />
+            <input
+              placeholder="Поиск..."
+              type="text"
+              className="admin-panel__search"
+            />
             <ul className="admin-panel__edit-list">
               {localProducts.map((product) => (
-                <li
-                  className="admin-panel__edit-item"
-                  key={product.barcode}
-                >
-                  {product.name}
+                <li className="admin-panel__edit-item" key={product.barcode}>
+                  <AdminPanelProduct
+                    product={product}
+                    handleEdit={handleEditProduct}
+                  />
                 </li>
               ))}
             </ul>
           </div>
-        </div>
-        <select
-          onChange={handleCurrentProductChange}
-          value={selectedOption}
-          // id={String(currentProduct.barcode)}
-          className="admin-panel__main-select"
-        >
-          {localProducts.map((item) => (
-            <option
-              className="admin-panel__products-option"
-              key={item.barcode}
-              value={item.barcode}
-            >
-              {item.name}
-            </option>
-          ))}
-        </select>
-        {'или'}
-        <button
-          onClick={addEmptyProduct}
-          type="button"
-          className="admin-panel__add-new-btn"
-        >
-          Добавить новый
-        </button>
-        <button
-          onClick={handleRemoveProduct}
-          type="button"
-          className="admin-panel__remove-btn"
-        >
-          Удалить товар
-        </button>
-        <div className="admin-panel__form">
-          <ul className="admin-panel__prop-list">
-            {Object.keys(currentProduct).map((item) => (
-              <li key={item} className="admin-panel__prop-item">
-                <p className="admin-panel__prop-item-key">{item} </p>
-              </li>
-            ))}
-          </ul>
-          <EditForm product={curr} handleEdit={handleEditProduct} />
-        </div>
-      </div>
-      <div className="admin-panel__wrapper container">
-        <h1 className="admin-panel__title">Админка</h1>
-        <button
-          type="button"
-          onClick={handleLoadData}
-          className="admin-panel__loadBtn"
-        >
-          Подгрузить данные из исходного JSON
-        </button>
-        <select
-          onChange={handleCurrentProductChange}
-          value={selectedOption}
-          // id={String(currentProduct.barcode)}
-          className="admin-panel__main-select"
-        >
-          {localProducts.map((item) => (
-            <option
-              className="admin-panel__products-option"
-              key={item.barcode}
-              value={item.barcode}
-            >
-              {item.name}
-            </option>
-          ))}
-        </select>
-        {'или'}
-        <button
-          onClick={addEmptyProduct}
-          type="button"
-          className="admin-panel__add-new-btn"
-        >
-          Добавить новый
-        </button>
-        <button
-          onClick={handleRemoveProduct}
-          type="button"
-          className="admin-panel__remove-btn"
-        >
-          Удалить товар
-        </button>
-        <div className="admin-panel__form">
-          <ul className="admin-panel__prop-list">
-            {Object.keys(currentProduct).map((item) => (
-              <li key={item} className="admin-panel__prop-item">
-                <p className="admin-panel__prop-item-key">{item} </p>
-              </li>
-            ))}
-          </ul>
-          <EditForm product={curr} handleEdit={handleEditProduct} />
         </div>
       </div>
     </section>

@@ -12,7 +12,7 @@ type Props = {
 const AdminPanelProduct = ({ product, handleEdit }: Props) => {
   const [edit, setEdit] = useState(false);
   return (
-    <div className="admin-product__wrapper">
+    <div className="admin-product">
       {edit ? (
         <EditForm product={product} handleEdit={handleEdit} />
       ) : (
