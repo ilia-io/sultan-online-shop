@@ -52,15 +52,21 @@ export const productSlice = createSlice({
     setLocalItems: (state, action: PayloadAction<IProduct[]>) => {
       state.localItems = action.payload;
     },
-    removeSelected: (state, action: PayloadAction<IProduct>) => {
+    removeProduct: (state, action: PayloadAction<IProduct>) => {
       state.localItems = state.localItems.filter(
         (item) => item.barcode !== action.payload.barcode
       );
       state.currentItem = state.localItems[0];
     },
-    addNew: (state) => {
+    addNewProduct: (state) => {
       state.localItems.unshift(emptyProduct);
       state.currentItem = emptyProduct;
+    },
+    editProduct: (state, action: PayloadAction<IProduct>) => {
+      state.currentItem = action.payload;
+      state.localItems = state.localItems.map((item) =>
+        item.barcode === action.payload.barcode ? (item = action.payload) : item
+      );
     },
   },
   // The `extraReducers` field lets the slice handle actions defined elsewhere,
@@ -86,7 +92,12 @@ export const currentItemSelector = (state: RootState) =>
 export const localItemsSelector = (state: RootState) =>
   state.product.localItems;
 
-export const { getCurrentItem, setLocalItems, removeSelected, addNew } =
-  productSlice.actions;
+export const {
+  getCurrentItem,
+  setLocalItems,
+  removeProduct,
+  addNewProduct,
+  editProduct,
+} = productSlice.actions;
 
 export default productSlice.reducer;

@@ -1718,6 +1718,7 @@ a {
     align-items: center;
     justify-content: center;
     padding: 50px 10px;
+    gap: 20px;
   }
 
   &__title {
@@ -1725,12 +1726,15 @@ a {
   }
 
   &__loadBtn {
-    margin: 10px 0;
-    padding: 4px;
+    padding: 6px;
+    border-radius: 6px;
+    border: 2px solid $_5;
   }
 
   &__main-select {
     padding: 10px;
+    border-radius: 6px;
+    border: 2px solid $_5;
   }
 
   &__products-option {}
@@ -1752,7 +1756,6 @@ a {
     width: 300px;
     padding: 20px;
     display: flex;
-
   }
 
   &__prop-item-key {
@@ -1773,12 +1776,21 @@ a {
 
   &__submit-btn {
     padding: 6px;
+    border-radius: 6px;
+    border: 2px solid $_5;
   }
 
   &__remove-btn {
     padding: 6px;
+    border-radius: 6px;
+    border: 2px solid $_5;
   }
 
+  &__add-new-btn {
+    padding: 6px;
+    border-radius: 6px;
+    border: 2px solid $_5;
+  }
 
 }
 
