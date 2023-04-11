@@ -14,11 +14,14 @@ const AdminPanelProduct = ({ product, handleEdit }: Props) => {
   return (
     <div className="admin-product">
       {edit ? (
-        <EditForm product={product} handleEdit={handleEdit} />
+        <EditForm product={product} handleEdit={handleEdit} button='edit'/>
       ) : (
         <div className="admin-product__mini">
           <div className="admin-product__mini-actions">
-            <button className="admin-product__edit-btn">
+            <button
+              onClick={() => setEdit(!edit)}
+              className="admin-product__edit-btn"
+            >
               <img
                 src={editImg}
                 alt="pencil"

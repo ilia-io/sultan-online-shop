@@ -135,6 +135,7 @@ const AdminPanel = (props: Props) => {
         </button> */}
         <div className="admin-panel__form-wrapper">
           <div className="admin-panel__create-box">
+            <h2 className="admin-panel__create-box-title">Добавить товар</h2>
             <EditForm
               product={{
                 imageURL: '',
@@ -149,9 +150,11 @@ const AdminPanel = (props: Props) => {
                 careType: [''],
               }}
               handleEdit={handleEditProduct}
+              button='create'
             />
           </div>
           <div className="admin-panel__edit-box">
+            <h2 className="admin-panel__edit-box-title">Все товары</h2>
             <input
               placeholder="Поиск..."
               type="text"

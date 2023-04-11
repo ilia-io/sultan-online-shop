@@ -1748,25 +1748,39 @@ a {
   &__prop-list {
     list-style: none;
     flex-basis: 50%;
-    height: 900px;
+    // height: 1300px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   &__prop-item {
     min-height: 40px;
-    width: 300px;
-    padding: 20px;
     display: flex;
+    padding: 10px;
   }
 
   &__prop-item-key {
     padding: 3.2px;
   }
 
-  &__prop-label {}
+  &__prop-label {
+    display: flex;
+    flex-direction: column;
+
+    &_note {
+      color: $_2;
+      font-style: italic;
+    }
+  }
 
   &__prop-input {
-    width: 250px;
-    padding: 4px;
+    width: 300px;
+    padding: 6px;
+    border-radius: 8px;
+    font-size: 16px;
+    border: 3px solid $_5;
   }
 
   &__buttons {
@@ -1800,15 +1814,21 @@ a {
   &__create-box {
     flex-basis: 50%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
+
+  &__create-box-title {}
 
   &__edit-box {
     flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   &__search {
-    width: 80%;
+    width: 90%;
     padding: 6px;
     border-radius: 8px;
     font-size: 16px;
@@ -1829,7 +1849,7 @@ a {
   &__mini {
     display: flex;
     gap: 10px;
-    height: 120px;
+    min-height: 120px;
     border: 1px solid $_5;
     border-radius: 8px;
     margin: 15px 0;
@@ -1840,6 +1860,7 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    gap: 10px;
   }
 
   &__edit-btn {
@@ -1875,7 +1896,7 @@ a {
   }
 
   &__mini-img {
-    max-width: 100%;
+    max-width: 120px;
     height: auto;
   }
 
@@ -1957,7 +1978,7 @@ a {
     }
 
     &__mobile-buttons {
-      width: 1000px;
+      // width: 1000px;
       border-top: 1px solid rgba(63, 78, 101, 0.1);
       border-bottom: 1px solid rgba(63, 78, 101, 0.1);
       display: flex;
@@ -2022,5 +2043,34 @@ a {
 
   .bread-crumbs {
     display: none;
+  }
+
+  .admin-panel {
+    &__form-wrapper {
+      flex-wrap: wrap;
+    }
+
+    &__create-box {
+      flex-basis: 100%;
+    }
+
+    &__edit-box {
+      margin: 20px auto;
+      flex-basis: 100%;
+    }
+  }
+
+  .admin-product {
+    &__mini {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      width: 300px;
+    }
+
+    &__mini-img {
+      max-width: 140px;
+      height: auto;
+    }
   }
 }
