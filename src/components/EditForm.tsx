@@ -1,15 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, SetStateAction, Dispatch } from 'react';
 import { IProduct } from '../@types/Product';
 import { useAppSelector } from '../app/hooks';
 import { filterSelector } from '../app/reducers/filterSlice';
 
 type Props = {
   product: IProduct;
-  handleEdit: (product: IProduct) => void;
+  handleClick: (product: IProduct) => void;
   button: 'edit' | 'create';
+  setStatus?: Dispatch<SetStateAction<boolean>>;
 };
 
-const EditForm = ({ product, handleEdit, button }: Props) => {
+const EditForm = ({ product, handleClick, button, setStatus }: Props) => {
   const [imageURL, setImageURL] = useState(product.imageURL);
   const [name, setName] = useState(product.name);
   const [type, setType] = useState(product.type);
@@ -25,7 +26,7 @@ const EditForm = ({ product, handleEdit, button }: Props) => {
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    handleEdit({
+    handleClick({
       imageURL,
       name,
       type,
@@ -37,6 +38,7 @@ const EditForm = ({ product, handleEdit, button }: Props) => {
       price,
       careType,
     });
+    setStatus && setStatus(false);
   }
 
   function handleCareType(e: React.ChangeEvent<HTMLSelectElement>) {
@@ -56,6 +58,7 @@ const EditForm = ({ product, handleEdit, button }: Props) => {
         <label className="admin-panel__prop-label">
           <span className="admin-panel__prop-label_note">URL картинки</span>
           <input
+            required
             type="text"
             className="admin-panel__prop-input"
             value={imageURL}
@@ -67,6 +70,7 @@ const EditForm = ({ product, handleEdit, button }: Props) => {
         <label className="admin-panel__prop-label">
           <span className="admin-panel__prop-label_note">Название</span>
           <input
+            required
             type="text"
             className="admin-panel__prop-input"
             value={name}
@@ -78,6 +82,7 @@ const EditForm = ({ product, handleEdit, button }: Props) => {
         <label className="admin-panel__prop-label">
           <span className="admin-panel__prop-label_note">Тип</span>
           <input
+            required
             type="text"
             className="admin-panel__prop-input"
             value={type}
@@ -89,6 +94,7 @@ const EditForm = ({ product, handleEdit, button }: Props) => {
         <label className="admin-panel__prop-label">
           <span className="admin-panel__prop-label_note">Размер</span>
           <input
+            required
             type="number"
             className="admin-panel__prop-input"
             value={size}
@@ -100,6 +106,7 @@ const EditForm = ({ product, handleEdit, button }: Props) => {
         <label className="admin-panel__prop-label">
           <span className="admin-panel__prop-label_note">Штрихкод</span>
           <input
+            required
             type="number"
             className="admin-panel__prop-input"
             value={barcode}
@@ -111,6 +118,7 @@ const EditForm = ({ product, handleEdit, button }: Props) => {
         <label className="admin-panel__prop-label">
           <span className="admin-panel__prop-label_note">Производитель</span>
           <input
+            required
             type="text"
             className="admin-panel__prop-input"
             value={manufacturer}
@@ -122,6 +130,7 @@ const EditForm = ({ product, handleEdit, button }: Props) => {
         <label className="admin-panel__prop-label">
           <span className="admin-panel__prop-label_note">Бренд</span>
           <input
+            required
             type="text"
             className="admin-panel__prop-input"
             value={brand}
@@ -133,6 +142,7 @@ const EditForm = ({ product, handleEdit, button }: Props) => {
         <label className="admin-panel__prop-label">
           <span className="admin-panel__prop-label_note">Описание</span>
           <input
+            required
             type="text"
             className="admin-panel__prop-input"
             value={description}
@@ -144,6 +154,7 @@ const EditForm = ({ product, handleEdit, button }: Props) => {
         <label className="admin-panel__prop-label">
           <span className="admin-panel__prop-label_note">Цена, ₸</span>
           <input
+            required
             type="number"
             className="admin-panel__prop-input"
             value={price}
@@ -161,6 +172,7 @@ const EditForm = ({ product, handleEdit, button }: Props) => {
                   // onChange={(e) => setCareType(e.target.value)}
                 /> */}
           <select
+            required
             multiple
             defaultValue={careType}
             onChange={(e) => handleCareType(e)}

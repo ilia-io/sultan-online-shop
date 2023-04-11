@@ -1,4 +1,4 @@
-import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import DB from '../../assets/db.json';
 import { IProduct } from '../../@types/Product';
 import { RootState } from '../store';
@@ -27,18 +27,6 @@ export const emptyProduct: IProduct = {
   price: 0,
   careType: [''],
 };
-// const fetchProducts = createAsyncThunk(
-//   'product/fetch',
-//   async (_, thunkAPI) => {
-//     try {
-
-//       const response = await axios.get<IUser[]>(API_URL!);
-//       return response.data;
-//     } catch (error) {
-//       return thunkAPI.rejectWithValue('Не удалось загрузить пользователей');
-//     }
-//   }
-// );
 
 export const productSlice = createSlice({
   name: 'product',
@@ -56,14 +44,11 @@ export const productSlice = createSlice({
       state.localItems = state.localItems.filter(
         (item) => item.barcode !== action.payload.barcode
       );
-      state.currentItem = state.localItems[0];
     },
-    addNewProduct: (state) => {
-      state.localItems.unshift(emptyProduct);
-      state.currentItem = emptyProduct;
+    addProduct: (state, action: PayloadAction<IProduct>) => {
+      state.localItems.unshift(action.payload);
     },
     editProduct: (state, action: PayloadAction<IProduct>) => {
-      state.currentItem = action.payload;
       state.localItems = state.localItems.map((item) =>
         item.barcode === action.payload.barcode ? (item = action.payload) : item
       );
@@ -96,7 +81,7 @@ export const {
   getCurrentItem,
   setLocalItems,
   removeProduct,
-  addNewProduct,
+  addProduct,
   editProduct,
 } = productSlice.actions;
 

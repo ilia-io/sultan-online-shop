@@ -1,103 +1,30 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React from 'react';
 import { useAppDispatch, useAppSelector } from '../app/hooks';
 import { IProduct } from '../@types/Product';
 import {
   productsSelector,
-  currentItemSelector,
   localItemsSelector,
   setLocalItems,
-  getCurrentItem,
   removeProduct,
-  addNewProduct,
-  emptyProduct,
   editProduct,
+  addProduct,
 } from '../app/reducers/productSlice';
-import { render } from 'react-dom';
-import { filterSelector } from '../app/reducers/filterSlice';
 import EditForm from './EditForm';
 import AdminPanelProduct from './AdminPanelProduct';
-
-// useEffect(() => {
-//   setLocalProducts(JSON.parse(localStorage.getItem('products') as string));
-
-//   return () => {};
-// }, []);
-
-// const [localProducts, setLocalProducts] = useState();
 
 type Props = {};
 
 const AdminPanel = (props: Props) => {
   const PRODUCTS: IProduct[] = useAppSelector(productsSelector);
-  const currentProduct: IProduct = useAppSelector(currentItemSelector);
   const localProducts = useAppSelector(localItemsSelector);
 
-  const [selectedOption, setSelectedOption] = useState(currentProduct.barcode);
-
   const dispatch = useAppDispatch();
-  // const [currentProd, setCurrentProd] = useState(currentProduct);
-  // const [mainInputBarcode, setMainInputBarcode] = useState(
-  //   String(currentProduct.barcode)
-  // );
-  // const [currentKeys, setCurrentKeys] = useState(
-  //   Object.keys(currentProduct || {}) || []
-  // );
-  // const [currentValues, setCurrentValues] = useState(
-  //   Object.values(currentProduct || {})
-  // );
-
-  // const [careTypeOption, setCareTypeOption] = useState(currentProduct.careType);
-
-  // useEffect(() => {
-  //   fillUpInputs(currentProduct);
-  //   setCareTypeValue(careType);
-  //   return () => {};
-  // }, [currentProduct, careType]);
 
   function handleLoadData() {
     localStorage.setItem('products', JSON.stringify(PRODUCTS));
     // setLocalProducts(JSON.parse(localStorage.getItem('products') as string));
 
     setLocalItems(PRODUCTS);
-  }
-
-  // const cachedFill = useCallback(fillUpInputs, []);
-
-  // function fillUpInputs(currentProduct: IProduct) {
-  //   setImageURL(currentProduct.imageURL);
-  //   setName(currentProduct.name);
-  //   setType(currentProduct.type);
-  //   setSize(currentProduct.size);
-  //   setBarcode(currentProduct.barcode);
-  //   setManufacturer(currentProduct.manufacturer);
-  //   setBrand(currentProduct.brand);
-  //   setDescription(currentProduct.description);
-  //   setPrice(currentProduct.price);
-  //   setCareType(currentProduct.careType);
-  // }
-
-  const [curr, setCurr] = useState(currentProduct);
-
-  function handleCurrentProductChange(e: React.ChangeEvent<HTMLSelectElement>) {
-    setSelectedOption(Number(e.target.value));
-    getCurrentItem(Number(e.target.value));
-    const getItem = localProducts.find(
-      (item) => item.barcode === Number(e.target.value)
-    );
-
-    setCurr(getItem as IProduct);
-
-    // console.log(curr);
-    // fillUpInputs(getItem as IProduct);
-  }
-
-  function handleRemoveProduct(
-    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) {
-    e.preventDefault();
-    dispatch(removeProduct(currentProduct));
-    // fillUpInputs(currentProduct);
-    writeToLS(localProducts);
   }
 
   function readFromLS() {
@@ -108,11 +35,9 @@ const AdminPanel = (props: Props) => {
     localStorage.setItem('products', JSON.stringify(items));
   }
 
-  function addEmptyProduct(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
-    e.preventDefault();
-    dispatch(addNewProduct());
-    // fillUpInputs(emptyProduct);
-    // writeToLS([...localProducts, emptyProduct]);
+  function handleAddNewProduct(product: IProduct) {
+    dispatch(addProduct(product));
+    writeToLS([product, ...localProducts]);
   }
 
   function handleEditProduct(product: IProduct) {
@@ -122,6 +47,15 @@ const AdminPanel = (props: Props) => {
     );
     writeToLS(temp);
   }
+
+  function handleRemoveProduct(product: IProduct) {
+    dispatch(removeProduct(product));
+    const temp = [...localProducts].filter(
+      (item) => item.barcode !== product.barcode
+    );
+    writeToLS(temp);
+  }
+
   return (
     <section className="admin-panel">
       <div className="admin-panel__wrapper container">
@@ -149,8 +83,8 @@ const AdminPanel = (props: Props) => {
                 price: 0,
                 careType: [''],
               }}
-              handleEdit={handleEditProduct}
-              button='create'
+              handleClick={handleAddNewProduct}
+              button="create"
             />
           </div>
           <div className="admin-panel__edit-box">
@@ -166,6 +100,7 @@ const AdminPanel = (props: Props) => {
                   <AdminPanelProduct
                     product={product}
                     handleEdit={handleEditProduct}
+                    handleRemove={handleRemoveProduct}
                   />
                 </li>
               ))}

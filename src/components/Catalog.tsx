@@ -53,7 +53,6 @@ const Catalog = (props: Props) => {
   const {
     activeCategory,
     categoryFilter,
-    manufacturers,
     categories,
     activeManufacturers,
     manufacturersFilter,
@@ -64,6 +63,7 @@ const Catalog = (props: Props) => {
 
   function dispatchBarcode(barcode: number) {
     dispatch(getCurrentItem(barcode));
+    window.scrollTo(0, 0);
   }
 
   function toggleSortOptions() {

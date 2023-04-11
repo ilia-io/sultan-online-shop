@@ -7,14 +7,20 @@ import deleteImg from '../assets/icons/cart-delete.svg';
 type Props = {
   product: IProduct;
   handleEdit: (product: IProduct) => void;
+  handleRemove: (product: IProduct) => void;
 };
 
-const AdminPanelProduct = ({ product, handleEdit }: Props) => {
+const AdminPanelProduct = ({ product, handleEdit, handleRemove }: Props) => {
   const [edit, setEdit] = useState(false);
   return (
     <div className="admin-product">
       {edit ? (
-        <EditForm product={product} handleEdit={handleEdit} button='edit'/>
+        <EditForm
+          product={product}
+          handleClick={handleEdit}
+          button="edit"
+          setStatus={setEdit}
+        />
       ) : (
         <div className="admin-product__mini">
           <div className="admin-product__mini-actions">
@@ -28,7 +34,10 @@ const AdminPanelProduct = ({ product, handleEdit }: Props) => {
                 className="admin-product__edit-btn-icon"
               />
             </button>
-            <button className="admin-product__delete-btn">
+            <button
+              onClick={() => handleRemove(product)}
+              className="admin-product__delete-btn"
+            >
               <img
                 src={deleteImg}
                 alt="trash bin"
