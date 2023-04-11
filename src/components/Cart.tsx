@@ -7,11 +7,11 @@ import Modal from './Modal';
 import orderCheckIcon from '../assets/icons/order-double-check.svg';
 import { useAppDispatch, useAppSelector } from '../app/hooks';
 import {
-  addItem,
+  addItemToCart,
   cartSelector,
   clearCart,
   minusItem,
-  removeItem,
+  removeItemFromCart,
 } from '../app/reducers/cartSlice';
 import { ICartItem } from '../@types/CartItem';
 
@@ -71,7 +71,7 @@ const Cart = (props: Props) => {
   const dispatch = useAppDispatch();
 
   function handleAddItem(item: ICartItem) {
-    dispatch(addItem(item));
+    dispatch(addItemToCart(item));
   }
 
   function handleMinusItem(barcode: number) {
@@ -79,7 +79,7 @@ const Cart = (props: Props) => {
   }
 
   function handleRemoveItem(barcode: number) {
-    dispatch(removeItem(barcode));
+    dispatch(removeItemFromCart(barcode));
   }
 
   return (

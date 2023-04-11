@@ -1,14 +1,9 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import arrowDown from '../assets/icons/sort-arrow-down.svg';
 import arrowUp from '../assets/icons/sort-arrow-up.svg';
-import DB from '../assets/db.json';
 import SearchForm from './SearchForm';
-import typeBottleIcon from '../assets/icons/type-bottle.svg';
-import typeSolidBoxIcon from '../assets/icons/type-solid-box.svg';
-import cartBtnIcon from '../assets/icons/product-cart-in-btn.svg';
 import ManufacturersList from './ManufacturersList';
 import { IProduct } from '../@types/Product';
-import { RootState } from '../app/store';
 import { useAppDispatch, useAppSelector } from '../app/hooks';
 import { Link } from 'react-router-dom';
 import {
@@ -22,7 +17,8 @@ import {
   setPriceFilterMin,
 } from '../app/reducers/filterSlice';
 import Pagination from './Pagination';
-import { addItem } from '../app/reducers/cartSlice';
+import { addItemToCart } from '../app/reducers/cartSlice';
+import CatalogProduct from './CatalogProduct';
 
 type Props = {};
 
@@ -42,6 +38,14 @@ const sortOptionsArr: ISortOption[] = [
   { type: 'price', reversed: true },
 ];
 
+export function getProductsFromLocalStorage() {
+  const products = JSON.parse(localStorage.getItem('products') as string);
+
+  if (!products || products.length === 0) return null;
+
+  return products;
+}
+
 const Catalog = (props: Props) => {
   const [showSortOptions, setShowSortOptions] = useState(false);
 
@@ -60,11 +64,6 @@ const Catalog = (props: Props) => {
     priceFilterMin,
     priceFilterMax,
   } = useAppSelector(filterSelector);
-
-  function dispatchBarcode(barcode: number) {
-    dispatch(getCurrentItem(barcode));
-    window.scrollTo(0, 0);
-  }
 
   function toggleSortOptions() {
     setShowSortOptions(!showSortOptions);
@@ -137,20 +136,16 @@ const Catalog = (props: Props) => {
   }
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage] = useState(15);
+  const [productsPerPage] = useState(15);
 
-  const indexOfLastPost = currentPage * postsPerPage;
-  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const indexOfLastPost = currentPage * productsPerPage;
+  const indexOfFirstPost = indexOfLastPost - productsPerPage;
   const currentProducts = filteredProducts.slice(
     indexOfFirstPost,
     indexOfLastPost
   );
 
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
-
-  function handleAddItem(product: IProduct) {
-    dispatch(addItem(product));
-  }
 
   // console.log(document.querySelectorAll('.catalog__product').length);
   return (
@@ -284,78 +279,15 @@ const Catalog = (props: Props) => {
                     .toLowerCase()
                     .includes(manufacturersSearch.toLowerCase())
                 )
-                .filter((item) => item.price > Number(priceFilterMin))
-                .filter((item) => item.price < Number(priceFilterMax))
+                .filter((item) => item.price >= Number(priceFilterMin))
+                .filter((item) => item.price <= Number(priceFilterMax))
                 .map((product: IProduct) => (
-                  <li key={product.barcode} className="catalog__product">
-                    <img
-                      src={product.imageURL}
-                      alt={product.name}
-                      className="catalog__product-img"
-                    />
-                    <div className="catalog__product-type-box">
-                      <img
-                        src={
-                          product.type === 'weight'
-                            ? typeSolidBoxIcon
-                            : typeBottleIcon
-                        }
-                        alt={product.type === 'weight' ? 'solid box' : 'bottle'}
-                        className="catalog__product-type-icon"
-                      />
-                      <p className="catalog__product-type-text">
-                        {product.size} {product.type === 'weight' ? 'г' : 'мл'}
-                      </p>
-                    </div>
-                    <Link to={`/catalog/${product.barcode}`}>
-                      <h2
-                        onClick={() => dispatchBarcode(product.barcode)}
-                        className="catalog__product-title"
-                      >
-                        {product.name}
-                      </h2>
-                    </Link>
-                    <p className="catalog__product-barcode">
-                      Штрихкод:{' '}
-                      <span className="catalog__product-barcode_value">
-                        {product.barcode}
-                      </span>
-                    </p>
-                    <p className="catalog__product-manufacturer">
-                      Производитель:{' '}
-                      <span className="catalog__product-manufacturer_value">
-                        {product.manufacturer}
-                      </span>
-                    </p>
-                    <p className="catalog__product-brand">
-                      Бренд:{' '}
-                      <span className="catalog__product-brand_value">
-                        {product.brand}
-                      </span>
-                    </p>
-                    <div className="catalog__product-price-box">
-                      <p className="catalog__product-price">
-                        {product.price} ₸
-                      </p>
-                      <button
-                        onClick={() => handleAddItem(product)}
-                        type="button"
-                        className="catalog__product-cartBtn"
-                      >
-                        В КОРЗИНУ{' '}
-                        <img
-                          src={cartBtnIcon}
-                          alt="cart"
-                          className="catalog__product-cartBtn-icon"
-                        />
-                      </button>
-                    </div>
-                  </li>
+                  <CatalogProduct key={product.barcode} product={product} />
                 ))}
             </ul>
             <Pagination
-              postsPerPage={postsPerPage}
-              totalPosts={filteredProducts.length}
+              productsPerPage={productsPerPage}
+              totalProducts={filteredProducts.length}
               paginate={paginate}
               currentPage={currentPage}
             />

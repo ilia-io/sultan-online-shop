@@ -939,6 +939,7 @@ a {
     height: 220px;
     margin-bottom: 4px;
     align-self: center;
+    object-fit: contain;
   }
 
   &__product-type-box {
@@ -958,11 +959,15 @@ a {
 
   &__product-title {
     max-width: 282px;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 16px;
     line-height: 130%;
     color: $_1;
     margin-bottom: 20px;
+
+    &_bold {
+      font-weight: 700;
+    }
   }
 
 
@@ -1035,16 +1040,18 @@ a {
     background-color: $_5;
     border-radius: 80px;
     border: none;
-
     width: 153px;
     height: 45px;
-
     font-weight: 700;
     font-size: 10px;
     line-height: 12px;
     letter-spacing: 0.15em;
     color: #FFFFFF;
     cursor: pointer;
+
+    &_active {
+      background-color: $_7;
+    }
   }
 
   &__product-cartBtn-icon {

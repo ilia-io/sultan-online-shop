@@ -14,7 +14,11 @@ import {
   currentItemSelector,
   productsSelector,
 } from '../app/reducers/productSlice';
-import { addItem, cartSelector, minusItem } from '../app/reducers/cartSlice';
+import {
+  addItemToCart,
+  cartSelector,
+  minusItem,
+} from '../app/reducers/cartSlice';
 import BreadCrumbs from './BreadCrumbs';
 
 type Props = {};
@@ -46,7 +50,7 @@ const ProductCard = (props: Props) => {
   }
 
   function handleAddItem() {
-    dispatch(addItem(PRODUCT));
+    dispatch(addItemToCart(PRODUCT));
   }
 
   function handleMinusItem() {

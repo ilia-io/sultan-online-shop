@@ -7,25 +7,30 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import AdminPage from './pages/AdminPage';
 import { useAppDispatch, useAppSelector } from './app/hooks';
 import {
+  localItemsSelector,
   productsSelector,
   setLocalItems,
 } from './app/reducers/productSlice';
 
 function App() {
-  const dispatch = useAppDispatch();
-  const products = useAppSelector(productsSelector);
+  // const dispatch = useAppDispatch();
+  // const products = useAppSelector(productsSelector);
+  // const localItems = useAppSelector(localItemsSelector);
 
-  useEffect(() => {
-    if (!localStorage.getItem('products')) {
-      localStorage.setItem('products', JSON.stringify(products));
-      dispatch(setLocalItems(products));
-    } else {
-      const local = JSON.parse(localStorage.getItem('products') as string);
-      dispatch(setLocalItems(local));
-    }
+  // useEffect(() => {
+  //   if (
+  //     localStorage.getItem('products')?.length === 0 ||
+  //     localStorage.getItem('products') === null
+  //   ) {
+  //     localStorage.setItem('products', JSON.stringify(products));
+  //     dispatch(setLocalItems(products));
+  //   } else {
+  //     const local = JSON.parse(localStorage.getItem('products') as string);
+  //     dispatch(setLocalItems(local));
+  //   }
 
-    return () => {};
-  }, [dispatch, products]);
+  //   return () => {};
+  // }, [dispatch, products]);
 
   return (
     <>

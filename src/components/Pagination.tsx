@@ -3,21 +3,21 @@ import leftIcon from '../assets/icons/pagination-left.svg';
 import rightIcon from '../assets/icons/pagination-right.svg';
 
 type Props = {
-  postsPerPage: number;
-  totalPosts: number;
+  productsPerPage: number;
+  totalProducts: number;
   paginate: (number: number) => void;
   currentPage: number;
 };
 
 const Pagination = ({
-  postsPerPage,
-  totalPosts,
+  productsPerPage,
+  totalProducts,
   paginate,
   currentPage,
 }: Props) => {
   const pageNumbers = [];
 
-  for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
+  for (let i = 1; i <= Math.ceil(totalProducts / productsPerPage); i++) {
     pageNumbers.push(i);
   }
 
