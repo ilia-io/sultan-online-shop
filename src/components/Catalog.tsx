@@ -153,6 +153,13 @@ const Catalog = (props: Props) => {
       <div className="catalog__wrapper container">
         <section className="catalog__title-box">
           <h1 className="catalog__title">Косметика и гигиена</h1>
+
+          <Link to={'/admin'}>
+            <button type="button" className="catalog__product-cartBtn">
+              В АДМИНКУ{' '}
+            </button>
+          </Link>
+
           <div className="catalog__sort-box">
             <p className="catalog__sort-text">Сортировка:</p>
             <button
