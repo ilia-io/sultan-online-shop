@@ -637,14 +637,20 @@ a {
   }
 
   &__sort-box {
-    height: 24px;
-    min-width: 199px;
     position: relative;
+
+    &_mobile {
+      display: none;
+    }
+  }
+
+  &__sort-text-wrapper {
+    height: 24px;
+    width: 193px;
   }
 
   &__sort-text {
-    display: inline-block;
-
+    display: inline;
     font-weight: 500;
     font-size: 16px;
     line-height: 150%;
@@ -652,7 +658,6 @@ a {
   }
 
   &__sort-btn {
-    display: inline-block;
     background: none;
     border: none;
     outline: none;
@@ -666,11 +671,9 @@ a {
 
   &__sort-list {
     list-style: none;
-
     position: absolute;
-    top: 20;
-    right: -0;
-    margin-right: 7px;
+    top: 27px;
+    left: 50%;
     background-color: #fff
   }
 
@@ -726,17 +729,26 @@ a {
   }
 
   &__side-filters {
-    width: 238px;
+    max-width: 238px;
     display: flex;
     flex-direction: column;
   }
 
+  &__side-filters-title-box {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 32px;
+  }
+
   &__side-filters-title {
+    min-width: 100%;
     font-weight: 500;
     font-size: 16px;
     line-height: 150%;
     color: $_1;
     margin-bottom: 10px;
+    margin: auto;
   }
 
   &__price-filter-box {
@@ -1925,6 +1937,14 @@ a {
   }
 
   &__back-img {}
+
+  &__filter-arrow {
+    display: none;
+  }
+
+  &__to-admin-btn {
+    margin: 10px 38px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -2057,6 +2077,7 @@ a {
 
     &__title-box {
       flex-direction: column;
+      align-items: center;
     }
 
     &__title {
@@ -2069,11 +2090,18 @@ a {
 
     &__sort-box {
       display: none;
+
+      &_mobile {
+        display: flex;
+        position: relative;
+        margin-left: -30px;
+      }
     }
 
     &__main {
       margin: 0;
       flex-direction: column;
+      align-items: center;
     }
 
     &__side-filters {
@@ -2083,6 +2111,16 @@ a {
     &__products-list {
       justify-content: center;
     }
+
+    &__side-filters-categories-item {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 17px;
+      color: $_2;
+      margin-bottom: 0px;
+      text-transform: none;
+    }
+
   }
 
   .bread-crumbs {
@@ -2134,6 +2172,7 @@ a {
       text-transform: uppercase;
       color: #3F4E65;
       margin-bottom: 25px;
+      margin-left: -168px;
     }
 
     &__back-img {
@@ -2144,6 +2183,16 @@ a {
 
     &__to-admin-btn {
       margin: 10px 38px;
+    }
+
+    &__filter-arrow {
+      display: block;
+      margin: auto;
+    }
+
+    &__filter-arrow-img {
+      width: 32px;
+      height: 32px;
     }
   }
 }

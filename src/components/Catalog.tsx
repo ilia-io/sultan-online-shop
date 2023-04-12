@@ -1,44 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import arrowDown from '../assets/icons/sort-arrow-down.svg';
-import arrowUp from '../assets/icons/sort-arrow-up.svg';
-import SearchForm from './SearchForm';
-import ManufacturersList from './ManufacturersList';
 import { IProduct } from '../@types/Product';
 import { useAppDispatch, useAppSelector } from '../app/hooks';
 import { Link } from 'react-router-dom';
-import {
-  getCurrentItem,
-  localItemsSelector,
-} from '../app/reducers/productSlice';
-import {
-  filterSelector,
-  setActiveCaterogy,
-  setPriceFilterMax,
-  setPriceFilterMin,
-} from '../app/reducers/filterSlice';
+import { localItemsSelector } from '../app/reducers/productSlice';
+import { filterSelector, setActiveCaterogy } from '../app/reducers/filterSlice';
 import Pagination from './Pagination';
-import { addItemToCart } from '../app/reducers/cartSlice';
 import CatalogProduct from './CatalogProduct';
-import mBackIcon from '../assets/icons/moblie-back.svg';
+import mBackIcon from '../assets/icons/mobile-back.svg';
 import SideFilters from './SideFilters';
+import SortBy from './SortBy';
 
 type Props = {};
-
-// const categories: string[] = DB.careTypes;
-// export const manufacturers: string[] = DB.manufacturers;
-// export const PRODUCTS: IProduct[] = DB.products;
-
-interface ISortOption {
-  type: 'name' | 'price';
-  reversed: boolean;
-}
-
-const sortOptionsArr: ISortOption[] = [
-  { type: 'name', reversed: false },
-  { type: 'name', reversed: true },
-  { type: 'price', reversed: false },
-  { type: 'price', reversed: true },
-];
 
 export function getProductsFromLocalStorage() {
   const products = JSON.parse(localStorage.getItem('products') as string);
@@ -49,13 +21,8 @@ export function getProductsFromLocalStorage() {
 }
 
 const Catalog = (props: Props) => {
-  const [showSortOptions, setShowSortOptions] = useState(false);
-
   const dispatch = useAppDispatch();
-
-  // const PRODUCTS = useAppSelector((state: RootState) => state.product.items);
   const localItems = useAppSelector(localItemsSelector);
-
   const {
     activeCategory,
     categoryFilter,
@@ -67,58 +34,13 @@ const Catalog = (props: Props) => {
     priceFilterMax,
   } = useAppSelector(filterSelector);
 
-  function toggleSortOptions() {
-    setShowSortOptions(!showSortOptions);
-  }
-
-  const [activeSortOption, setActiveSortOption] = useState(sortOptionsArr[0]);
-
-  function handleSort(option: ISortOption) {
-    setActiveSortOption(option);
-    setShowSortOptions(false);
-    sort();
-  }
-
   const [filteredProducts, setFilteredProducts] = useState(localItems);
 
-  useEffect(() => {
-    setFilteredProducts(localItems);
-
-    return () => {};
-  }, [localItems]);
-
-  function sort() {
-    const itemsCopy = [...filteredProducts];
-
-    if (activeSortOption.type === 'name') {
-      itemsCopy.sort((itemA, itemB) => {
-        if (activeSortOption.reversed) {
-          return itemB.name.localeCompare(itemA.name);
-        }
-        return itemA.name.localeCompare(itemB.name);
-      });
-      setFilteredProducts(itemsCopy);
-    } else {
-      itemsCopy.sort((itemA, itemB) => {
-        if (activeSortOption.reversed) {
-          return itemA.price - itemB.price;
-        }
-        return itemB.price - itemA.price;
-      });
-      setFilteredProducts(itemsCopy);
-    }
+  function handleClickCategory(categorie: string) {
+    dispatch(setActiveCaterogy(categorie));
   }
 
-  useEffect(() => {
-    // if (inputPriceMin === '' || inputPriceMax === '') {
-    // setFilteredProducts(PRODUCTS);
-    // } else {
-    // priceFilter();
-    sort();
-    // }
-
-    return () => {};
-  }, [activeSortOption]);
+  useEffect(() => setFilteredProducts(localItems), [localItems]);
 
   const [currentPage, setCurrentPage] = useState(1);
   const [productsPerPage] = useState(15);
@@ -131,10 +53,6 @@ const Catalog = (props: Props) => {
   );
 
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
-
-  function handleClickCategory(categorie: string) {
-    dispatch(setActiveCaterogy(categorie));
-  }
 
   // console.log(document.querySelectorAll('.catalog__product').length);
   return (
@@ -160,40 +78,10 @@ const Catalog = (props: Props) => {
             </button>
           </Link>
 
-          <div className="catalog__sort-box">
-            <p className="catalog__sort-text">Сортировка:</p>
-            <button
-              onClick={toggleSortOptions}
-              className="catalog__sort-btn"
-              type="button"
-            >
-              {activeSortOption.type === 'name' ? 'Название' : 'Цена'}
-              <img
-                src={activeSortOption.reversed ? arrowUp : arrowDown}
-                alt="arrow down"
-                className="catalog__sort-icon"
-              />
-            </button>
-
-            {showSortOptions && (
-              <ul className="catalog__sort-list">
-                {sortOptionsArr.map((option, index) => (
-                  <li
-                    onClick={() => handleSort(option)}
-                    key={index}
-                    className="catalog__sort-option"
-                  >
-                    {option.type === 'name' ? 'Название' : 'Цена'}
-                    <img
-                      src={option.reversed ? arrowUp : arrowDown}
-                      alt="arrow down"
-                      className="catalog__sort-icon"
-                    />
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
+          <SortBy
+            filteredProducts={filteredProducts}
+            setFilteredProducts={setFilteredProducts}
+          />
         </section>
         <section className="catalog__top-line-categories">
           <ul className="catalog__top-line-categories-list">
@@ -214,6 +102,11 @@ const Catalog = (props: Props) => {
         </section>
         <section className="catalog__main">
           <SideFilters />
+          <SortBy
+            filteredProducts={filteredProducts}
+            setFilteredProducts={setFilteredProducts}
+            classPrefix="mobile"
+          />
           <section className="catalog__products">
             <ul className="catalog__products-list">
               {currentProducts

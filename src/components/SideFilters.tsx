@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { filterSelector, setActiveCaterogy } from '../app/reducers/filterSlice';
 import { useAppDispatch, useAppSelector } from '../app/hooks';
 import SelectionByParams from './SelectionByParams';
+import mUpIcon from '../assets/icons/mobile-up.svg';
+import mDownIcon from '../assets/icons/mobile-down.svg';
 
 type Props = {};
 
@@ -16,19 +18,26 @@ const SideFilters = (props: Props) => {
   }
   return (
     <section className="catalog__side-filters">
-      <h2
+      <div
         onClick={() => setShowParams(!showParams)}
-        className="catalog__side-filters-title"
+        className="catalog__side-filters-title-box"
       >
-        ПОДБОР ПО ПАРАМЕТРАМ
-      </h2>
+        <h2 className="catalog__side-filters-title">ПОДБОР ПО ПАРАМЕТРАМ</h2>
+        <div className="mobile__filter-arrow">
+          <img
+            src={showParams ? mUpIcon : mDownIcon}
+            alt="arrow"
+            className="mobile__filter-arrow-img"
+          />
+        </div>
+      </div>
+
       <div
         hidden={showParams ? false : true}
         className="catalog__mobile-filter-wrapper"
       >
         <SelectionByParams />
       </div>
-
       <div className="catalog__side-filters-categories-box">
         <ul className="catalog__side-filters-categories-list">
           {categories.map((categorie) => (
