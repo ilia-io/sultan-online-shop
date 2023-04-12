@@ -19,6 +19,8 @@ import {
 import Pagination from './Pagination';
 import { addItemToCart } from '../app/reducers/cartSlice';
 import CatalogProduct from './CatalogProduct';
+import mBackIcon from '../assets/icons/moblie-back.svg';
+import SideFilters from './SideFilters';
 
 type Props = {};
 
@@ -69,10 +71,6 @@ const Catalog = (props: Props) => {
     setShowSortOptions(!showSortOptions);
   }
 
-  function handleClickCategory(categorie: string) {
-    dispatch(setActiveCaterogy(categorie));
-  }
-
   const [activeSortOption, setActiveSortOption] = useState(sortOptionsArr[0]);
 
   function handleSort(option: ISortOption) {
@@ -111,9 +109,6 @@ const Catalog = (props: Props) => {
     }
   }
 
-  const [inputPriceMin, setInputPriceMin] = useState('0');
-  const [inputPriceMax, setInputPriceMax] = useState('10000');
-
   useEffect(() => {
     // if (inputPriceMin === '' || inputPriceMax === '') {
     // setFilteredProducts(PRODUCTS);
@@ -124,16 +119,6 @@ const Catalog = (props: Props) => {
 
     return () => {};
   }, [activeSortOption]);
-
-  function handlePriceMin(e: React.ChangeEvent<HTMLInputElement>) {
-    setInputPriceMin(e.target.value);
-    dispatch(setPriceFilterMin(e.target.value));
-  }
-
-  function handlePriceMax(e: React.ChangeEvent<HTMLInputElement>) {
-    setInputPriceMax(e.target.value);
-    dispatch(setPriceFilterMax(e.target.value));
-  }
 
   const [currentPage, setCurrentPage] = useState(1);
   const [productsPerPage] = useState(15);
@@ -147,15 +132,30 @@ const Catalog = (props: Props) => {
 
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
+  function handleClickCategory(categorie: string) {
+    dispatch(setActiveCaterogy(categorie));
+  }
+
   // console.log(document.querySelectorAll('.catalog__product').length);
   return (
     <section className="catalog">
       <div className="catalog__wrapper container">
         <section className="catalog__title-box">
+          <button className="mobile__back-btn">
+            <img
+              src={mBackIcon}
+              alt="arrow back"
+              className="mobile__back-img"
+            />
+            НАЗАД
+          </button>
           <h1 className="catalog__title">Косметика и гигиена</h1>
 
           <Link to={'/admin'}>
-            <button type="button" className="catalog__product-cartBtn">
+            <button
+              type="button"
+              className="catalog__product-cartBtn mobile__to-admin-btn"
+            >
               В АДМИНКУ{' '}
             </button>
           </Link>
@@ -213,63 +213,7 @@ const Catalog = (props: Props) => {
           </ul>
         </section>
         <section className="catalog__main">
-          <section className="catalog__side-filters">
-            <h2 className="catalog__side-filters-title">
-              ПОДБОР ПО ПАРАМЕТРАМ
-            </h2>
-            <div className="catalog__price-filter-box">
-              <h2 className="catalog__price-filter-title">
-                Цена <span className="catalog__price-filter-currency">₸</span>
-              </h2>
-              <div className="catalog__price-filter-inputs">
-                <label htmlFor="priceMin"></label>
-                <input
-                  id="priceMin"
-                  type="number"
-                  className="catalog__price-filter-min"
-                  placeholder="0"
-                  value={inputPriceMin}
-                  onChange={(e) => handlePriceMin(e)}
-                />
-                <p className="catalog__price-filter-divider">-</p>
-                <label htmlFor="priceMax"></label>
-                <input
-                  id="priceMax"
-                  type="number"
-                  className="catalog__price-filter-max"
-                  placeholder="10 000"
-                  value={inputPriceMax}
-                  onChange={(e) => handlePriceMax(e)}
-                />
-              </div>
-            </div>
-            <div className="catalog__manufacturer-filter-box">
-              <h2 className="catalog__manufacturer-filter-title">
-                Производитель
-              </h2>
-              <SearchForm classPrefix="catalog" />
-              <ManufacturersList />
-
-              <div className="catalog__manufacturer-filter-divider"></div>
-            </div>
-            <div className="catalog__side-filters-categories-box">
-              <ul className="catalog__side-filters-categories-list">
-                {categories.map((categorie) => (
-                  <li
-                    onClick={() => handleClickCategory(categorie)}
-                    key={categorie}
-                    className={
-                      activeCategory === categorie
-                        ? 'catalog__side-filters-categories-item catalog__side-filters-categories-item_active'
-                        : 'catalog__side-filters-categories-item'
-                    }
-                  >
-                    {categorie}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </section>
+          <SideFilters />
           <section className="catalog__products">
             <ul className="catalog__products-list">
               {currentProducts
