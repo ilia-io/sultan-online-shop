@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import typeBottleIcon from '../assets/icons/type-bottle.svg';
 import typeSolidBoxIcon from '../assets/icons/type-solid-box.svg';
 import cartBtnIcon from '../assets/icons/product-cart-in-btn.svg';
-import shareIcon from '../assets/icons/product-share.svg';
 import priceListIcon from '../assets/icons/price-list-in-btn-dark.svg';
 import arrowDown from '../assets/icons/sort-arrow-down.svg';
 import arrowUp from '../assets/icons/sort-arrow-up.svg';
@@ -20,6 +19,7 @@ import {
   minusItem,
 } from '../app/reducers/cartSlice';
 import BreadCrumbs from './BreadCrumbs';
+import ShareBtn from './ShareBtn';
 
 type Props = {};
 
@@ -123,14 +123,9 @@ const ProductCard = (props: Props) => {
               />
             </button>
           </div>
+          <ShareBtn classPrefix='mobile' />
           <div className="product-card__ad-box">
-            <button disabled className="product-card__share-link">
-              <img
-                src={shareIcon}
-                alt="share"
-                className="product-card__share-icon"
-              />
-            </button>
+            <ShareBtn />
             <div className="product-card__ad-text-box">
               <p className="product-card__ad-text">
                 При покупке от
