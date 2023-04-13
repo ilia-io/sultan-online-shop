@@ -14,6 +14,7 @@ import {
   removeItemFromCart,
 } from '../app/reducers/cartSlice';
 import { ICartItem } from '../@types/CartItem';
+import MobileBackBtn from './MobileBackBtn';
 
 type Props = {};
 
@@ -85,6 +86,7 @@ const Cart = (props: Props) => {
   return (
     <section className="cart">
       <div className="cart__wrapper container">
+        <MobileBackBtn classPrefix="cart" />
         <h1 className="cart__title">Корзина</h1>
         <div className="cart__horizontal-line"></div>
         <ul className="cart__list">
@@ -118,7 +120,7 @@ const Cart = (props: Props) => {
                     {cartItem.description.split('').slice(0, 200).join('')} ...
                   </p>
                 </div>
-                <div className="cart__item-vertical-line"></div>
+                <div className="cart__item-vertical-line mobile-hide"></div>
                 <div className="cart__item-actions">
                   <div className="cart__amount-box">
                     <button

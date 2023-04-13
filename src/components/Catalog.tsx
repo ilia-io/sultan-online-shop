@@ -6,9 +6,9 @@ import { localItemsSelector } from '../app/reducers/productSlice';
 import { filterSelector, setActiveCaterogy } from '../app/reducers/filterSlice';
 import Pagination from './Pagination';
 import CatalogProduct from './CatalogProduct';
-import mBackIcon from '../assets/icons/mobile-back.svg';
 import SideFilters from './SideFilters';
 import SortBy from './SortBy';
+import MobileBackBtn from './MobileBackBtn';
 
 type Props = {};
 
@@ -59,14 +59,7 @@ const Catalog = (props: Props) => {
     <section className="catalog">
       <div className="catalog__wrapper container">
         <section className="catalog__title-box">
-          <button className="mobile__back-btn">
-            <img
-              src={mBackIcon}
-              alt="arrow back"
-              className="mobile__back-img"
-            />
-            НАЗАД
-          </button>
+          <MobileBackBtn />
           <h1 className="catalog__title">Косметика и гигиена</h1>
 
           <Link to={'/admin'}>

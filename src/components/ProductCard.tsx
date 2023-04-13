@@ -17,7 +17,7 @@ import {
 import BreadCrumbs from './BreadCrumbs';
 import ShareBtn from './ShareBtn';
 import ProductCartBtn from './ProductCartBtn';
-import mBackIcon from '../assets/icons/mobile-back.svg';
+import MobileBackBtn from './MobileBackBtn';
 
 type Props = {};
 
@@ -59,10 +59,7 @@ const ProductCard = (props: Props) => {
     <>
       <BreadCrumbs activeItem={PRODUCT.name} section="Каталог" />
       <section className="product-card container">
-        <button className="mobile__back-btn mobile__back-btn_product-page">
-          <img src={mBackIcon} alt="arrow back" className="mobile__back-img" />
-          НАЗАД
-        </button>
+        <MobileBackBtn classPrefix="product-page" />
         <div className="product-card__img-wrapper">
           <img
             src={PRODUCT.imageURL}
