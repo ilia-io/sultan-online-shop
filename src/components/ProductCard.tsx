@@ -1,14 +1,10 @@
 import React, { useState } from 'react';
 import typeBottleIcon from '../assets/icons/type-bottle.svg';
 import typeSolidBoxIcon from '../assets/icons/type-solid-box.svg';
-import cartBtnIcon from '../assets/icons/product-cart-in-btn.svg';
 import priceListIcon from '../assets/icons/price-list-in-btn-dark.svg';
 import arrowDown from '../assets/icons/sort-arrow-down.svg';
 import arrowUp from '../assets/icons/sort-arrow-up.svg';
-import { IProduct } from '../@types/Product';
 import { useAppDispatch, useAppSelector } from '../app/hooks';
-import { RootState } from '../app/store';
-import { useParams } from 'react-router-dom';
 import {
   currentItemSelector,
   productsSelector,
@@ -20,6 +16,8 @@ import {
 } from '../app/reducers/cartSlice';
 import BreadCrumbs from './BreadCrumbs';
 import ShareBtn from './ShareBtn';
+import ProductCartBtn from './ProductCartBtn';
+import mBackIcon from '../assets/icons/mobile-back.svg';
 
 type Props = {};
 
@@ -61,6 +59,10 @@ const ProductCard = (props: Props) => {
     <>
       <BreadCrumbs activeItem={PRODUCT.name} section="Каталог" />
       <section className="product-card container">
+        <button className="mobile__back-btn mobile__back-btn_product-page">
+          <img src={mBackIcon} alt="arrow back" className="mobile__back-img" />
+          НАЗАД
+        </button>
         <div className="product-card__img-wrapper">
           <img
             src={PRODUCT.imageURL}
@@ -110,20 +112,13 @@ const ProductCard = (props: Props) => {
                 +
               </button>
             </div>
-            <button
-              onClick={handleAddItem}
-              type="button"
-              className="product-card__product-cartBtn"
-            >
-              В корзину{' '}
-              <img
-                src={cartBtnIcon}
-                alt="cart"
-                className="product-card__product-cartBtn-icon"
-              />
-            </button>
+            <ProductCartBtn handleClick={handleAddItem} />
           </div>
-          <ShareBtn classPrefix='mobile' />
+          <div className="mobile__product-cart-btn-wrapper">
+            <ProductCartBtn handleClick={handleAddItem} classPrefix="mobile" />
+            <ShareBtn classPrefix="mobile" />
+          </div>
+
           <div className="product-card__ad-box">
             <ShareBtn />
             <div className="product-card__ad-text-box">

@@ -132,14 +132,16 @@ const Header = (props: Props) => {
         </section>
         <div className="header__mobile-buttons">
           <div className="header__mobile-buttons-wrapper">
-            <button className="header__mobile-buttons-catalog">
-              <img
-                src={mobileCatalogIcon}
-                alt="catalog"
-                className="header__mobile-buttons-catalog-img"
-              />
-              Каталог
-            </button>
+            <Link to={'/catalog'}>
+              <button className="header__mobile-buttons-catalog">
+                <img
+                  src={mobileCatalogIcon}
+                  alt="catalog"
+                  className="header__mobile-buttons-catalog-img"
+                />
+                Каталог
+              </button>
+            </Link>
             <div className="header__mobile-vertical-line"></div>
             <button className="header__mobile-buttons-search">
               <img

@@ -1216,6 +1216,10 @@ a {
     letter-spacing: 0.15em;
     color: #FFFFFF;
     cursor: pointer;
+
+    &_mobile {
+      display: none;
+    }
   }
 
   &__product-cartBtn-icon {
@@ -1949,6 +1953,12 @@ a {
   &__to-admin-btn {
     margin: 10px 38px;
   }
+
+  &__product-cart-btn-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -2043,6 +2053,7 @@ a {
       font-size: 12px;
       line-height: 15px;
       color: $_2;
+      cursor: pointer;
     }
 
     &__mobile-buttons-catalog-img {
@@ -2177,6 +2188,14 @@ a {
       color: #3F4E65;
       margin-bottom: 25px;
       margin-left: -168px;
+
+      &_product-page {
+        margin: 0;
+        // margin-right: 200px;
+        position: relative;
+        top: 0;
+        left: -30%;
+      }
     }
 
     &__back-img {
@@ -2204,6 +2223,10 @@ a {
     width: 100%;
     margin: 0 auto;
     gap: 0;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding-bottom: 60px;
 
     &__img-wrapper {
       width: 100%;
@@ -2212,6 +2235,8 @@ a {
 
     &__data {
       width: 100%;
+      // display: flex;
+      // flex-wrap: wrap;
     }
 
     &__title {
@@ -2234,7 +2259,7 @@ a {
       margin-bottom: 20px;
       gap: 10px;
 
-      width: 320px;
+      width: 300px;
       justify-content: flex-start;
     }
 
@@ -2242,6 +2267,40 @@ a {
       font-size: 20px;
       margin-right: 27px;
     }
+
+    &__product-cartBtn {
+      display: none;
+
+      &_mobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+
+        background-color: $_5;
+        border-radius: 80px;
+        border: none;
+
+        width: 184px;
+        height: 59px;
+
+        font-weight: 700;
+        font-size: 10px;
+        line-height: 12px;
+        letter-spacing: 0.15em;
+        color: #FFFFFF;
+        cursor: pointer;
+      }
+    }
+
+    &__ad-box {
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin: 0 auto;
+    }
+
 
     &__share-link {
       display: none;
@@ -2257,6 +2316,29 @@ a {
         box-shadow: 0px 15px 70px -11px rgba(43, 28, 1, 0.04);
         border-radius: 10px;
         border: none;
+      }
+    }
+
+    &__ad-text-box {
+      width: 100%;
+    }
+
+    &__priceListBtn {
+      width: 100%;
+    }
+
+    &__prop {
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 150%;
+      color: $_2;
+      margin-bottom: 5px;
+
+      &_value {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 150%;
+        color: $_1;
       }
     }
   }
