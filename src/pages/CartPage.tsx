@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
 import Header from '../components/Header';
-import BreadCrumbs from '../components/BreadCrumbs';
+import BreadCrumbs from '../components/BreadCrumbs/BreadCrumbs';
 import Cart from '../components/Cart';
 import Footer from '../components/Footer';
 
-type Props = {}
+type Props = {};
 
 const CartPage = (props: Props) => {
   return (
@@ -17,6 +17,6 @@ const CartPage = (props: Props) => {
       <Footer />
     </>
   );
-}
+};
 
-export default CartPage
+export default CartPage;

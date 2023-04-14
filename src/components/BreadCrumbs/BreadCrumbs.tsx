@@ -21,7 +21,10 @@ const BreadCrumbs = ({ activeItem, section }: Props) => {
             </Link>
           </>
         )}
-        <div className="bread-crumbs__vertical-line"></div>
+        <div
+          data-testid="vertical-line"
+          className="bread-crumbs__vertical-line"
+        ></div>
         <a href="#" className="bread-crumbs__element_active">
           {activeItem || ''}Косметика и гигиена
         </a>

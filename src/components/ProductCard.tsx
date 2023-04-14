@@ -14,8 +14,8 @@ import {
   cartSelector,
   minusItem,
 } from '../app/reducers/cartSlice';
-import BreadCrumbs from './BreadCrumbs';
-import ShareBtn from './ShareBtn';
+import BreadCrumbs from './BreadCrumbs/BreadCrumbs';
+import ShareBtn from './ShareBtn/ShareBtn';
 import ProductCartBtn from './ProductCartBtn';
 import MobileBackBtn from './MobileBackBtn';
 

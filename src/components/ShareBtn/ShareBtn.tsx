@@ -1,5 +1,5 @@
 import React from 'react';
-import shareIcon from '../assets/icons/product-share.svg';
+import shareIcon from '../../assets/icons/product-share.svg';
 
 type Props = {
   classPrefix?: string;

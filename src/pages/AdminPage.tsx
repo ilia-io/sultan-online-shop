@@ -2,7 +2,7 @@ import React from 'react';
 import AdminPanel from '../components/AdminPanel/AdminPanel';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import BreadCrumbs from '../components/BreadCrumbs';
+import BreadCrumbs from '../components/BreadCrumbs/BreadCrumbs';
 
 type Props = {};
 
