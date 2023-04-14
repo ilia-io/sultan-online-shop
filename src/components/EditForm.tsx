@@ -165,12 +165,6 @@ const EditForm = ({ product, handleClick, button, setStatus }: Props) => {
       <div className="admin-panel__prop-item">
         <label className="admin-panel__prop-label">
           <span className="admin-panel__prop-label_note">Тип ухода</span>
-          {/* <input
-                  // type="text"
-                  // className="admin-panel__prop-input"
-                  // value={careType}
-                  // onChange={(e) => setCareType(e.target.value)}
-                /> */}
           <select
             required
             multiple

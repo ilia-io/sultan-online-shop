@@ -15,22 +15,10 @@ import AdminPanelProduct from './AdminPanelProduct';
 type Props = {};
 
 const AdminPanel = (props: Props) => {
-  const PRODUCTS: IProduct[] = useAppSelector(productsSelector);
   const localProducts = useAppSelector(localItemsSelector);
 
   const dispatch = useAppDispatch();
 
-  function handleLoadData() {
-    localStorage.setItem('products', JSON.stringify(PRODUCTS));
-    // setLocalProducts(JSON.parse(localStorage.getItem('products') as string));
-
-    setLocalItems(PRODUCTS);
-  }
-
-  function readFromLS() {
-    const local = JSON.parse(localStorage.getItem('products') as string);
-    dispatch(setLocalItems(local));
-  }
   function writeToLS(items: IProduct[]) {
     localStorage.setItem('products', JSON.stringify(items));
   }
@@ -60,13 +48,6 @@ const AdminPanel = (props: Props) => {
     <section className="admin-panel">
       <div className="admin-panel__wrapper container">
         <h1 className="admin-panel__title">Админка</h1>
-        {/* <button
-          type="button"
-          onClick={handleLoadData}
-          className="admin-panel__loadBtn"
-        >
-          Подгрузить данные из исходного JSON
-        </button> */}
         <div className="admin-panel__form-wrapper">
           <div className="admin-panel__create-box">
             <h2 className="admin-panel__create-box-title">Добавить товар</h2>

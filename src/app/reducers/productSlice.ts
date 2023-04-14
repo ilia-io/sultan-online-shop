@@ -16,19 +16,6 @@ const initialState: ProductState = {
   localItems: getProductsFromLocalStorage() || DB.products,
 };
 
-// export const emptyProduct: IProduct = {
-//   imageURL: '',
-//   name: '',
-//   type: '',
-//   size: 0,
-//   barcode: 0,
-//   manufacturer: '',
-//   brand: '',
-//   description: '',
-//   price: 0,
-//   careType: [''],
-// };
-
 export const productSlice = createSlice({
   name: 'product',
   initialState,
