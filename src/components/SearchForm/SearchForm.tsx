@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import searchBtn from '../assets/icons/search-btn.svg';
-import { useAppDispatch } from '../app/hooks';
-import { setManufacturersSearch } from '../app/reducers/filterSlice';
+import searchBtn from '../../assets/icons/search-btn.svg';
+import { useAppDispatch } from '../../app/hooks';
+import { setManufacturersSearch } from '../../app/reducers/filterSlice';
 
 type Props = {
   classPrefix: string;
@@ -16,6 +16,7 @@ const SearchForm = ({ classPrefix }: Props) => {
   }
   return (
     <form
+      data-testid="search-form"
       onSubmit={(e) => handleSearch(e)}
       className={`${classPrefix}__search-form`}
       style={{
@@ -25,6 +26,7 @@ const SearchForm = ({ classPrefix }: Props) => {
       }}
     >
       <input
+        data-testid="search-input"
         value={searchValue}
         onChange={(e) => setSearchValue(e.target.value)}
         name="text"
@@ -39,6 +41,7 @@ const SearchForm = ({ classPrefix }: Props) => {
         }}
       />
       <input
+        data-testid="search-btn"
         name="btn"
         type="submit"
         className={`${classPrefix}__search-btn`}

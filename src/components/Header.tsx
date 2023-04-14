@@ -6,7 +6,7 @@ import catalogBtnIcon from '../assets/icons/catalog-in-btn.svg';
 import contactImg from '../assets/images/person-online.svg';
 import priceListBtnIcon from '../assets/icons/price-list-in-btn.svg';
 import cartIcon from '../assets/icons/cart.svg';
-import SearchForm from './SearchForm';
+import SearchForm from './SearchForm/SearchForm';
 import { Link } from 'react-router-dom';
 import { useAppSelector } from '../app/hooks';
 import { cartSelector } from '../app/reducers/cartSlice';
