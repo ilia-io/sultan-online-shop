@@ -1,14 +1,14 @@
 import React from 'react';
-import { useAppDispatch, useAppSelector } from '../app/hooks';
-import { IProduct } from '../@types/Product';
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
+import { IProduct } from '../../@types/Product';
 import {
   localItemsSelector,
   removeProduct,
   editProduct,
   addProduct,
-} from '../app/reducers/productSlice';
-import EditForm from './EditForm';
-import AdminPanelProduct from './AdminPanelProduct';
+} from '../../app/reducers/productSlice';
+import EditForm from '../EditForm';
+import AdminPanelProduct from '../AdminPanelProduct';
 
 type Props = {};
 

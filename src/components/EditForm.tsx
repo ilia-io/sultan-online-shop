@@ -182,7 +182,11 @@ const EditForm = ({ product, handleClick, button, setStatus }: Props) => {
         </label>
       </div>
       <div className="admin-panel__buttons">
-        <button type="submit" className="admin-panel__submit-btn">
+        <button
+          data-testid="create"
+          type="submit"
+          className="admin-panel__submit-btn"
+        >
           {button === 'edit' ? 'Изменить' : 'Добавить'}
         </button>
       </div>

@@ -25,6 +25,7 @@ const AdminPanelProduct = ({ product, handleEdit, handleRemove }: Props) => {
         <div className="admin-product__mini">
           <div className="admin-product__mini-actions">
             <button
+              data-testid="edit-btn"
               onClick={() => setEdit(!edit)}
               className="admin-product__edit-btn"
             >
