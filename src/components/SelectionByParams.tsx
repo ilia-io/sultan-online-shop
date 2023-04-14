@@ -5,7 +5,7 @@ import {
   setPriceFilterMin,
 } from '../app/reducers/filterSlice';
 import SearchForm from './SearchForm/SearchForm';
-import ManufacturersList from './ManufacturersList';
+import ManufacturersList from './ManufacturersList/ManufacturersList';
 
 type Props = {};
 

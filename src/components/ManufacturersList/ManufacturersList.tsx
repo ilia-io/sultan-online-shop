@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
-import arrowDown from '../assets/icons/sort-arrow-down.svg';
-import arrowUp from '../assets/icons/sort-arrow-up.svg';
-import { useAppDispatch, useAppSelector } from '../app/hooks';
+import arrowDown from '../../assets/icons/sort-arrow-down.svg';
+import arrowUp from '../../assets/icons/sort-arrow-up.svg';
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import {
   filterSelector,
   setActiveManufacturers,
-} from '../app/reducers/filterSlice';
+} from '../../app/reducers/filterSlice';
 
 type Props = {};
 
 const ManufacturersList = (props: Props) => {
   const [show, setShow] = useState(true);
-  const { manufacturers } = useAppSelector(filterSelector);
+  const { manufacturers} = useAppSelector(filterSelector);
   const dispatch = useAppDispatch();
 
   function manufacturerShowHideAll() {
