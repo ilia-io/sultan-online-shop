@@ -2,9 +2,7 @@ import React from 'react';
 import { useAppDispatch, useAppSelector } from '../app/hooks';
 import { IProduct } from '../@types/Product';
 import {
-  productsSelector,
   localItemsSelector,
-  setLocalItems,
   removeProduct,
   editProduct,
   addProduct,
