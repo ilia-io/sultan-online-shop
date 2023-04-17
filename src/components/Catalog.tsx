@@ -4,7 +4,7 @@ import { useAppDispatch, useAppSelector } from '../app/hooks';
 import { Link } from 'react-router-dom';
 import { localItemsSelector } from '../app/reducers/productSlice';
 import { filterSelector, setActiveCaterogy } from '../app/reducers/filterSlice';
-import Pagination from './Pagination';
+import Pagination from './Pagination/Pagination';
 import CatalogProduct from './CatalogProduct';
 import SideFilters from './SideFilters';
 import SortBy from './SortBy';

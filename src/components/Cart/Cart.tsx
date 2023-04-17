@@ -1,9 +1,9 @@
 import React from 'react';
-import { useAppSelector } from '../app/hooks';
-import { cartSelector } from '../app/reducers/cartSlice';
-import MobileBackBtn from './MobileBackBtn';
-import CartProduct from './CartProduct';
-import CartOrderComplete from './CartOrderComplete';
+import { useAppSelector } from '../../app/hooks';
+import { cartSelector } from '../../app/reducers/cartSlice';
+import MobileBackBtn from '../MobileBackBtn';
+import CartProduct from '../CartProduct';
+import CartOrderComplete from '../CartOrderComplete';
 
 type Props = {};
 

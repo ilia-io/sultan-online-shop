@@ -26,7 +26,7 @@ describe('SearchForm', () => {
     expect(getByTestId('search-btn')).toBeInTheDocument();
   });
 
-  test('dispatches setManufacturersSearch action when form is submitted', () => {
+  it('dispatches setManufacturersSearch action when form is submitted', () => {
     const { getByRole, getByTestId } = render(
       <Provider store={store}>
         <SearchForm classPrefix="some-class" />

@@ -1,6 +1,6 @@
 import React from 'react';
-import leftIcon from '../assets/icons/pagination-left.svg';
-import rightIcon from '../assets/icons/pagination-right.svg';
+import leftIcon from '../../assets/icons/pagination-left.svg';
+import rightIcon from '../../assets/icons/pagination-right.svg';
 
 type Props = {
   productsPerPage: number;
