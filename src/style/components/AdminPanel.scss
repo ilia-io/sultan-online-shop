@@ -1,0 +1,132 @@
+.admin-panel {
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 10px;
+    gap: 20px;
+  }
+
+  &__title {
+    padding: 10px;
+  }
+
+  &__loadBtn {
+    padding: 6px;
+    border-radius: 6px;
+    border: 2px solid $_5;
+  }
+
+  &__main-select {
+    padding: 10px;
+    border-radius: 6px;
+    border: 2px solid $_5;
+  }
+
+  &__products-option {}
+
+  &__form {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  &__prop-list {
+    list-style: none;
+    flex-basis: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__prop-item {
+    min-height: 40px;
+    display: flex;
+    padding: 10px;
+  }
+
+  &__prop-item-key {
+    padding: 3.2px;
+  }
+
+  &__prop-label {
+    display: flex;
+    flex-direction: column;
+
+    &_note {
+      color: $_2;
+      font-style: italic;
+    }
+  }
+
+  &__prop-input {
+    width: 300px;
+    padding: 6px;
+    border-radius: 8px;
+    font-size: 16px;
+    border: 3px solid $_5;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__submit-btn {
+    padding: 6px;
+    border-radius: 6px;
+    border: 2px solid $_5;
+  }
+
+  &__remove-btn {
+    padding: 6px;
+    border-radius: 6px;
+    border: 2px solid $_5;
+  }
+
+  &__add-new-btn {
+    padding: 6px;
+    border-radius: 6px;
+    border: 2px solid $_5;
+  }
+
+  &__form-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__create-box {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__create-box-title {}
+
+  &__edit-box {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__search {
+    width: 90%;
+    padding: 6px;
+    border-radius: 8px;
+    font-size: 16px;
+    border: 3px solid $_5;
+    margin: 10px;
+  }
+
+  &__edit-list {
+    list-style: none;
+
+  }
+
+  &__edit-item {}
+}

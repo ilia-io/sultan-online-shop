@@ -8,7 +8,7 @@ describe('AdminPanel component', () => {
     localStorage.clear();
   });
 
-  test('renders AdminPanel component', () => {
+  it('renders AdminPanel component', () => {
     render(
       <Provider store={store}>
         <AdminPanel />
@@ -18,7 +18,7 @@ describe('AdminPanel component', () => {
     expect(titleElement).toBeInTheDocument();
   });
 
-  test('adds new product when "create" button is clicked', () => {
+  it('adds new product when "create" button is clicked', () => {
     render(
       <Provider store={store}>
         <AdminPanel />
@@ -46,7 +46,7 @@ describe('AdminPanel component', () => {
     expect(storedProducts[0].barcode).toBe(1234567890);
   });
 
-  test('edits existing product when "save" button is clicked', () => {
+  it('edits existing product when "save" button is clicked', () => {
     localStorage.setItem(
       'products',
       JSON.stringify([

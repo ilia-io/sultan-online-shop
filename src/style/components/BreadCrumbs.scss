@@ -1,0 +1,32 @@
+.bread-crumbs {
+  min-height: 112px;
+
+  &__wrapper {
+    min-height: 112px;
+    display: flex;
+    align-items: center;
+
+    &>* {
+      margin-right: 10px;
+    }
+  }
+
+  &__element {
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 120%;
+    color: $_2;
+
+    &_active {
+      text-decoration: none;
+      opacity: 0.5;
+    }
+  }
+
+  &__vertical-line {
+    height: 16px;
+    opacity: 0.3;
+    border-left: 1px dashed $_2;
+  }
+}

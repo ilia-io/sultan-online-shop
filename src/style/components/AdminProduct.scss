@@ -1,0 +1,66 @@
+.admin-product {
+
+  &__mini {
+    display: flex;
+    gap: 10px;
+    min-height: 120px;
+    border: 1px solid $_5;
+    border-radius: 8px;
+    margin: 15px 0;
+    padding: 0 10px;
+  }
+
+  &__mini-actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 10px;
+  }
+
+  &__edit-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: $_5;
+    border-radius: 6px;
+    padding: 4px;
+    cursor: pointer;
+  }
+
+  &__edit-btn-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  &__delete-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: $_5;
+    border-radius: 6px;
+    padding: 4px;
+    cursor: pointer;
+  }
+
+  &__delete-btn-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  &__mini-img {
+    max-width: 120px;
+    height: auto;
+  }
+
+  &__mini-props {}
+
+  &__mini-prop {
+    font-size: 13px;
+
+    &_bold {
+      font-weight: 700;
+    }
+  }
+}
