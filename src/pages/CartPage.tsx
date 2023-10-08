@@ -11,7 +11,6 @@ const CartPage = (props: Props) => {
     <>
       <Header />
       <main className="main">
-        <BreadCrumbs />
         <Cart />
       </main>
       <Footer />

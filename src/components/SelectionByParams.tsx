@@ -56,7 +56,6 @@ const SelectionByParams = (props: Props) => {
         <h2 className="catalog__manufacturer-filter-title">Производитель</h2>
         <SearchForm classPrefix="catalog" />
         <ManufacturersList />
-
         <div className="catalog__manufacturer-filter-divider"></div>
       </div>
     </>

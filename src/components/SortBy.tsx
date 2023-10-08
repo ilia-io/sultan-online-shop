@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import arrowDown from '../assets/icons/sort-arrow-down.svg';
 import arrowUp from '../assets/icons/sort-arrow-up.svg';
 import { IProduct } from '../@types/Product';
+import { useAppDispatch } from '../app/hooks';
+import { setLocalItems } from '../app/reducers/productSlice';
 
 type Props = {
   filteredProducts: IProduct[];
-  setFilteredProducts: React.Dispatch<React.SetStateAction<IProduct[]>>;
+  // setFilteredProducts?: React.Dispatch<React.SetStateAction<IProduct[]>>;
   classPrefix?: string;
 };
 
@@ -23,12 +25,11 @@ const sortOptionsArr: ISortOption[] = [
 
 const SortBy = ({
   filteredProducts,
-  setFilteredProducts,
   classPrefix,
 }: Props) => {
   const [showSortOptions, setShowSortOptions] = useState(false);
   const [activeSortOption, setActiveSortOption] = useState(sortOptionsArr[0]);
-
+const dispatch = useAppDispatch()
   function toggleSortOptions() {
     setShowSortOptions(!showSortOptions);
   }
@@ -49,7 +50,7 @@ const SortBy = ({
         }
         return itemA.name.localeCompare(itemB.name);
       });
-      setFilteredProducts(itemsCopy);
+      dispatch(setLocalItems(itemsCopy));
     } else {
       itemsCopy.sort((itemA, itemB) => {
         if (activeSortOption.reversed) {
@@ -57,7 +58,7 @@ const SortBy = ({
         }
         return itemB.price - itemA.price;
       });
-      setFilteredProducts(itemsCopy);
+      dispatch(setLocalItems(itemsCopy));
     }
   }
 

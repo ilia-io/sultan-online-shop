@@ -11,7 +11,6 @@ const AdminPage = (props: Props) => {
     <>
       <Header />
       <main className="main">
-        <BreadCrumbs />
         <AdminPanel />
       </main>
       <Footer />
