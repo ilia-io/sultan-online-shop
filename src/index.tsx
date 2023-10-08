@@ -7,7 +7,6 @@ import { BrowserRouter } from 'react-router-dom';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
-// basename={'/sultan-online-shop'}
 root.render(
   <React.StrictMode>
     <BrowserRouter basename={'/sultan-online-shop'}>

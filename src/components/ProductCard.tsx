@@ -37,8 +37,6 @@ const ProductCard = (props: Props) => {
     (item) => item.barcode === PRODUCT.barcode
   )?.count;
 
-  // const { barcode } = useParams<{ barcode: string }>();
-
   function showHideDescription() {
     setShowDescription(!showDescription);
   }

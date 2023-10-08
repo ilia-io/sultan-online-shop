@@ -1,5 +1,6 @@
 import React from 'react';
 import mBackIcon from '../assets/icons/mobile-back.svg';
+
 type Props = {
   classPrefix?: string;
 };

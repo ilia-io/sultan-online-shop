@@ -9,6 +9,7 @@ import CatalogProduct from './CatalogProduct';
 import SideFilters from './SideFilters';
 import SortBy from './SortBy';
 import MobileBackBtn from './MobileBackBtn';
+import { useFilters } from '../helpers/useFilter';
 
 type Props = {};
 
@@ -23,24 +24,14 @@ export function getProductsFromLocalStorage() {
 const Catalog = (props: Props) => {
   const dispatch = useAppDispatch();
   const localItems = useAppSelector(localItemsSelector);
-  const {
-    activeCategory,
-    categoryFilter,
-    categories,
-    activeManufacturers,
-    manufacturersFilter,
-    manufacturersSearch,
-    priceFilterMin,
-    priceFilterMax,
-  } = useAppSelector(filterSelector);
+  const { activeCategory, categories } = useAppSelector(filterSelector);
 
-  const [filteredProducts, setFilteredProducts] = useState(localItems);
+  const filteredProducts = useFilters(localItems);
 
   function handleClickCategory(categorie: string) {
     dispatch(setActiveCaterogy(categorie));
+    setCurrentPage(1);
   }
-
-  useEffect(() => setFilteredProducts(localItems), [localItems]);
 
   const [currentPage, setCurrentPage] = useState(1);
   const [productsPerPage] = useState(15);
@@ -54,14 +45,12 @@ const Catalog = (props: Props) => {
 
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
-  // console.log(document.querySelectorAll('.catalog__product').length);
   return (
     <section className="catalog">
       <div className="catalog__wrapper container">
         <section className="catalog__title-box">
           <MobileBackBtn />
           <h1 className="catalog__title">Косметика и гигиена</h1>
-
           <Link to={'/admin'}>
             <button
               type="button"
@@ -70,11 +59,7 @@ const Catalog = (props: Props) => {
               В АДМИНКУ{' '}
             </button>
           </Link>
-
-          <SortBy
-            filteredProducts={filteredProducts}
-            setFilteredProducts={setFilteredProducts}
-          />
+          <SortBy filteredProducts={filteredProducts} />
         </section>
         <section className="catalog__top-line-categories">
           <ul className="catalog__top-line-categories-list">
@@ -95,32 +80,12 @@ const Catalog = (props: Props) => {
         </section>
         <section className="catalog__main">
           <SideFilters />
-          <SortBy
-            filteredProducts={filteredProducts}
-            setFilteredProducts={setFilteredProducts}
-            classPrefix="mobile"
-          />
+          <SortBy filteredProducts={filteredProducts} classPrefix="mobile" />
           <section className="catalog__products">
             <ul className="catalog__products-list">
-              {currentProducts
-                .filter((item) =>
-                  categoryFilter ? item.careType.includes(activeCategory) : true
-                )
-                .filter((item) =>
-                  manufacturersFilter
-                    ? activeManufacturers.includes(item.manufacturer)
-                    : true
-                )
-                .filter((item) =>
-                  item.manufacturer
-                    .toLowerCase()
-                    .includes(manufacturersSearch.toLowerCase())
-                )
-                .filter((item) => item.price >= Number(priceFilterMin))
-                .filter((item) => item.price <= Number(priceFilterMax))
-                .map((product: IProduct) => (
-                  <CatalogProduct key={product.barcode} product={product} />
-                ))}
+              {currentProducts.map((product: IProduct) => (
+                <CatalogProduct key={product.barcode} product={product} />
+              ))}
             </ul>
             <Pagination
               productsPerPage={productsPerPage}
