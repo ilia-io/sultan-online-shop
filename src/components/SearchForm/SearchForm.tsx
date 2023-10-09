@@ -39,6 +39,7 @@ const SearchForm = ({ classPrefix }: Props) => {
           backgroundColor: 'inherit',
           opacity: '0.6',
         }}
+        disabled={classPrefix === 'header' ? true : false}
       />
       <input
         data-testid="search-btn"
@@ -56,6 +57,7 @@ const SearchForm = ({ classPrefix }: Props) => {
           height: '40px',
           cursor: 'pointer',
         }}
+        disabled={classPrefix === 'header' ? true : false}
       />
     </form>
   );
