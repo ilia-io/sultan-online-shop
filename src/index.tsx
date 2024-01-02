@@ -9,7 +9,7 @@ const container = document.getElementById('root')!;
 const root = createRoot(container);
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename={'/sultan-online-shop'}>
+    <BrowserRouter>
       <Provider store={store}>
         <App />
       </Provider>

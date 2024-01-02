@@ -1,6 +1,5 @@
 {
   "name": "sultan-online-shop",
-  "homepage": "https://ilia-io.github.io/sultan-online-shop",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
