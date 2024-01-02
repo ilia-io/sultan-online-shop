@@ -130,3 +130,20 @@
 
   &__edit-item {}
 }
+
+@media (max-width: 768px) {
+  .admin-panel {
+    &__form-wrapper {
+      flex-wrap: wrap;
+    }
+
+    &__create-box {
+      flex-basis: 100%;
+    }
+
+    &__edit-box {
+      margin: 20px auto;
+      flex-basis: 100%;
+    }
+  }
+}

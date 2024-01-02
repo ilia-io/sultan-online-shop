@@ -41,11 +41,19 @@
     border: none;
     outline: none;
     cursor: pointer;
+    padding: 2px;
 
     font-size: 16px;
     line-height: 150%;
     color: $_2;
     margin-left: 5px;
+
+    &:hover {
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 4px 10px;
+      background-color: #FFC85E20;
+      border-radius: 4px;
+      cursor: pointer;
+    }
   }
 
   &__sort-list {
@@ -92,8 +100,19 @@
     border-radius: 10px;
     cursor: pointer;
 
+    &:hover {
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 4px 10px;
+      background-color: #FFC85E20;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
     &_active {
       background-color: $_5;
+
+      &:hover {
+        background-color: $_5;
+      }
     }
   }
 
@@ -156,10 +175,22 @@
     align-items: center;
   }
 
+  &__price-filter-inputs input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    display: none;
+  }
+
+  &__price-filter-inputs input[type="number"] {
+    -moz-appearance: textfield;
+    -webkit-appearance: textfield;
+    appearance: textfield;
+  }
+
   &__price-filter-min {
     display: block;
     min-width: 100px;
     height: 23px;
+    padding: 0 10px;
 
     background: linear-gradient(90deg, rgba(255, 198, 80, 0.3) 0%, rgba(254, 202, 110, 0.3) 97.25%);
     border-radius: 1000px;
@@ -184,6 +215,7 @@
     display: block;
     min-width: 100px;
     height: 23px;
+    padding: 10px;
 
     background: linear-gradient(90deg, rgba(255, 198, 80, 0.3) 0%, rgba(254, 202, 110, 0.3) 97.25%);
     border-radius: 1000px;
@@ -291,8 +323,19 @@
     cursor: pointer;
     border-radius: 8px;
 
+    &:hover {
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 4px 10px;
+      background-color: #FFC85E20;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
     &_active {
       background-color: $_5;
+
+      &:hover {
+        background-color: $_5;
+      }
     }
   }
 
@@ -443,10 +486,69 @@
     &_active {
       background-color: $_7;
     }
+
+    &:hover {
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 4px 10px;
+    }
   }
 
   &__product-cartBtn-icon {
     width: 27px;
     height: 27px;
+  }
+}
+
+@media (max-width: 768px) {
+  .catalog {
+    &__top-line-categories {
+      display: none;
+    }
+
+    &__title-box {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__title {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 120%;
+      text-transform: uppercase;
+      color: #111111;
+    }
+
+    &__sort-box {
+      display: none;
+
+      &_mobile {
+        display: flex;
+        position: relative;
+        margin-left: -30px;
+      }
+    }
+
+    &__main {
+      margin: 0;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__side-filters {
+      margin: 0 auto;
+    }
+
+    &__products-list {
+      justify-content: center;
+    }
+
+    &__side-filters-categories-item {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 17px;
+      color: $_2;
+      margin-bottom: 0px;
+      text-transform: none;
+    }
+
   }
 }

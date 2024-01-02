@@ -64,3 +64,19 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .admin-product {
+    &__mini {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      width: 300px;
+    }
+
+    &__mini-img {
+      max-width: 140px;
+      height: auto;
+    }
+  }
+}
