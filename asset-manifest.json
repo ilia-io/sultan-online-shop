@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/sultan-online-shop/static/css/main.a071a271.css",
-    "main.js": "/sultan-online-shop/static/js/main.15216619.js",
+    "main.css": "/sultan-online-shop/static/css/main.548884be.css",
+    "main.js": "/sultan-online-shop/static/js/main.3db8f353.js",
     "static/media/person-online.svg": "/sultan-online-shop/static/media/person-online.8ae7fd87199e160e38790d99ab54bd3e.svg",
     "static/media/logo-header.svg": "/sultan-online-shop/static/media/logo-header.1a5963ad41a9a045e45ab84f01418760.svg",
     "static/media/logo-footer.svg": "/sultan-online-shop/static/media/logo-footer.18600ba6450c54512a99f98a551a8556.svg",
@@ -26,7 +26,7 @@
     "static/media/mobile-up.svg": "/sultan-online-shop/static/media/mobile-up.9216c358588736703910198655b7306c.svg",
     "static/media/mobile-search.svg": "/sultan-online-shop/static/media/mobile-search.3220935802512cc3a56d90ed1d23993a.svg",
     "static/media/mobile-down.svg": "/sultan-online-shop/static/media/mobile-down.a3141697a3fd3e81a1c78bc292f6189b.svg",
-    "static/media/mobile-back.svg": "/sultan-online-shop/static/media/mobile-back.6bb5b57cfac085118bacb3b993af493f.svg",
+    "static/media/mobile-back.svg": "/sultan-online-shop/static/media/mobile-back.11c388720ceddf1575bdacdd1492c101.svg",
     "static/media/order-double-check.svg": "/sultan-online-shop/static/media/order-double-check.37f3bc180890ba89fe771c62d8d15901.svg",
     "static/media/burger-menu.svg": "/sultan-online-shop/static/media/burger-menu.093eea7d000932b68c4c3bea46f17de4.svg",
     "static/media/price-list-in-btn-dark.svg": "/sultan-online-shop/static/media/price-list-in-btn-dark.328b8a0054f394fba0bd4e0a04124692.svg",
@@ -36,11 +36,11 @@
     "static/media/pagination-right.svg": "/sultan-online-shop/static/media/pagination-right.93ba4abe5846a231d455ec0417dd0a4b.svg",
     "static/media/sort-arrow-down.svg": "/sultan-online-shop/static/media/sort-arrow-down.260e242d67fc23d29ab014c3406116d8.svg",
     "static/media/sort-arrow-up.svg": "/sultan-online-shop/static/media/sort-arrow-up.5e5d30daddeae7614a94f9346edb1e23.svg",
-    "main.a071a271.css.map": "/sultan-online-shop/static/css/main.a071a271.css.map",
-    "main.15216619.js.map": "/sultan-online-shop/static/js/main.15216619.js.map"
+    "main.548884be.css.map": "/sultan-online-shop/static/css/main.548884be.css.map",
+    "main.3db8f353.js.map": "/sultan-online-shop/static/js/main.3db8f353.js.map"
   },
   "entrypoints": [
-    "static/css/main.a071a271.css",
-    "static/js/main.15216619.js"
+    "static/css/main.548884be.css",
+    "static/js/main.3db8f353.js"
   ]
 }
